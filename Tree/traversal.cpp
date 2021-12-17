@@ -2,6 +2,14 @@
 #include <queue>
 using namespace std;
 
+// Example Tree
+//		1
+//		/\
+//	2		3
+//	/\		/\
+//4		5
+
+
 struct Node {
 	int data;
 	struct Node *left, *right; // Alternatively, struct Node* left, *right;
@@ -12,6 +20,7 @@ struct Node {
 };
 
 // left, right, root
+// 4 5 2 3 1
 // T(n) = T(k) + T(n - k -1); cost = O(n)
 void PostOrder (struct Node* node) {
 	if (node == NULL)
@@ -22,6 +31,7 @@ void PostOrder (struct Node* node) {
 
 
 // root, left, right
+// 1 2 4 5 3
 void PreOrder (struct Node* node) {
 	if (node == NULL)
 		return;
@@ -30,6 +40,7 @@ void PreOrder (struct Node* node) {
 }
 
 // left, root, right
+// 4 2 5 1 3
 void InOrder (struct Node* node) {
 	if (node == NULL)
 		return;
@@ -50,6 +61,7 @@ int depth (struct Node* node) {
 }
 
 // level order traversal
+// 1 2 3 4 5
 void Level (struct Node* root, int level) {
 	if (root == NULL)
 		return;
@@ -60,6 +72,8 @@ void Level (struct Node* root, int level) {
 		Level (root->right, level - 1);
 	}
 }
+
+// Same as BFS on Tree -- O(n)
 void LevelOrder (struct Node* root) {
 	int h = depth(root);
 	for (int i = 1; i <= h; i++)
@@ -81,6 +95,21 @@ void LevelOrderQueue (struct Node* root) {
 	}
 }
 
+
+Node* array2LevelOrderTree (int arr[], Node* root, int l, int r) {
+	if (l < r) {
+		Node* temp = new Node(arr[l]);
+		root = temp;
+		root->left = array2LevelOrderTree (arr, root->left, 2*l + 1, r);
+		root->right = array2LevelOrderTree (arr, root->right, 2*l + 2, r);
+	}
+	return root;
+}
+
+Node* array2InPreOrderTree (int arr_preorder[], int arr_inorder[]) {
+
+}
+
 int main() {
 	struct Node *root = new Node(1);
 	root->left = new Node(2);
@@ -92,5 +121,14 @@ int main() {
 	InOrder(root); cout << endl; 
 	LevelOrder(root); cout << endl;
 	LevelOrderQueue(root); cout << endl;
+
+	int arr[] = {1, 2, 3, 4, 5}; int n = sizeof(arr) / sizeof(arr[0]);
+	struct Node* new_root = array2LevelOrderTree (arr, new_root, 0, n);
+	LevelOrder(new_root); cout << endl;
+
+	int arr_preorder[] = {1, 2, 4, 5, 3};
+	int arr_inorder[] = {4, 2, 5, 1, 3};
+	struct Node* root = array2InPreOrderTree(arr_inorder, arr_preorder);
+	LevelOrder(new_root); cout << endl;
 	return 0;
 }

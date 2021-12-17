@@ -15,9 +15,11 @@ void Paths (struct Node* node, int path[], int len) {
 		return;
 	path[len] = node->data; len++;
 	if (node->left == NULL && node->right == NULL) {
-		for (int i = 0; i < len; i++)
-			cout << path[i] << " ";
-		cout << endl;
+		int sum = 0;
+		for (int i = 0; i < len; i++) {
+			cout << path[i] << " "; sum += path[i];
+		}
+		cout << "Sum: " << sum << endl;
 	}
 	else {
 		Paths (node->left, path, len);
@@ -29,7 +31,7 @@ int main() {
 	struct Node *root = new Node(1);
 	root->left = new Node(2);
 	root->right = new Node(3);
-	root->right->left = new Node(4);
+	root->left->left = new Node(4);
 	root->left->right = new Node(5);
 	int path[100];
 	Paths(root, path, 0);

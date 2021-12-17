@@ -12,6 +12,8 @@ public:
 	void addEdge(int u, int v); // Function to add an edge from node u to v
 	void BFS(int s); // BFS traversal from a given source s
 	void DFS(int s); // DFS traversal from a given source s
+	bool isCyclic(int s);
+	bool isTree();
 	map<int, bool> visited;
 };
 
@@ -64,6 +66,33 @@ void Graph::DFS(int s) {
             DFS(*i);
 }
 
+// How to check if the graph has a cycle
+// Use BFS
+bool Graph::isCyclic (int s) {
+	visited[s] = true;
+	list<int>::iterator i;
+	for (i = adj[s].begin(); i != adj[s].end(); ++i) {
+        if (!visited[*i]) {
+        	if (isCyclic(*i))
+        		return true;
+        }
+        else { return true; }
+    }
+    return false;
+}
+
+bool Graph::isTree () {
+	if (this->isCyclic(0))
+		return false;
+	for (int i = 0; i < this->V; i++)
+		if (!visited[i])
+			return false;
+	return true;
+}
+
+// |<--------->|					
+// 0 --> 1 --> 2 --> 3<>
+
 int main() {
 	Graph g(4);
 	g.addEdge(0, 1);
@@ -73,7 +102,9 @@ int main() {
 	g.addEdge(2, 3);
 	g.addEdge(3, 3);
 	g.BFS(2);
-	g.visited.clear(); g.DFS(2);
+	g.visited.clear(); g.DFS(2); cout << endl;
+	g.visited.clear(); cout << boolalpha << g.isCyclic(0) << endl;
+	g.visited.clear(); cout << boolalpha << g.isTree() << endl;
 	return 0;
 }
 
