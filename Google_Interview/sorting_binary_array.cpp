@@ -53,7 +53,7 @@ int main() {
 	int arr[] = {0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0};
 	int n = sizeof(arr) / sizeof(arr[0]);
 	printarray(&arr[0], &arr[n]);
-	mysort2(&arr[0], &arr[n - 1]);
+	mysort(&arr[0], &arr[n - 1]);
 	printarray(&arr[0], &arr[n]);
 	return 0;
 }

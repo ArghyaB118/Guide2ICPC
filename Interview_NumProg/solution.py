@@ -26,7 +26,7 @@ def solution1(n):
 	X = np.linalg.solve(A,B)
 	return X[:-1]
 
-print "The solution of X: " + str(solution1(100))
+print("The solution of X: " + str(solution1(100)))
 
 
 # generating n points 
@@ -46,7 +46,7 @@ def solution2(n, radius):
 			count = count + 1
 	return count
 
-print "Percentage of points in the circle is: " + str(solution2(100, 10.000))
+print("Percentage of points in the circle is: " + str(solution2(100, 10.000)))
 
 
 # y = number of years
@@ -79,9 +79,9 @@ def solution4(day, accident):
 	answer[day - 1] = accident
 	if (accident < array[day - 1]):
 		deficit = array[day - 1] - accident
-		for i in xrange(day, length):
+		for i in range(day, length):
 			answer[i] = array[i] + 1.000 * deficit * array[i] / np.sum(array[day:])
-	print "Modified pattern: " + str(answer)
+	print("Modified pattern: " + str(answer))
 
 solution4(2, 60)
 
@@ -123,8 +123,64 @@ def solution5b(A, n):
 		Asub.sort()
 		if Asub[199] == 1000:
 			detected = detected + 1
-	print "Number of samples with spike: " + str(detected)
+	print("Number of samples with spike: " + str(detected))
 
 A = solution5a(2000)
 solution5b(A, 2000)
+
+
+# Solution 6
+import cvxpy as cp
+
+A_t = [500, 700, -450, 600, 640]
+B_t = [300, -200, 350, -400, 100]
+
+# part a
+X_t = []
+Y_t = []
+x = cp.Variable()
+y = cp.Variable()
+constraints = [150 <= x, x <= 400, 120 <= y, y <= 320]
+obj = cp.Maximize(A_t[0] * x + B_t[0] * y - 40000)
+prob = cp.Problem(obj, constraints)
+prob.solve()
+X_t.append(x.value)
+Y_t.append(y.value)
+
+for i in range(1, 5):
+	x = cp.Variable()
+	y = cp.Variable()
+	constraints = [150 <= x, x <= 400, 120 <= y, y <= 320, x - X_t[i-1] <= 200, y - Y_t[i-1] <= 100]
+	obj = cp.Maximize(A_t[i] * x + B_t[i] * y - 40000)
+	prob = cp.Problem(obj, constraints)
+	prob.solve()
+	X_t.append(x.value)
+	Y_t.append(y.value)
+
+print(X_t, Y_t)
+
+
+# part b
+X_t = []
+Y_t = []
+x = cp.Variable()
+y = cp.Variable()
+constraints = [150 <= x, x <= 400, 120 <= y, y <= 320, x + y <= 400]
+obj = cp.Maximize(A_t[0] * x + B_t[0] * y - 40000)
+prob = cp.Problem(obj, constraints)
+prob.solve()
+X_t.append(x.value)
+Y_t.append(y.value)
+
+for i in range(1, 5):
+	x = cp.Variable()
+	y = cp.Variable()
+	constraints = [150 <= x, x <= 400, 120 <= y, y <= 320, x + y <= 400, x - X_t[i-1] <= 200, y - Y_t[i-1] <= 100]
+	obj = cp.Maximize(A_t[i] * x + B_t[i] * y - 40000)
+	prob = cp.Problem(obj, constraints)
+	prob.solve()
+	X_t.append(x.value)
+	Y_t.append(y.value)
+
+print(X_t, Y_t)
 

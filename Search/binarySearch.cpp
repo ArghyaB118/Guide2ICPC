@@ -37,6 +37,21 @@ bool bsi (int arr[], int left, int right, int key) {
 	return false;
 }
 
+int findPivot(vector<int>& nums) {
+	int n = nums.size();
+	if (n == 1)
+		return 0;
+	int i = 1;
+	while (nums[i] <= nums)
+}
+
+int searchRotated (vector<int>& nums, int target) {
+	int pivot = findPivot(nums);
+	if (target >= nums[0]) {
+		binary_search(nums, target);
+	}
+}
+
 
 int main() {
 	int arr[] = {10, 4, 15, 7, 19, 5, 1, 3, 12};
