@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <map>
 using namespace std;
 
 // Example Tree
@@ -95,6 +96,27 @@ void LevelOrderQueue (struct Node* root) {
 	}
 }
 
+typedef pair<int, struct Node*> Pair;
+
+vector<vector<int>> verticalOrder (struct Node* root) {
+	vector<vector<int>> result;
+	map<int, vector<int>> elements;
+	queue<Pair> nodes; nodes.push(make_pair(0, root));
+	while (!nodes.empty()) {
+		Pair root = nodes.front();
+		elements[root.first].push_back(root.second->data);
+		nodes.pop();
+		if (root.second->left != NULL) {
+			nodes.push(make_pair(root.first - 1, root.second->left));
+		}
+		if (root.second->right != NULL)
+			nodes.push(make_pair(root.first + 1, root.second->right));
+	}
+	for (auto & m : elements)
+		result.push_back(m.second);
+	return result;
+}
+
 
 Node* array2LevelOrderTree (int arr[], Node* root, int l, int r) {
 	if (l < r) {
@@ -106,9 +128,9 @@ Node* array2LevelOrderTree (int arr[], Node* root, int l, int r) {
 	return root;
 }
 
-Node* array2InPreOrderTree (int arr_preorder[], int arr_inorder[]) {
+//Node* array2InPreOrderTree (int arr_preorder[], int arr_inorder[]) {
 
-}
+//}
 
 int main() {
 	struct Node *root = new Node(1);
@@ -128,7 +150,13 @@ int main() {
 
 	int arr_preorder[] = {1, 2, 4, 5, 3};
 	int arr_inorder[] = {4, 2, 5, 1, 3};
-	struct Node* root = array2InPreOrderTree(arr_inorder, arr_preorder);
+//	struct Node* root = array2InPreOrderTree(arr_inorder, arr_preorder);
 	LevelOrder(new_root); cout << endl;
+
+	for (int i = 0; i < verticalOrder(root).size(); i++) {
+		for (int j = 0; j < verticalOrder(root)[i].size(); j++)
+			cout << verticalOrder(root)[i][j] << " ";
+		cout << endl;
+	}
 	return 0;
 }

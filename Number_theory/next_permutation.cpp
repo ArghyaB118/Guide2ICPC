@@ -33,12 +33,14 @@ void next_perm (vector<int>& nums) {
 		if (nums[i] > nums[i - 1]) {
 			// now we have to swap nums[i - 1].
 			// swap with the ``smallest greater'' number from the right side
-			cout << i - 1 << endl;
-			for (int j = n - 1; j >= i; j++) {
-				if (nums[j] > nums[i - 1]) {
-					swap(nums[j], nums[i - 1]); break;
+			int smallest_greater = nums[i], smallest_greater_index = i;
+			for (int j = i; j < n; j++) {				
+				if (nums[j] > nums[i - 1] && nums[j] < smallest_greater) {
+					smallest_greater = nums[j];
+					smallest_greater_index = j;
 				}
 			}
+			swap(nums[smallest_greater_index], nums[i - 1]);
 			break;
 		}
 	}
@@ -54,5 +56,6 @@ int main () {
 		next_perm(nums);
 	for (auto i : nums)
 		cout << i << " ";
+	cout << endl;
 	return 0;
 }

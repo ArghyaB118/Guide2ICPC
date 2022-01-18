@@ -40,6 +40,27 @@ bool wordBreak(string s, vector<string>& wordDict) {
 	return dp[s.length() - 1];        
 }
 
+/*
+Given a string s and a dictionary of strings wordDict, 
+add spaces in s to construct a sentence where each word 
+is a valid dictionary word. Return all such possible sentences in any order.
+
+Note that the same word in the dictionary may be reused multiple times in the segmentation.
+
+Input: s = "catsanddog", wordDict = ["cat","cats","and","sand","dog"]
+Output: ["cats and dog","cat sand dog"]
+
+Input: s = "pineapplepenapple", wordDict = ["apple","pen","applepen","pine","pineapple"]
+Output: ["pine apple pen apple","pineapple pen apple","pine applepen apple"]
+
+Input: s = "catsandog", wordDict = ["cats","dog","sand","and","cat"]
+Output: []
+*/
+
+vector<string> wordBreakSpace (string s, vector<string>& wordDict) {
+	
+}
+
 int main () {
 	string s = "applepenapple"; 
 	vector<string> wordDict{"apple","pen"};

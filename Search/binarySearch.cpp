@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 using namespace std;
 
 bool search (int arr[], int n, int key) {
@@ -37,21 +38,39 @@ bool bsi (int arr[], int left, int right, int key) {
 	return false;
 }
 
-int findPivot(vector<int>& nums) {
-	int n = nums.size();
-	if (n == 1)
+
+// Searching for an element in a circular sorted array
+int findPivot (vector<int>& nums, int left, int right) {
+	if (nums.size() == 1)
 		return 0;
-	int i = 1;
-	while (nums[i] <= nums)
+	if (left == right)
+		return left;
+	if (left == right - 1)
+		if (nums[left] > nums[right])
+			return right;
+	int mid = left + (right - left + 1) / 2;
+	if (nums[left] < nums[mid])
+		return findPivot(nums, mid, right);
+	return findPivot(nums, left, mid);
 }
 
-int searchRotated (vector<int>& nums, int target) {
-	int pivot = findPivot(nums);
-	if (target >= nums[0]) {
-		binary_search(nums, target);
-	}
+int binary_search (vector<int>& nums, int left, int right, int key) {
+	int mid = left + (right - left + 1) / 2;
+	if (nums[mid] == key)
+		return mid;
+	if (nums[mid] > key)
+		return binary_search(nums, left, mid, key);
+	return binary_search(nums, mid, right, key);
 }
 
+int circularRotatedSearch (vector<int>& nums, int key) {
+	int pivot = findPivot(nums, 0, nums.size() - 1);
+	if (key >= nums[0])
+		return binary_search(nums, 0, pivot - 1, key);
+	else
+		return binary_search(nums, pivot, nums.size() - 1, key);
+	return -1;
+}
 
 int main() {
 	int arr[] = {10, 4, 15, 7, 19, 5, 1, 3, 12};
@@ -64,5 +83,8 @@ int main() {
 		cout << boolalpha << bsr(arr, 0, n-1, key) << endl;
 		cout << boolalpha << bsi(arr, 0, n-1, key) << endl;
 	}
+
+	vector<int> rotatedArray{6,7,8,1,2,3,4,5};
+	cout << circularRotatedSearch(rotatedArray, 3) << endl;
 	return 0;
 }

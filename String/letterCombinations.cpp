@@ -62,12 +62,22 @@ void rotate (vector<int>& nums) {
 	nums.push_back(num);
 }
 
-
-vector<vector<int>> permute (vector<int>& nums) {
-	vector<vector<int>> v;
-	if (nums.empty()) { return v; }
-	if (nums.size() == 1) { return {{nums[0]}}; }
-	return v;       
+// Use Backtracking
+void permute (vector<int>& nums, int start, vector<vector<int>>& v) {
+	if (nums.empty()) { return; }
+	if (nums.size() == 1) { 
+		v.push_back({nums[0]});
+		return; 
+	}
+	if (start == nums.size())
+		return;
+	for (int j = start; j < nums.size(); j++) {
+		swap(nums[start], nums[j]);
+		if (find(v.begin(), v.end(), nums) == v.end())
+			v.push_back(nums);
+		permute(nums, start + 1, v);
+		swap(nums[start], nums[j]);
+	}
 }
 
 int main () {
@@ -80,11 +90,11 @@ int main () {
 		cout << endl;
 	}
 	*/
-	vector<vector<int>> v1; vector<int> v{1,2};
-	v1 = permute(v);
-	for (int i = 0; i < v1.size(); i++) {
-		for (int j = 0; j < v1[i].size(); j++)
-			cout << v1[i][j] << " ";
+	vector<vector<int>> v; vector<int> nums{1,2,3};
+	permute(nums, 0, v);
+	for (int i = 0; i < v.size(); i++) {
+		for (int j = 0; j < v[i].size(); j++)
+			cout << v[i][j] << " ";
 		cout << endl;
 	}
 	return 0;

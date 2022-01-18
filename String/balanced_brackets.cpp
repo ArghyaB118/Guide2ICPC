@@ -120,6 +120,20 @@ int longestValidParentheses (string s) {
 }
 
 
+vector<string> removeInvalidParentheses (string s) {
+  int left = 0, right = 0;
+  for (int i = 0; i < s.length(); i++) {
+    if (s[i] == '(')
+      left++;
+    else if (s[i] == ')' && left != 0)
+      left--;
+    else if (s[i] == ')' && left == 0)
+      right++;
+  }
+}
+
+
+
 int main() {
 
   string s_1 = "{[(])}";

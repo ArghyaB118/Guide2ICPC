@@ -2,6 +2,7 @@
 #include <list>
 #include <queue>
 #include <map>
+#include <stack>
 using namespace std;
 
 class Graph {
@@ -15,6 +16,8 @@ public:
 	bool isCyclic(int s);
 	bool isTree();
 	map<int, bool> visited;
+	void topologicalSort(); 
+	void topoSort(int i, stack<int>& st);
 };
 
 Graph::Graph(int V) {
@@ -90,6 +93,27 @@ bool Graph::isTree () {
 	return true;
 }
 
+void Graph::topoSort(int v, stack<int>& st) {
+	visited[v] = true;
+	list<int>::iterator i;
+	for (i = adj[v].begin(); i != adj[v].end(); i++)
+		if (!visited[*i])
+			topoSort(*i, st);
+	st.push(v);
+}
+
+void Graph::topologicalSort () {
+	stack<int> st;
+	for (int i = 0; i < V; i++)
+		if (!visited[i])
+			topoSort(i, st);
+	while (!st.empty()) {
+		cout << st.top() << " ";
+		st.pop();
+	}
+	cout << endl;
+} 
+
 // |<--------->|					
 // 0 --> 1 --> 2 --> 3<>
 
@@ -105,6 +129,8 @@ int main() {
 	g.visited.clear(); g.DFS(2); cout << endl;
 	g.visited.clear(); cout << boolalpha << g.isCyclic(0) << endl;
 	g.visited.clear(); cout << boolalpha << g.isTree() << endl;
+
+	g.visited.clear(), g.topologicalSort();
 	return 0;
 }
 

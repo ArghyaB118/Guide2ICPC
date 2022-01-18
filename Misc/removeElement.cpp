@@ -19,6 +19,8 @@ Output: 2, nums = [2,2,_,_]
 
 #include <iostream>
 #include <vector>
+#include <string>
+#include <stack>
 using namespace std;
 
 //Check the edge cases -- Due
@@ -36,6 +38,42 @@ int removeElement (vector<int>& v, int num) {
 	return count1;
 }
 
+/*Remove consecutive identical numbers
+that appears K times consecutively
+
+Example: str = "qddxxxd", k = 3
+output: "q"
+*/
+string removeKchars (string s, int k) {
+	stack<char> st;
+	for (int i = 0; i < s.length(); i++) {
+		if (st.empty())
+			st.push(s[i]);
+		else {
+			if (s[i] != st.top())
+				st.push(s[i]);
+			else {
+				char tmp = st.top(); st.pop();
+				if (tmp != st.top()) {
+					st.push(tmp); st.push(s[i]);
+				}
+				else {
+					st.pop();
+				}
+			}
+		}
+	}
+	string t;
+	while (!st.empty()) {
+		t.push_back(st.top());
+		st.pop();
+	}
+	reverse(t.begin(), t.end());
+	return t;
+}
+
+
+
 void printVec (vector<int>& v, int num) {
 	cout << "The vector till the " << num << "-th number:" << endl;
 	for (int i = 0; i < num; i++)
@@ -48,5 +86,8 @@ int main () {
 	printVec(v, v.size());
 	int x = removeElement(v, 1);
 	printVec(v, x);
+
+	string s = "qddxxxd"; 
+	cout << removeKchars(s, 3) << endl;
 	return 0;
 }
