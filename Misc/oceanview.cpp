@@ -19,6 +19,9 @@ Output: [3]
 #include <vector>
 using namespace std;
 
+
+// Idea: maintain another vector that says max_obstacle = maximum element rightward
+// If an element is greater than the max_obstacle, it has oceanview
 vector<int> findBuildings(vector<int>& heights) {
 	vector<int> oceanview;
 	int max_obstacle = heights[heights.size() - 1];

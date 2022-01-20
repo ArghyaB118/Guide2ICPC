@@ -41,6 +41,36 @@ bool isPalindrome (string s) {
 	return true;
 }
 
+/*
+Given a string s, return true if the s can be palindrome 
+after deleting at most one character from it.
+*/
+
+
+// Use two pointers
+bool validPalindromeWithDeletion (string s) {
+	int left = 0, right = s.length() - 1;
+	bool useDeletion = false;
+	while (left < right) {
+		if (s[left] != s[right] && useDeletion == true)
+			return false;
+		else if (s[left] != s[right] && useDeletion == false) {
+			useDeletion = true;
+			if (left + 1 == right)
+				return true;
+			else if (s[left + 1] == s[right])
+				left++;
+			else if (s[left] == s[right - 1])
+				right--;
+		}
+		else {
+			left++; right--;
+		}
+	}
+	return true;
+}
+
+
 
 // dp[i][j] = (dp[i + 1][j - 1]) && (is s[i] == s[j])
 // Anything between two same letters is palindromic or not
@@ -80,6 +110,7 @@ int main () {
 	string s = "A man, a plan, a canal: Panama";
 	s = removeNonAlphaNumerics(s);
 	cout << "Is " << s << " a palindrome? " << boolalpha << isPalindrome(s) << endl;
+	cout << "Is abca a palindrome after deleting at most one char? " << validPalindromeWithDeletion(s) << endl;
 	cout << "Length of longest palindromic substring of abcbd: " << longestPalindromicSubstring("abcbd") << endl; 
 	return 0;
 }

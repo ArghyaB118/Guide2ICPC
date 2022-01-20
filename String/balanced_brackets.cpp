@@ -119,7 +119,58 @@ int longestValidParentheses (string s) {
   return max_length;
 }
 
+/*
+Minimum Remove to Make Valid Parentheses
 
+Given a string s of '(' , ')' and lowercase English characters.
+
+Your task is to remove the minimum number of parentheses ( '(' or ')', 
+in any positions ) so that the resulting parentheses string is valid 
+and return any valid string.
+
+Formally, a parentheses string is valid if and only if:
+
+It is the empty string, contains only lowercase characters, or
+It can be written as AB (A concatenated with B), where A and B are valid strings, or
+It can be written as (A), where A is a valid string.
+
+Input: s = "lee(t(c)o)de)"
+Output: "lee(t(c)o)de"
+
+Input: s = "a)b(c)d"
+Output: "ab(c)d"
+
+Input: s = "))(("
+Output: ""
+*/
+
+typedef pair<char, int> Pair;
+
+string minRemoveToMakeValid (string s) {
+    stack<Pair> st;
+    for (int i = 0; i < s.length(); i++) {
+        if (!isalpha(s[i])) {
+            if (st.empty())
+                st.push(make_pair(s[i], i));
+            else {
+                if (s[i] == '(')
+                    st.push(make_pair(s[i], i));
+                else if (s[i] == ')' && st.top().first == '(')
+                    st.pop();
+                else if (s[i] == ')' && st.top().first != '(')
+                    st.push(make_pair(s[i], i));
+            }
+        }
+    }
+    
+    while (!st.empty()) {
+        Pair tmp = st.top(); st.pop();
+        s.erase(s.begin() + tmp.second);
+    }
+    return s;
+}
+
+/*
 vector<string> removeInvalidParentheses (string s) {
   int left = 0, right = 0;
   for (int i = 0; i < s.length(); i++) {
@@ -131,8 +182,38 @@ vector<string> removeInvalidParentheses (string s) {
       right++;
   }
 }
+*/
 
+/*
+Minimum Add to Make Parentheses Valid
 
+A parentheses string is valid if and only if:
+
+It is the empty string,
+It can be written as AB (A concatenated with B), where A and B are valid strings, or
+It can be written as (A), where A is a valid string.
+You are given a parentheses string s. In one move, 
+you can insert a parenthesis at any position of the string.
+
+For example, if s = "()))", you can insert an opening parenthesis to be "(()))" 
+or a closing parenthesis to be "())))".
+Return the minimum number of moves required to make s valid.
+*/
+
+int minAddToMakeValid(string s) {
+    stack<char> st;
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] == ')' && st.top() == '(')
+          st.pop();
+        else
+          st.push(s[i]);
+    }
+    int count = 0;
+    while (!st.empty()) {
+        st.pop(); count++;
+    }
+    return count;
+}
 
 int main() {
 
@@ -152,6 +233,10 @@ int main() {
   check(expected_3, output_3);
   
   string s = "(()"; cout << longestValidParentheses(s) << endl;
+  cout << "Minimum to make valid string: " << minAddToMakeValid("(()") << endl;
+
+  s = "lee(t(c)o)de)";
+  cout << "Min removed to make valid string: " << s << " -> " << minRemoveToMakeValid(s) << endl;
   return 0;
   
 }

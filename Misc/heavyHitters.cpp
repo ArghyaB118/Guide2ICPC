@@ -26,11 +26,27 @@ vector<int> topKelements(vector<int>& arr, int k) {
 	return heavy_hitters;
 }
 
+int findKthLargest(vector<int>& nums, int k) {
+	priority_queue<int, vector<int>, greater<int>> pq;
+	for (int i = 0; i < nums.size(); i++) {
+		if (pq.size() < k)
+			pq.push(nums[i]);
+		else {
+			pq.push(nums[i]); pq.pop();
+		}
+	}
+	return pq.top();
+}
+
+
 int main () {
 	vector<int> arr{1,2,4,2,5,5,2,1,2,3,5,1};
 	vector<int> heavy_hitters = topKelements(arr, 2);
 	for (int i = 0; i < heavy_hitters.size(); i++)
 		cout << heavy_hitters[i] << " ";
 	cout << endl;
+
+	arr = {1,2,3,4,5};
+	cout << "The kth largest element: " << findKthLargest(arr, 2) << endl;
 	return 0;
 }

@@ -72,6 +72,23 @@ string removeKchars (string s, int k) {
 	return t;
 }
 
+// remove any 2 adjacent elements if they are equal
+string removeDuplicate (string s) {
+	stack<char> st;
+	for (int i = 0; i < s.length(); i++) {
+		if (st.empty() || s[i] != st.top())
+			st.push(s[i]);
+		else if (s[i] == st.top())
+			st.pop();
+	}
+	string t;
+	while (!st.empty()) {
+		t.push_back(st.top());
+		st.pop();
+	}
+	reverse(t.begin(), t.end());
+	return t;
+}
 
 
 void printVec (vector<int>& v, int num) {
@@ -89,5 +106,7 @@ int main () {
 
 	string s = "qddxxxd"; 
 	cout << removeKchars(s, 3) << endl;
+
+	s = "abbaca"; cout << removeDuplicate(s) << endl;
 	return 0;
 }

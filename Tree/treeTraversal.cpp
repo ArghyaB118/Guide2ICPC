@@ -132,12 +132,73 @@ Node* array2LevelOrderTree (int arr[], Node* root, int l, int r) {
 
 //}
 
+/*
+The diameter of a binary tree is the length of the 
+longest path between any two nodes in a tree. 
+This path may or may not pass through the root.
+The length of a path between two nodes is represented by 
+the number of edges between them.
+
+Input: root = [1,2,3,4,5]
+Output: 3
+
+Input: root = [1,2]
+Output: 1
+*/
+
+
+
+int diameter (struct Node* root) {
+	if (root == NULL)
+		return 0;
+	if (root->left == NULL && root->right == NULL)
+		return 0;
+	if (root->left == NULL)
+		return max(depth(root->right), diameter(root->right));
+	if (root->right == NULL)
+		return max(depth(root->left), diameter(root->left));
+	return (diameter(root->left) > diameter(root->right)) 
+			? max(diameter(root->left), depth(root->left) + depth(root->right))
+			: max(diameter(root->right), depth(root->left) + depth(root->right));
+}
+
+/*
+Given the root of a binary tree, imagine yourself standing on the right side of it, 
+return the values of the nodes you can see ordered from top to bottom.
+
+Input: root = [1,2,3,null,5,null,4]
+Output: [1,3,4]
+*/
+
+vector<int> rightSideView(struct Node* root) {
+	vector<int> v;
+	queue<Node*> q;
+	q.push(root);
+	while (!q.empty()) {
+		Node* root = q.front();
+		v.push_back(root->data);
+		q.pop();
+		if (root->right != NULL) {
+			q.push(root->right);
+			root = root->right;
+		}
+		else if (root->right == NULL && root->left != NULL) {
+			q.push(root->left);
+			root = root->left;
+		}
+	}
+	return v;
+}
+
+
 int main() {
 	struct Node *root = new Node(1);
 	root->left = new Node(2);
 	root->right = new Node(3);
 	root->left->left = new Node(4);
 	root->left->right = new Node(5);
+	root->right->left = new Node(6);
+	root->right->right = new Node(7);
 	PostOrder(root); cout << endl; 
 	PreOrder(root); cout << endl; 
 	InOrder(root); cout << endl; 
@@ -153,10 +214,22 @@ int main() {
 //	struct Node* root = array2InPreOrderTree(arr_inorder, arr_preorder);
 	LevelOrder(new_root); cout << endl;
 
-	for (int i = 0; i < verticalOrder(root).size(); i++) {
-		for (int j = 0; j < verticalOrder(root)[i].size(); j++)
-			cout << verticalOrder(root)[i][j] << " ";
-		cout << endl;
+
+	vector<vector<int>> result = verticalOrder(root);
+	cout << "Vertical Order Traversal: ";
+	for (int i = 0; i < result.size(); i++) {
+		cout << "{";
+		for (int j = 0; j < result[i].size(); j++)
+			cout << result[i][j] << ",";
+		cout << "}";
 	}
+	cout << endl;
+
+	cout << "The diameter of the tree: " << diameter(root) << endl;
+	
+	vector<int> v = rightSideView(root);
+	for (int & vv : v)
+		cout << vv << " ";
+	cout << endl;
 	return 0;
 }

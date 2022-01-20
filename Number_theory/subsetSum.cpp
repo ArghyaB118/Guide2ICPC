@@ -42,12 +42,63 @@ Input: nums = [23,2,6,4,7], k = 13
 Output: false
 */
 
+// Naive approach: O(n ^ 2)
 bool checkSubarraySum (vector<int>& nums, int k) {
 	for (int i = 1; i < nums.size(); i++)
 		for (int j = 0; j < i - 1; j++)
 			if (accumulate(nums.begin() + j, nums.begin() + i, 0) % k == 0)
 				return true;
 	return false;
+}
+
+// O(n) algorithm
+bool checksubarraySum2 (vector<int>& nums, int k) {
+	if (nums.size() == 0)
+		return false;
+	int left = 0, right = 0, sum = nums[0];
+	while (right < nums.size() - 1) {
+		if (sum == k)
+			return true;
+		else if (sum < k) {
+			right++; sum += nums[right];
+		}
+		else if (sum > k) {
+			sum -= nums[left]; left++;
+		}
+	}
+	return false;
+}
+
+
+/*
+Subarray Sum Equals K
+
+Given an array of integers nums and an integer k, 
+return the total number of continuous subarrays whose sum equals to k.
+
+Input: nums = [1,1,1], k = 2
+Output: 2
+
+Input: nums = [1,2,3], k = 3
+Output: 2
+*/
+
+int subarraySum(vector<int>& nums, int k) {
+	if (nums.size() == 0)
+		return 0;
+	int left = 0, right = 0, count = 0, sum = nums[0];
+	while (left < nums.size() - 1 && right < nums.size() - 1 && left <= right) {
+		if (sum == k) {
+			count++; left++; right++;
+		}
+		else if (sum < k) {
+			right++; sum += nums[right];
+		}
+		else if (sum > k) {
+			sum -= nums[left]; left++;
+		}
+	}
+	return count;
 }
 
 int main() {
@@ -59,5 +110,9 @@ int main() {
 
 	vector<int> v{23,2,4,6,7}; int k = 6;
 	cout << boolalpha << checkSubarraySum(v, k) << endl;
+
+	vector<int> nums{1,1,1}; int target = 2;
+	cout << subarraySum(nums, target) << endl;
+	cout << boolalpha << checksubarraySum2(nums, target) << endl;
 	return 0;
 }

@@ -47,7 +47,7 @@ void printItinerary(map<string, string> dataSet)
      }
  
     // Once we have starting point, we simple need to go next,
-    //next of next using given hash map
+    // next of next using given hash map
     it = dataSet.find(start);
     while (it != dataSet.end())
     {
