@@ -20,17 +20,21 @@ Output: [3]
 using namespace std;
 
 
-// Idea: maintain another vector that says max_obstacle = maximum element rightward
+// Idea: maintain an integer that says max_obstacle = maximum element rightward
 // If an element is greater than the max_obstacle, it has oceanview
-vector<int> findBuildings(vector<int>& heights) {
-	vector<int> oceanview;
+vector<int> findBuildings (vector<int>& heights) {
+	if (heights.size() == 0)
+		return {};
+	if (heights.size() == 1)
+		return {0};
 	int max_obstacle = heights[heights.size() - 1];
-	oceanview.push_back(heights.size() - 1);
+	vector<int> oceanview{int(heights.size() - 1)};
 	for (int i = heights.size() - 2; i >= 0; i--) {
 		if (heights[i] > max_obstacle)
 			oceanview.push_back(i);
 		max_obstacle = max(max_obstacle, heights[i]);
 	}
+	//sort is a much faster function than reverse! Use sort.
 	sort(oceanview.begin(), oceanview.end());
 	return oceanview;
 }
@@ -40,5 +44,6 @@ int main () {
 	for (auto & x : findBuildings(heights))
 		cout << x << " ";
 	cout << endl;
+
 	return 0;
 }

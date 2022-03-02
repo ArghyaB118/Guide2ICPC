@@ -1,0 +1,717 @@
+id,area,bathrooms,bedrooms,condo_fee,parking_spots,attached_rooms,type,lat,lon,year_built,overall_condition,has_elevator,leasures_available
+2590,54,2,2,0,1,1,apartment,-5.8821365,-35.1722172,2004,Score 6,yes,
+242,92,3,3,575,2,1,apartment,-5.8674286,-35.1966683,1966,Score 6,yes,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+2946,98,2,4,0,2,2,apartment,-5.8576398,-35.2014489,,Score 2,Yes,
+758,182,5,3,1200,3,3,apartment,-5.8127874,-35.2049897,1993,Score 5,nop,"steam room,gym,sports court"
+1160,69,2,3,250,1,0,apartment,-5.8437235,-35.2214483,2001,Score 4,No,"barbecue space,PLAYGROUND"
+2870,250,3,3,0,0,3,house,-5.7540506,-35.2152587,,Score 6,Yes,
+3735,145,5,3,0,2,3,house,-5.8618005,-35.197517,1967,Score 7,yes,
+1630,64,1,2,314,1,0,apartment,-5.8431967,-35.2124468,,Score 4,Yes,"playground,SPORTS COURT"
+2397,131,5,3,800,2,3,apartment,-5.8173131,-35.2226992,,Score 5,no,"gym,PLAYGROUND"
+3901,92,3,3,400,2,1,apartment,-5.8636826,-35.2153349,,Score 4,Yes,"playground,SPORTS COURT"
+3517,56,1,2,660,1,1,apartment,-5.8821365,-35.1722172,2001,Score 5,no,"POOL,BARBECUE SPACE,GYM,PLAYGROUND"
+2890,56,2,2,240,1,1,apartment,-5.8753421,-35.2254937,1962,Score 4,Yes,playground
+3421,70,1,3,380,1,0,apartment,-5.8126859,-35.2084239,,Score 6,yes,"playground,SPORTS COURT"
+2563,190,1,3,0,2,1,house,-5.830929,-35.2195447,,Score 5,Yes,
+2671,80,2,3,500,2,1,apartment,-5.8821365,-35.1722172,,Score 5,y,playground
+1526,160,3,3,820,2,1,apartment,-5.7816923,-35.1973759,,Score 6,y,"barbecue space,PLAYGROUND"
+1605,102,5,3,300,2,3,apartment,-5.8841734,-35.1783162,1998,Score 4,Yes,"barbecue space,playground,sports court"
+4610,122,3,3,822,2,1,apartment,-5.8032096,-35.2002054,2008,Score 5,Yes,"BARBECUE SPACE,PLAYGROUND"
+2324,56,1,1,570,1,1,apartment,-5.7840945,-35.1999475,1995,Score 4,no,"gym,PLAYGROUND,sports court"
+2709,48,1,1,0,1,1,other,-5.8821365,-35.1722172,,Score 4,y,
+4202,93,3,3,688,2,1,apartment,-5.8855448,-35.1775819,,Score 5,nop,"pool,playground,sports court"
+1312,30,1,1,0,1,1,apartment,-5.8821365,-35.1722172,2000,Score 5,Yes,
+3448,119,2,3,677,2,2,apartment,-5.7845495,-35.1984438,1958,Score 4,no,"gym,playground"
+3812,197,3,3,0,2,1,apartment,-5.8624754,-35.1935607,,Score 7,yes,barbecue space
+1989,189,3,3,0,2,3,apartment,-5.8165334,-35.2224341,1990,Score 2,no,POOL
+4446,93,4,3,705,2,3,apartment,-5.88041595,-35.17678282,,Score 7,no,"POOL,playground"
+2362,79,2,3,0,1,1,apartment,-5.8821365,-35.1722172,1999,Score 5,y,
+1975,61,1,3,80,1,0,apartment,-5.8576398,-35.2014489,1994,Score 5,no,
+3514,57,2,2,475,-5,1,apartment,-5.7903384,-35.1952596,2000,Score 7,yes,"PLAYGROUND,sports court"
+1761,180,3,3,0,2,2,house,-5.8212372,-35.1988219,1999,Score 6,Yes,POOL
+3391,128,4,3,1000,2,3,apartment,-5.8226937,-35.2126403,,Score 6,Yes,"pool,BARBECUE SPACE,GYM,playground"
+1305,142,1,3,720,3,0,apartment,-5.8032096,-35.2002054,2008,Score 4,yes,PLAYGROUND
+2739,75,2,3,0,2,1,apartment,-5.8196922,-35.2169549,1984,Score 4,y,
+1541,143,2,4,950,3,2,apartment,-5.8437235,-35.2214483,,Score 5,No,"POOL,gym"
+4450,131,5,3,800,2,3,apartment,-5.8173131,-35.2226992,,Score 5,nop,"pool,BARBECUE SPACE,gym,playground,sports court"
+2472,57,1,2,0,1,1,apartment,-5.8633093,-35.2324324,2000,Score 6,yes,
+3625,94,1,3,650,2,1,apartment,-5.8821365,-35.1722172,2003,Score 6,Yes,"POOL,PLAYGROUND,sports court"
+2642,36,1,1,670,1,0,other,-5.8821365,-35.1722172,,Score 5,yes,"pool,BARBECUE SPACE,playground,SPORTS COURT"
+2795,68,1,3,0,1,1,apartment,-5.8576398,-35.2014489,,Score 5,No,
+4266,59,2,2,362,1,1,apartment,-5.8999907,-35.1759866,1973,Score 3,yes,"barbecue space,playground"
+4007,75,1,3,0,2,1,apartment,-5.7767142,-35.2062156,,Score 5,Yes,barbecue space
+1493,200,2,4,1106,2,2,apartment,-5.8032096,-35.2002054,1969,Score 4,yes,"POOL,steam room,PLAYGROUND,SPORTS COURT"
+2158,390,4,4,0,2,2,house,-5.8032096,-35.2002054,,Score 5,y,
+1169,250,1,2,0,0,0,house,-5.8226937,-35.2126403,2001,Score 4,Yes,barbecue space
+4316,113,3,3,0,2,3,apartment,-5.8226937,-35.2126403,1987,Score 4,No,BARBECUE SPACE
+232,130,3,3,0,3,3,apartment,-5.8226937,-35.2126403,,Score 3,no,
+66,600,,3,0,10,3,house,-5.8576398,-35.2014489,1974,Score 4,Yes,
+1603,140,4,4,850,2,3,apartment,-5.808596,-35.20447,,Score 4,no,
+3283,60,2,2,410,1,1,other,-5.8833757,-35.1810368,2006,Score 5,Yes,"barbecue space,playground"
+3596,57,2,2,400,1,1,apartment,-5.8855448,-35.1775819,1987,Score 5,yes,BARBECUE SPACE
+125,65,0,2,1200,0,0,apartment,-5.8821365,-35.1722172,2004,Score 5,yes,"PLAYGROUND,sports court"
+1296,98,3,3,469,2,1,apartment,-5.7871981,-35.2012834,2000,Score 7,y,"POOL,PLAYGROUND,SPORTS COURT"
+1976,57,2,2,226,1,1,apartment,-5.8796695,-35.1973555,,Score 5,nop,PLAYGROUND
+4317,175,1,2,0,1,0,house,-5.7988797,-35.2188577,,Score 4,y,
+4283,53,1,2,748,1,0,other,-5.8821365,-35.1722172,,Score 6,Yes,"barbecue space,sports court"
+2075,190,4,3,950,3,2,apartment,-5.8152068,-35.2147971,,Score 4,nop,"PLAYGROUND,SPORTS COURT"
+3086,170,2,3,0,3,1,house,-5.8371859,-35.2217578,2001,Score 5,Yes,
+4154,92,2,3,830,1,2,apartment,-5.8163039,-35.2204887,,Score 5,Yes,"BARBECUE SPACE,gym,sports court"
+3345,92,1,3,0,2,1,apartment,-5.8226937,-35.2126403,2005,Score 7,yes,
+4267,54,2,2,450,1,1,apartment,-5.8821365,-35.1722172,,Score 5,Yes,"pool,BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+2797,55,2,2,390,2,1,apartment,-5.8163039,-35.2204887,1983,Score 4,y,"barbecue space,PLAYGROUND,SPORTS COURT"
+918,80,2,3,450,2,1,apartment,-5.8600136,-35.1998189,,Score 4,yes,"POOL,PLAYGROUND"
+1646,56,2,2,450,1,1,apartment,-5.8730875,-35.1800373,1988,Score 5,yes,"POOL,barbecue space,PLAYGROUND,SPORTS COURT"
+364,10064,0,0,0,0,0,other,-5.7690001,-35.2618893,,Score 4,Yes,
+3287,240,4,4,1380,0,0,apartment,-5.8437235,-35.2214483,1958,Score 1,yes,"BARBECUE SPACE,GYM,PLAYGROUND"
+2125,57,2,2,300,1,1,apartment,-5.8666079,-35.2088062,,Score 6,yes,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+525,150,4,3,1400,3,3,apartment,-5.8293994,-35.220392,,Score 4,yes,"barbecue space,STEAM ROOM,gym,PLAYGROUND,SPORTS COURT"
+55,56,2,2,355,1,1,apartment,-5.8431967,-35.2124468,1970,Score 5,yes,"playground,SPORTS COURT"
+638,100,2,3,500,2,1,apartment,-5.7941845,-35.2063996,,Score 4,nop,playground
+302,90,2,3,648,2,1,apartment,-5.8855448,-35.1775819,,Score 6,yes,PLAYGROUND
+2766,160,4,3,500,3,3,apartment,-5.8164277,-35.2116397,,Score 4,Yes,pool
+1276,59,1,2,0,1,1,apartment,-5.8032096,-35.2002054,,Score 3,yes,
+2055,57,1,3,340,2,1,apartment,-5.8502894,-35.2166072,1999,Score 5,y,"BARBECUE SPACE,playground,sports court"
+3644,119,4,3,0,2,3,apartment,-5.8165334,-35.2224341,1966,Score 5,Yes,
+2878,134,2,3,130,2,1,apartment,-5.8437235,-35.2214483,,Score 4,nop,
+2286,86,4,3,600,2,2,apartment,-5.8226937,-35.2126403,,Score 5,No,"pool,GYM"
+2261,64,1,2,0,1,1,apartment,-5.8666079,-35.2088062,1971,Score 7,no,
+2296,150,3,3,0,2,3,house,-5.8088697,-35.199618,,Score 4,y,
+1753,250,8,12,0,2,8,other,-5.8731749,-35.1833109,,Score 4,yes,
+1968,98,2,3,500,2,2,apartment,-5.8226937,-35.2126403,1973,Score 2,No,SPORTS COURT
+4159,35,1,2,200,1,0,apartment,-5.8821365,-35.1722172,1962,Score 4,No,
+3117,68,2,3,90,1,1,apartment,-5.8635502,-35.2029564,1983,Score 4,yes,
+2393,110,3,3,350,1,1,apartment,-5.8198444,-35.2109804,2004,Score 4,nop,PLAYGROUND
+523,153,3,3,0,2,1,house,-5.8161104,-35.213958,1998,Score 4,Yes,
+3900,75,2,2,190,1,1,apartment,-5.866287,-35.1917372,,Score 5,yes,
+3122,99,2,3,630,2,1,apartment,-5.7941845,-35.2063996,1966,Score 5,no,playground
+1969,187,4,3,0,2,3,house,-5.8032096,-35.2002054,,Score 4,yes,
+671,180,3,4,1400,0,3,apartment,-5.7869014,-35.1902633,1956,Score 5,y,"BARBECUE SPACE,steam room,PLAYGROUND,SPORTS COURT"
+666,280,3,4,0,2,3,apartment,-5.8226937,-35.2126403,,Score 7,yes,
+4147,130,1,3,0,3,1,house,-5.8437235,-35.2214483,,Score 7,y,
+1887,54,2,2,265,1,1,apartment,-5.8835355,-35.1712843,2002,Score 4,Yes,barbecue space
+3266,90,2,3,350,2,1,apartment,-5.8821365,-35.1722172,1999,Score 5,yes,sports court
+280,200,3,3,0,3,2,other,-5.822714,-35.203543,2005,Score 6,y,
+1719,120,1,3,400,2,1,apartment,-5.7985993,-35.2130776,,Score 5,yes,"pool,playground"
+2947,65,2,2,0,1,2,apartment,-5.7869014,-35.1902633,,Score 4,yes,barbecue space
+899,142,3,3,0,2,3,apartment,-5.866287,-35.1917372,2002,Score 5,Yes,
+4630,188,4,4,0,0,3,apartment,-5.7840027,-35.1946003,1993,Score 7,yes,
+760,80,3,3,450,2,1,apartment,-5.8477276,-35.2130915,1994,Score 6,yes,"POOL,sports court"
+1906,270,2,3,0,3,1,house,-5.7845495,-35.1984438,1967,Score 5,Yes,
+4042,56,2,2,268,1,1,apartment,-5.8796695,-35.1973555,1992,Score 5,No,"BARBECUE SPACE,PLAYGROUND,sports court"
+3823,75,1,2,0,1,1,apartment,-5.8269204,-35.1985475,2004,Score 5,Yes,
+4138,59,2,2,564,1,1,apartment,-5.8639405,-35.1979088,2005,Score 4,Yes,"BARBECUE SPACE,gym,PLAYGROUND"
+3818,55,2,2,300,2,0,apartment,-5.8999907,-35.1759866,,Score 4,Yes,
+2593,130,5,3,800,2,3,apartment,-5.8173131,-35.2226992,2000,Score 5,No,"gym,sports court"
+3031,70,2,3,350,1,1,apartment,-5.8669345,-35.191136,2003,Score 6,Yes,"pool,sports court"
+3579,180,4,3,0,2,3,apartment,-5.7893158,-35.1992309,2004,Score 8,y,
+2832,46,1,2,265,1,0,apartment,-5.8835355,-35.1712843,2004,Score 5,yes,"playground,sports court"
+3472,69,2,2,290,2,1,apartment,-5.8226937,-35.2126403,1991,Score 4,yes,"BARBECUE SPACE,PLAYGROUND"
+137,102,3,3,440,2,2,apartment,-5.8437235,-35.2214483,,Score 7,no,"pool,playground,sports court"
+2180,112,3,3,0,2,2,apartment,-5.7997946,-35.1979747,1969,Score 5,y,
+2128,89,2,2,820,1,1,apartment,-5.783788,-35.1913745,2005,Score 4,no,"pool,playground"
+3177,67,2,2,300,1,1,apartment,-5.8768735,-35.2236066,2002,Score 6,Yes,"playground,sports court"
+4172,98,3,3,550,2,1,apartment,-5.8088697,-35.199618,,Score 5,yes,"PLAYGROUND,SPORTS COURT"
+1331,59,2,2,0,1,1,apartment,-5.8535097,-35.2094484,1992,Score 5,No,
+2017,110,3,3,743,2,1,apartment,-5.8821365,-35.1722172,,Score 3,nop,"barbecue space,playground"
+2482,75,2,3,410,2,1,apartment,-5.8502894,-35.2166072,1967,Score 5,Yes,"POOL,barbecue space,PLAYGROUND,SPORTS COURT"
+1358,56,1,2,0,1,1,apartment,-5.8821365,-35.1722172,,Score 6,nop,
+1329,125,3,3,700,1,1,apartment,-5.8012712,-35.2057237,,Score 5,no,"barbecue space,sports court"
+2150,89,3,3,310,2,1,apartment,-5.8666079,-35.2088062,1975,Score 5,yes,"barbecue space,playground"
+2122,270,4,4,0,3,3,apartment,-5.8143778,-35.2089333,,Score 4,no,
+3981,94,2,3,350,0,1,apartment,-5.8477276,-35.2130915,,Score 8,y,sports court
+1252,78,2,3,360,1,2,apartment,-5.890275,-35.175139,1996,Score 4,Yes,POOL
+3278,94,2,3,474,2,1,apartment,-5.8624754,-35.1935607,2006,Score 5,y,PLAYGROUND
+3374,136,5,3,0,3,3,apartment,-5.8347074,-35.2243579,1995,Score 5,Yes,
+2814,160,3,3,0,3,3,apartment,-5.8164277,-35.2116397,,Score 7,Yes,
+1848,56,1,2,250,1,0,apartment,-5.8633093,-35.2324324,1957,Score 5,yes,sports court
+3037,140,5,4,1000,3,3,apartment,-5.800734,-35.1970047,1964,Score 4,nop,pool
+388,123,4,3,0,2,3,apartment,-5.8347074,-35.2243579,,Score 5,Yes,
+235,59,2,2,302,1,1,apartment,-5.8796942,-35.1787862,,Score 7,yes,playground
+1077,123,4,3,550,2,3,apartment,-5.8347074,-35.2243579,1971,Score 7,No,"barbecue space,SPORTS COURT"
+1984,116,4,3,725,3,3,apartment,-5.8005515,-35.1986193,2002,Score 5,no,"POOL,PLAYGROUND,sports court"
+3962,130,2,4,700,2,2,apartment,-5.790886,-35.2023866,2003,Score 6,yes,"BARBECUE SPACE,playground"
+770,250,3,3,0,1,3,house,-5.8226937,-35.2126403,1972,Score 5,yes,barbecue space
+2165,54,2,2,570,1,1,apartment,-5.8437235,-35.2214483,,Score 4,Yes,"BARBECUE SPACE,GYM,playground,SPORTS COURT"
+673,55,2,2,220,1,1,apartment,-5.8796695,-35.1973555,2000,Score 4,y,"playground,SPORTS COURT"
+249,60,2,2,0,1,1,apartment,-5.8821365,-35.1722172,1962,Score 6,y,
+1574,114,3,3,0,2,3,apartment,-5.8226937,-35.2126403,1985,Score 5,yes,
+3419,45,1,1,428,1,1,other,-5.7823372,-35.1946781,,Score 5,yes,"barbecue space,PLAYGROUND,sports court"
+2081,108,2,3,0,2,2,apartment,-5.8164277,-35.2116397,1966,Score 6,no,barbecue space
+1823,167,5,3,500,2,3,apartment,-5.8253734,-35.2113637,,Score 6,No,"POOL,barbecue space,PLAYGROUND,sports court"
+716,205,4,3,1400,3,3,apartment,-5.8005515,-35.1986193,,Score 5,y,playground
+4459,114,1,3,500,1,1,apartment,-5.809497,-35.2063052,1999,Score 6,yes,SPORTS COURT
+2048,121,2,3,500,2,1,apartment,-5.799826,-35.207247,2004,Score 5,Yes,
+4178,110,2,3,475,2,2,apartment,-5.8108854,-35.2154712,,Score 6,no,playground
+2724,57,1,2,823,0,1,other,-5.8821365,-35.1722172,1997,Score 6,yes,"barbecue space,SPORTS COURT"
+4321,117,4,3,500,2,3,apartment,-5.8196922,-35.2169549,1958,Score 4,yes,"PLAYGROUND,sports court"
+1460,114,3,3,0,2,3,apartment,-5.8240873,-35.2108871,,Score 5,No,
+1668,188,5,3,0,2,3,house,-5.8437235,-35.2214483,1990,Score 7,yes,
+2756,55,2,2,350,1,1,apartment,-5.8535097,-35.2094484,1960,Score 5,y,PLAYGROUND
+2000,138,3,3,850,3,3,apartment,-5.8165334,-35.2224341,1980,Score 4,y,"gym,playground,SPORTS COURT"
+404,140,3,3,0,2,2,house,-5.8633093,-35.2324324,,Score 4,Yes,barbecue space
+384,55,2,2,0,1,1,apartment,-5.8136592,-35.2108172,,Score 6,nop,
+4293,75,1,3,610,2,1,apartment,-5.8603397,-35.2094385,1962,Score 5,nop,"gym,PLAYGROUND"
+2152,123,4,3,600,2,2,apartment,-5.8580854,-35.2023029,,Score 5,y,playground
+1633,83,3,3,500,1,1,apartment,-5.8576398,-35.2014489,1990,Score 7,No,playground
+4382,142,3,3,0,2,3,apartment,-5.866287,-35.1917372,,Score 4,nop,
+3925,93,3,3,0,2,1,apartment,-5.8855448,-35.1775819,2005,Score 4,no,
+4158,94,2,3,350,0,1,apartment,-5.8477276,-35.2130915,2008,Score 5,no,barbecue space
+223,300,3,3,0,2,3,house,-5.8576398,-35.2014489,2004,Score 5,y,
+2193,178,3,3,1500,3,3,apartment,-5.8044476,-35.2032196,1982,Score 4,No,"pool,BARBECUE SPACE,playground"
+3136,174,2,4,1300,3,2,apartment,-5.8032096,-35.2002054,1973,Score 5,Yes,"steam room,gym,PLAYGROUND"
+1824,72,2,3,420,2,1,apartment,-5.7868405,-35.2063287,1999,Score 4,y,barbecue space
+4395,56,1,2,1200,1,0,other,-5.8816164,-35.1782022,1974,Score 5,y,"barbecue space,gym,playground,SPORTS COURT"
+797,46,1,2,240,1,0,apartment,-5.8821365,-35.1722172,,Score 8,yes,barbecue space
+2871,96,2,3,945,2,1,apartment,-5.8576398,-35.2014489,1967,Score 5,nop,"POOL,BARBECUE SPACE,GYM,sports court"
+9,127,2,4,0,1,2,house,-5.7978488,-35.2092207,,Score 9,No,
+1944,56,1,2,414,1,1,apartment,-5.8226937,-35.2126403,1999,Score 5,y,"barbecue space,playground,sports court"
+1838,85,2,3,0,2,1,apartment,-5.8258062,-35.2068965,1969,Score 6,nop,
+255,108,2,3,0,2,1,apartment,-5.8226937,-35.2126403,,Score 5,no,
+4309,49,1,2,0,1,1,apartment,-5.8768735,-35.2236066,2002,Score 3,nop,BARBECUE SPACE
+1581,81,2,3,0,1,1,apartment,-5.8226937,-35.2126403,,Score 7,yes,
+2956,58,2,2,450,2,2,apartment,-5.8821365,-35.1722172,1977,Score 4,y,"pool,PLAYGROUND"
+924,69,2,3,350,1,1,apartment,-5.8535234,-35.2048314,1964,Score 6,no,PLAYGROUND
+4233,85,3,2,420,1,2,apartment,-5.8437235,-35.2214483,1995,Score 4,y,"POOL,BARBECUE SPACE,playground,SPORTS COURT"
+2508,160,1,3,0,2,1,apartment,-5.7845495,-35.1984438,2003,Score 4,nop,BARBECUE SPACE
+3775,49,1,1,0,1,1,other,-5.7823372,-35.1946781,2004,Score 6,Yes,
+4136,129,5,3,1200,2,3,apartment,-5.8206103,-35.220039,,Score 5,y,"pool,barbecue space,GYM"
+2779,79,3,3,0,2,1,apartment,-5.8196922,-35.2169549,1987,Score 8,y,
+539,46,1,2,248,1,0,apartment,-5.8894823,-35.1762901,2005,Score 4,yes,"BARBECUE SPACE,SPORTS COURT"
+2745,165,1,3,0,1,1,house,-5.8394649,-35.219294,2006,Score 4,Yes,
+4299,94,2,3,300,1,2,apartment,-5.8738039,-35.1815727,,Score 5,y,"PLAYGROUND,SPORTS COURT"
+4368,89,3,3,470,2,1,apartment,-5.8163039,-35.2204887,,Score 5,y,"pool,BARBECUE SPACE,SPORTS COURT"
+1145,110,3,3,850,2,3,apartment,-5.8226937,-35.2126403,1999,Score 6,Yes,"gym,PLAYGROUND"
+667,87,3,3,600,2,1,apartment,-5.809497,-35.2063052,1994,Score 4,yes,"BARBECUE SPACE,GYM,playground,SPORTS COURT"
+3019,75,1,2,600,1,1,apartment,-5.8226937,-35.2126403,1997,Score 5,yes,"barbecue space,PLAYGROUND"
+357,88,2,3,1105,0,1,apartment,-5.783788,-35.1913745,,Score 5,Yes,"steam room,playground"
+2831,60,2,2,362,1,1,apartment,-5.8999907,-35.1759866,,Score 5,No,"BARBECUE SPACE,SPORTS COURT"
+2783,49,1,2,0,1,0,apartment,-5.8768735,-35.2236066,1998,Score 3,Yes,BARBECUE SPACE
+1353,115,3,3,0,2,3,apartment,-5.8165259,-35.2141266,2003,Score 5,y,
+470,141,3,3,0,2,3,apartment,-5.8576398,-35.2014489,2004,Score 7,nop,barbecue space
+2703,83,2,2,0,0,1,apartment,-5.8032096,-35.2002054,,Score 4,Yes,BARBECUE SPACE
+3330,57,2,2,0,1,1,apartment,-5.7902697,-35.1994187,,Score 5,nop,
+3637,180,2,3,935,0,2,apartment,-5.8032096,-35.2002054,2003,Score 4,nop,"barbecue space,PLAYGROUND"
+1396,55,2,2,516,1,1,apartment,-5.8821365,-35.1722172,1963,Score 7,yes,"pool,gym,PLAYGROUND,sports court"
+3584,186,5,4,1500,2,3,apartment,-5.7832323,-35.1961748,2003,Score 5,y,"pool,barbecue space,playground"
+4288,236,4,4,800,3,3,apartment,-5.8253734,-35.2113637,1990,Score 7,nop,"barbecue space,GYM,PLAYGROUND,SPORTS COURT"
+3376,105,2,3,1050,2,2,apartment,-5.8576398,-35.2014489,,Score 5,Yes,"pool,steam room,GYM,playground,SPORTS COURT"
+1256,56,2,2,150,1,1,apartment,-5.8841734,-35.1783162,,Score 5,y,
+3512,358,2,4,0,2,1,house,-5.8502797,-35.2034748,1972,Score 9,yes,
+1250,845,0,0,500,0,0,other,-5.8666079,-35.2088062,,Score 4,yes,"PLAYGROUND,sports court"
+4589,140,4,4,1100,1,2,apartment,-5.7845495,-35.1984438,2003,Score 5,no,"PLAYGROUND,SPORTS COURT"
+3284,104,3,3,0,3,3,apartment,-5.8437235,-35.2214483,1986,Score 4,nop,
+2933,58,2,2,250,2,1,apartment,-5.8753421,-35.2254937,,Score 5,yes,"playground,sports court"
+4175,130,2,3,0,2,0,house,-5.8240436,-35.2416942,1969,Score 7,yes,
+1852,98,1,3,540,2,1,apartment,-5.8226937,-35.2126403,1996,Score 4,No,GYM
+4647,58,2,2,350,1,1,apartment,-5.8639405,-35.1979088,,Score 4,y,"playground,sports court"
+2105,60,1,2,1,1,1,other,-5.8730875,-35.1800373,,Score 4,Yes,
+133,56,2,2,0,2,1,apartment,-5.8576398,-35.2014489,1956,Score 6,no,
+928,275,2,4,0,2,2,house,-5.8821365,-35.1722172,1991,Score 7,y,
+823,124,3,3,680,2,3,apartment,-5.8347074,-35.2243579,2006,Score 5,yes,"POOL,BARBECUE SPACE,PLAYGROUND"
+4340,460,,,0,10,1,,-5.8213496,-35.2019448,,Score 4,y,
+1531,75,2,3,460,2,1,apartment,-5.8502894,-35.2166072,2003,Score 7,No,playground
+1214,125,2,3,0,1,0,house,-5.7988797,-35.2188577,,Score 5,Yes,
+504,63,1,2,0,1,1,apartment,-5.890275,-35.175139,1978,Score 4,y,
+1996,46,1,1,140,1,0,apartment,-5.7772142,-35.1948287,1973,Score 4,y,
+3072,123,5,3,550,2,3,apartment,-5.8347074,-35.2243579,1992,Score 5,yes,"pool,GYM,PLAYGROUND"
+1958,55,1,2,0,1,1,apartment,-5.7840027,-35.1946003,2001,Score 5,y,
+1384,98,3,3,600,2,1,apartment,-5.8855448,-35.1775819,,Score 6,No,"gym,PLAYGROUND"
+894,90,2,3,0,1,1,apartment,-5.8576398,-35.2014489,1994,Score 4,y,BARBECUE SPACE
+455,116,4,3,800,2,3,apartment,-5.8005515,-35.1986193,,Score 5,yes,"barbecue space,playground"
+4428,75,2,3,350,1,1,apartment,-5.8738039,-35.1815727,,Score 7,No,"BARBECUE SPACE,playground,SPORTS COURT"
+3709,80,1,1,0,1,1,apartment,-5.8811944,-35.1787182,1973,Score 5,yes,
+4411,260,3,3,0,2,3,house,-5.8633093,-35.2324324,2005,Score 5,y,barbecue space
+4268,180,5,3,1,3,3,apartment,-5.7842718,-35.1946585,2005,Score 6,y,
+3522,120,3,3,700,2,3,apartment,-5.8226937,-35.2126403,1978,Score 5,no,"pool,playground"
+4134,219,3,3,0,2,2,house,-5.8226937,-35.2126403,,Score 5,yes,
+3602,56,1,1,340,1,1,apartment,-5.8004904,-35.2077308,1974,Score 9,nop,"PLAYGROUND,SPORTS COURT"
+713,175,3,3,1100,2,3,apartment,-5.8032096,-35.2002054,2005,Score 4,no,PLAYGROUND
+4186,55,2,2,0,0,1,apartment,-5.8821365,-35.1722172,1962,Score 5,y,
+2214,100,2,4,0,0,0,other,-5.7988797,-35.2188577,,Score 5,y,
+2923,75,1,3,0,2,1,apartment,-5.7775126,-35.2013557,1992,Score 5,yes,
+1810,98,3,3,930,2,1,apartment,-5.8606852,-35.1989537,,Score 5,yes,"pool,gym,PLAYGROUND,sports court"
+3486,58,1,1,564,1,1,other,-5.7840945,-35.1999475,1992,Score 5,yes,"barbecue space,PLAYGROUND"
+3141,50,1,2,215,1,0,apartment,-5.8768735,-35.2236066,1993,Score 4,y,"barbecue space,PLAYGROUND,SPORTS COURT"
+1827,50,1,2,620,1,0,apartment,-5.8705936,-35.1817559,1997,Score 5,Yes,"BARBECUE SPACE,GYM,playground,sports court"
+1155,129,3,3,0,3,3,apartment,-5.8226937,-35.2126403,1965,Score 5,y,
+1324,87,4,3,0,2,1,apartment,-5.8286255,-35.2226081,,Score 5,Yes,
+510,104,1,3,0,2,1,apartment,-5.8226937,-35.2126403,,Score 8,no,
+1680,78,1,1,0,1,1,apartment,-5.8821365,-35.1722172,1959,Score 2,Yes,
+499,90,1,3,0,0,1,house,-5.8434221,-35.2131915,1975,Score 4,Yes,
+4333,140,3,3,0,3,3,apartment,-5.7997946,-35.1979747,,Score 5,Yes,
+1856,89,2,2,500,2,1,apartment,-5.8768735,-35.2236066,2003,Score 5,Yes,PLAYGROUND
+1388,54,2,2,0,1,1,apartment,-5.8576398,-35.2014489,1993,Score 7,No,
+3719,69,2,2,200,2,1,apartment,-5.8263231,-35.2177609,,Score 6,Yes,
+2386,51,1,2,0,1,0,apartment,-5.8768735,-35.2236066,,Score 5,no,
+3236,57,2,2,0,2,1,apartment,-5.8163039,-35.2204887,1970,Score 4,yes,
+1540,322,4,3,0,2,0,house,-5.8226937,-35.2126403,,Score 3,y,BARBECUE SPACE
+1217,100,1,3,600,2,1,apartment,-5.8062783,-35.2121696,,Score 4,No,"barbecue space,GYM,PLAYGROUND,sports court"
+2681,96,3,3,306,2,1,apartment,-5.8633093,-35.2324324,,Score 3,y,"barbecue space,PLAYGROUND"
+2993,240,5,3,1350,3,3,apartment,-5.7978488,-35.2092207,,Score 4,no,"barbecue space,steam room,SPORTS COURT"
+1191,153,4,3,0,3,3,apartment,-5.8209603,-35.2182387,1963,Score 4,y,
+1542,59,1,2,250,1,1,apartment,-5.8198444,-35.2109804,,Score 5,no,playground
+3301,50,0,2,0,0,0,apartment,-5.8633093,-35.2324324,,Score 4,No,
+3324,122,1,3,0,0,1,apartment,-5.8116287,-35.2079666,1962,Score 4,y,
+2539,70,0,3,300,0,0,apartment,-5.8226937,-35.2126403,1983,Score 7,yes,"BARBECUE SPACE,sports court"
+953,108,2,3,770,2,2,apartment,-5.8159576,-35.2189124,,Score 5,Yes,"POOL,barbecue space,gym,sports court"
+732,262,6,4,1500,3,3,apartment,-5.8143778,-35.2089333,1999,Score 7,yes,"BARBECUE SPACE,playground"
+1156,75,1,3,450,2,1,apartment,-5.8666079,-35.2088062,1977,Score 3,nop,SPORTS COURT
+3294,98,2,3,1000,2,1,apartment,-5.8226937,-35.2126403,,Score 5,No,PLAYGROUND
+2982,86,2,2,600,1,1,apartment,-5.7845495,-35.1984438,,Score 5,y,"BARBECUE SPACE,PLAYGROUND"
+2156,37,1,1,0,1,1,other,-5.8784962,-35.1752621,1996,Score 3,Yes,
+1062,112,2,2,1385,2,2,apartment,-5.8821365,-35.1722172,,Score 6,y,"BARBECUE SPACE,PLAYGROUND"
+2616,67,1,3,350,1,1,apartment,-5.8633093,-35.2324324,,Score 5,yes,"BARBECUE SPACE,playground,SPORTS COURT"
+1167,161,2,3,480,2,1,apartment,-5.8263231,-35.2177609,1997,Score 4,Yes,"barbecue space,PLAYGROUND,sports court"
+3222,57,2,2,300,1,1,apartment,-5.8654192,-35.2097736,,Score 5,Yes,playground
+3636,75,2,3,400,2,1,apartment,-5.7775126,-35.2013557,,Score 4,yes,"barbecue space,playground,sports court"
+2938,60,1,3,90,1,0,apartment,-5.8635502,-35.2029564,1972,Score 4,No,
+3140,125,4,3,550,2,3,apartment,-5.8437235,-35.2214483,,Score 5,No,"POOL,PLAYGROUND,sports court"
+143,200,4,4,950,2,2,apartment,-5.8032096,-35.2002054,,Score 5,Yes,"POOL,BARBECUE SPACE"
+3577,109,3,3,0,2,2,apartment,-5.8559951,-35.2043315,,Score 4,yes,
+2782,108,4,3,490,2,2,apartment,-5.8164277,-35.2116397,1990,Score 4,yes,BARBECUE SPACE
+717,94,2,3,0,2,2,apartment,-5.7845495,-35.1984438,1990,Score 6,Yes,
+1819,87,1,3,500,1,1,apartment,-5.8576398,-35.2014489,1981,Score 4,y,"POOL,playground"
+2502,110,1,2,0,1,0,house,-5.8226937,-35.2126403,1974,Score 5,Yes,
+4171,100,2,3,600,2,1,apartment,-5.8226937,-35.2126403,1963,Score 5,y,"barbecue space,GYM,PLAYGROUND,sports court"
+395,56,3,3,0,2,3,apartment,-5.8821365,-35.1722172,,Score 7,nop,
+4617,98,2,3,630,2,1,apartment,-5.8010185,-35.2078485,,Score 4,y,"pool,PLAYGROUND,sports court"
+1365,107,2,3,490,2,1,apartment,-5.8284015,-35.2200481,1961,Score 5,Yes,"pool,sports court"
+4355,140,4,3,0,3,3,apartment,-5.7997946,-35.1979747,,Score 5,Yes,BARBECUE SPACE
+595,189,3,3,0,2,3,apartment,-5.8165334,-35.2224341,2005,Score 4,Yes,
+3952,69,2,3,425,2,1,apartment,-5.8799135,-35.1998728,,Score 5,Yes,"pool,playground,sports court"
+2914,92,1,3,1100,2,1,apartment,-5.8226937,-35.2126403,2005,Score 5,no,"playground,sports court"
+2326,59,2,2,450,1,2,apartment,-5.8466516,-35.2082951,1965,Score 5,yes,"barbecue space,PLAYGROUND,SPORTS COURT"
+3766,117,3,4,120,2,1,apartment,-5.801043,-35.204203,1988,Score 4,yes,
+3440,103,2,3,378,1,2,apartment,-5.8437235,-35.2214483,,Score 6,Yes,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+3851,98,2,3,0,2,1,apartment,-5.8088697,-35.199618,1968,Score 5,Yes,
+4132,120,3,3,620,2,2,apartment,-5.8559951,-35.2043315,,Score 5,y,PLAYGROUND
+4387,189,2,3,0,2,1,apartment,-5.8032096,-35.2002054,1974,Score 5,no,
+2143,98,3,3,800,2,2,apartment,-5.8640599,-35.196594,2000,Score 5,y,"POOL,GYM,PLAYGROUND,SPORTS COURT"
+1571,92,3,3,620,2,1,apartment,-5.7903384,-35.1952596,2002,Score 5,yes,POOL
+4079,56,2,2,414,1,1,apartment,-5.8187773,-35.2166551,,Score 2,yes,"pool,barbecue space,PLAYGROUND"
+1122,120,3,3,705,3,3,apartment,-5.7978488,-35.2092207,1977,Score 8,nop,"barbecue space,playground,SPORTS COURT"
+2786,171,3,3,1500,3,3,apartment,-5.820507,-35.2164801,1997,Score 3,nop,"pool,barbecue space,gym,PLAYGROUND"
+2967,150,3,3,650,2,1,apartment,-5.7816181,-35.1974338,1993,Score 6,yes,"pool,BARBECUE SPACE,playground"
+2504,96,3,3,770,2,2,apartment,-5.8163039,-35.2204887,2000,Score 5,No,"pool,PLAYGROUND"
+3465,141,4,3,690,2,3,apartment,-5.866287,-35.1917372,1994,Score 5,nop,"pool,barbecue space,GYM,SPORTS COURT"
+675,55,2,2,350,2,1,apartment,-5.8640599,-35.196594,2002,Score 4,Yes,"STEAM ROOM,SPORTS COURT"
+2808,98,1,3,700,2,1,apartment,-5.8821365,-35.1722172,2002,Score 6,no,"BARBECUE SPACE,PLAYGROUND,sports court"
+3348,168,2,3,0,2,1,house,-5.8666079,-35.2088062,1966,Score 6,yes,
+728,57,1,2,414,2,1,apartment,-5.8187773,-35.2166551,,Score 5,yes,"BARBECUE SPACE,playground,SPORTS COURT"
+412,103,4,3,568,2,3,apartment,-5.8347074,-35.2243579,,Score 4,y,"POOL,PLAYGROUND,SPORTS COURT"
+3146,86,2,2,704,2,1,apartment,-5.783788,-35.1913745,2000,Score 5,y,"BARBECUE SPACE,playground,SPORTS COURT"
+1516,89,0,3,270,0,0,apartment,-5.8431967,-35.2124468,,Score 5,yes,"BARBECUE SPACE,playground"
+825,163,1,3,0,2,1,apartment,-5.8576398,-35.2014489,,Score 4,nop,
+3267,156,5,3,800,3,3,apartment,-5.8606852,-35.1989537,,Score 7,y,POOL
+3974,56,1,2,0,1,1,apartment,-5.8032096,-35.2002054,,Score 7,y,
+616,75,2,3,490,1,1,apartment,-5.8576398,-35.2014489,1999,Score 7,yes,"pool,BARBECUE SPACE,SPORTS COURT"
+114,58,2,2,448,1,1,apartment,-5.8639405,-35.1979088,1992,Score 6,Yes,playground
+417,62,1,3,0,1,1,apartment,-5.8032096,-35.2002054,2000,Score 5,Yes,
+3069,160,4,3,550,2,1,apartment,-5.8203803,-35.2256399,1978,Score 4,y,"pool,sports court"
+1625,90,2,3,390,2,1,apartment,-5.7978488,-35.2092207,1991,Score 7,y,"BARBECUE SPACE,playground,sports court"
+4723,110,2,3,0,2,1,apartment,-5.8284015,-35.2200481,1978,Score 4,y,BARBECUE SPACE
+4185,144,1,3,0,2,0,house,-5.7978488,-35.2092207,,Score 4,y,
+2896,136,3,3,950,2,1,apartment,-5.8383287,-35.2253736,1992,Score 9,y,"GYM,PLAYGROUND,sports court"
+4462,101,3,3,600,2,2,apartment,-5.8999907,-35.1759866,1957,Score 5,Yes,"barbecue space,PLAYGROUND,SPORTS COURT"
+2082,400,4,4,0,0,0,house,-5.8437235,-35.2214483,1961,Score 4,y,
+753,222,3,3,540,2,3,apartment,-5.8226937,-35.2126403,,Score 4,nop,"playground,sports court"
+2546,220,3,3,0,2,3,apartment,-5.8053683,-35.2050354,,Score 4,no,
+3969,57,2,2,258,1,1,apartment,-5.8796695,-35.1973555,,Score 5,y,"BARBECUE SPACE,playground,SPORTS COURT"
+3373,122,1,3,767,1,1,apartment,-5.7816181,-35.1974338,1978,Score 5,Yes,"POOL,barbecue space,playground"
+4107,86,2,3,478,2,1,apartment,-5.8286255,-35.2226081,,Score 6,no,"POOL,BARBECUE SPACE"
+2444,37,1,1,0,1,0,apartment,-5.8784962,-35.1752621,1998,Score 5,Yes,
+1066,122,4,3,500,2,1,apartment,-5.8226937,-35.2126403,1968,Score 5,Yes,PLAYGROUND
+3913,63,1,1,500,1,1,apartment,-5.8136592,-35.2108172,,Score 7,y,sports court
+3498,110,3,3,100,2,1,apartment,-5.8437235,-35.2214483,1999,Score 5,no,barbecue space
+2738,186,3,4,0,3,2,apartment,-5.8089286,-35.2013139,2005,Score 6,y,
+4000,74,2,2,380,1,1,apartment,-5.8660483,-35.1879769,,Score 4,No,"playground,SPORTS COURT"
+1568,93,3,3,1100,2,2,apartment,-5.8209841,-35.2211601,,Score 3,no,"barbecue space,PLAYGROUND"
+2427,422,2,3,0,0,2,house,-5.8226937,-35.2126403,1974,Score 5,Yes,
+3746,52,2,2,500,1,0,apartment,-5.8821365,-35.1722172,,Score 3,yes,playground
+4431,101,3,3,630,2,2,apartment,-5.8999907,-35.1759866,1993,Score 6,Yes,"BARBECUE SPACE,PLAYGROUND,sports court"
+1687,136,4,4,0,3,3,apartment,-5.8163039,-35.2204887,2000,Score 4,No,
+851,150,2,4,950,3,2,apartment,-5.8226937,-35.2126403,,Score 5,y,"pool,barbecue space,gym"
+3546,170,3,3,0,3,3,apartment,-5.8163039,-35.2204887,1965,Score 5,y,
+895,127,4,3,550,2,3,apartment,-5.8347074,-35.2243579,,Score 6,yes,"POOL,gym"
+335,180,5,4,1036,3,3,apartment,-5.7829457,-35.2004207,,Score 4,y,"barbecue space,playground"
+2839,101,2,3,500,2,2,apartment,-5.8999907,-35.1759866,1961,Score 4,yes,"POOL,BARBECUE SPACE,playground"
+3087,56,2,2,540,2,1,apartment,-5.8196922,-35.2169549,,Score 4,Yes,"POOL,gym"
+1348,55,2,2,340,1,1,apartment,-5.8751758,-35.1791324,,Score 4,yes,"barbecue space,playground"
+1015,101,2,3,0,2,1,apartment,-5.8640599,-35.196594,1999,Score 6,y,
+2816,123,5,3,450,2,3,apartment,-5.8347074,-35.2243579,,Score 4,nop,"POOL,BARBECUE SPACE,PLAYGROUND,sports court"
+1631,55,2,2,300,0,2,house,-5.8664332,-35.183107,1976,Score 4,y,"barbecue space,GYM,playground"
+2489,100,2,2,0,2,1,house,-5.8226937,-35.2126403,1989,Score 7,y,
+3730,119,4,4,0,2,3,apartment,-5.781494,-35.1998741,,Score 5,yes,
+3251,66,2,2,650,1,0,apartment,-5.7845495,-35.1984438,1969,Score 7,y,"barbecue space,sports court"
+4767,57,2,2,370,1,1,apartment,-5.8437235,-35.2214483,1960,Score 5,yes,SPORTS COURT
+2070,63,2,3,480,1,1,apartment,-5.8032096,-35.2002054,,Score 5,yes,
+4660,180,4,3,1000,3,3,apartment,-5.8437235,-35.2214483,2000,Score 3,nop,"barbecue space,gym,PLAYGROUND,SPORTS COURT"
+1635,52,1,2,820,1,0,other,-5.8821365,-35.1722172,1974,Score 5,Yes,GYM
+2479,197,4,3,450,2,3,house,-5.8633093,-35.2324324,1966,Score 6,Yes,"barbecue space,playground,sports court"
+2265,90,2,3,466,2,1,apartment,-5.8606852,-35.1989537,,Score 4,Yes,playground
+2959,56,2,2,350,1,1,apartment,-5.8226937,-35.2126403,1985,Score 5,Yes,PLAYGROUND
+3059,185,5,3,0,3,3,apartment,-5.783788,-35.1913745,,Score 6,y,barbecue space
+2141,210,4,4,770,2,3,apartment,-5.8010185,-35.2078485,1995,Score 5,no,PLAYGROUND
+3118,81,1,3,0,1,1,apartment,-5.8222404,-35.2102647,,Score 6,y,
+4515,124,3,3,1000,2,1,apartment,-5.7978488,-35.2092207,,Score 4,nop,"POOL,gym,playground"
+4045,71,2,3,0,2,1,apartment,-5.7869014,-35.1902633,,Score 4,No,
+3356,58,1,2,410,1,1,apartment,-5.7941845,-35.2063996,,Score 4,Yes,
+2744,112,2,3,0,2,2,apartment,-5.8032096,-35.2002054,,Score 5,y,
+3506,55,2,1,0,1,1,apartment,-5.7958441,-35.1988196,2007,Score 5,y,
+1679,92,1,3,315,0,1,apartment,-5.8576398,-35.2014489,,Score 4,Yes,PLAYGROUND
+4249,92,2,3,0,2,1,apartment,-5.866287,-35.1917372,,Score 5,yes,
+3147,44,1,1,350,1,0,apartment,-5.870161,-35.1824612,,Score 8,yes,PLAYGROUND
+2294,54,1,2,0,1,1,apartment,-5.8821365,-35.1722172,,Score 5,Yes,
+580,227,1,3,0,2,1,house,-5.8821365,-35.1722172,2006,Score 4,y,
+1470,54,1,2,350,1,1,apartment,-5.8730875,-35.1800373,2001,Score 5,Yes,"playground,SPORTS COURT"
+4070,56,2,2,250,1,1,apartment,-5.7902697,-35.1994187,,Score 5,y,SPORTS COURT
+3343,105,1,3,0,0,1,house,-5.8089827,-35.2272512,,Score 5,yes,
+3672,91,2,3,500,2,1,apartment,-5.8576398,-35.2014489,1967,Score 4,nop,SPORTS COURT
+559,103,4,3,350,2,3,apartment,-5.8347074,-35.2243579,,Score 7,yes,"PLAYGROUND,SPORTS COURT"
+2849,230,3,4,0,2,2,house,-5.8633093,-35.2324324,,Score 4,y,BARBECUE SPACE
+512,56,2,2,0,1,1,apartment,-5.8187773,-35.2166551,,Score 6,y,POOL
+1081,55,1,2,200,0,1,apartment,-5.8821365,-35.1722172,1999,Score 4,Yes,
+1664,180,4,4,0,3,3,house,-5.8624143,-35.1967263,,Score 5,no,
+1012,75,2,3,410,2,1,apartment,-5.8502894,-35.2166072,1989,Score 7,y,"playground,sports court"
+1931,51,0,2,0,0,0,apartment,-5.8633093,-35.2324324,1967,Score 5,yes,
+1150,194,5,4,0,3,3,house,-5.847598,-35.2024799,1987,Score 5,y,
+2838,75,1,3,0,2,1,apartment,-5.8226937,-35.2126403,1975,Score 5,y,
+116,116,4,2,700,3,2,apartment,-5.8044476,-35.2032196,,Score 5,No,"pool,GYM"
+740,108,2,3,0,2,2,apartment,-5.8164277,-35.2116397,,Score 4,Yes,
+4588,200,4,3,1200,3,2,apartment,-5.8198444,-35.2109804,,Score 6,yes,"PLAYGROUND,sports court"
+3675,140,1,3,0,2,1,house,-5.8720995,-35.2076498,1973,Score 4,y,
+830,103,3,3,450,1,3,apartment,-5.8437235,-35.2214483,1984,Score 6,yes,"pool,PLAYGROUND,SPORTS COURT"
+119,56,2,2,0,2,1,apartment,-5.8686163,-35.2305498,2001,Score 5,no,
+4562,108,2,3,300,2,1,apartment,-5.820507,-35.2164801,2004,Score 5,yes,PLAYGROUND
+4526,119,4,3,0,2,3,apartment,-5.797491,-35.2014217,,Score 3,y,
+635,45,1,2,0,1,0,apartment,-5.7372347,-35.2360433,,Score 7,Yes,barbecue space
+4364,70,2,3,282,2,1,apartment,-5.8186892,-35.2401631,1999,Score 5,no,"PLAYGROUND,SPORTS COURT"
+4142,54,1,2,0,1,1,apartment,-5.7845495,-35.1984438,1976,Score 7,yes,
+991,104,3,3,0,2,1,apartment,-5.8576398,-35.2014489,1998,Score 6,no,
+876,92,3,3,534,2,1,apartment,-5.8214697,-35.2168115,,Score 5,nop,"pool,PLAYGROUND,SPORTS COURT"
+4,50,1,2,0,1,0,other,-5.8678106,-35.1809804,,Score 5,Yes,
+3051,86,3,3,535,2,1,apartment,-5.8163039,-35.2204887,1987,Score 5,Yes,pool
+3124,75,2,3,0,2,1,apartment,-5.7767142,-35.2062156,2005,Score 5,y,
+2660,52,1,2,0,1,0,apartment,-5.8730875,-35.1800373,1996,Score 4,Yes,GYM
+2491,95,3,3,500,1,2,apartment,-5.8198444,-35.2109804,1975,Score 4,Yes,"barbecue space,playground,SPORTS COURT"
+3854,50,1,1,400,1,0,apartment,-5.7702789,-35.1957048,1962,Score 5,yes,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+1715,217,3,4,1100,2,3,apartment,-5.8650038,-35.1933903,2002,Score 5,Yes,"BARBECUE SPACE,GYM,playground,SPORTS COURT"
+1148,86,1,3,455,1,1,apartment,-5.8032096,-35.2002054,1992,Score 4,Yes,"barbecue space,SPORTS COURT"
+3261,50,1,2,215,1,0,apartment,-5.8768735,-35.2236066,1971,Score 6,yes,playground
+574,75,1,3,0,0,1,apartment,-5.8593959,-35.2006146,1995,Score 4,Yes,
+3769,69,2,3,250,1,0,apartment,-5.8431967,-35.2124468,,Score 4,y,"barbecue space,PLAYGROUND"
+3736,155,2,4,750,2,2,apartment,-5.790886,-35.2023866,1971,Score 5,yes,"pool,GYM,PLAYGROUND"
+4146,92,3,3,450,2,1,apartment,-5.820507,-35.2164801,1998,Score 4,yes,"POOL,BARBECUE SPACE,playground"
+853,57,2,2,220,1,1,apartment,-5.8455365,-35.2136399,1986,Score 6,yes,"BARBECUE SPACE,SPORTS COURT"
+1982,160,3,4,0,3,2,house,-5.8652754,-35.2324679,,Score 5,y,
+2774,88,1,3,377,2,1,apartment,-5.8226937,-35.2126403,,Score 4,yes,"POOL,barbecue space,SPORTS COURT"
+1166,167,3,4,640,2,3,apartment,-5.8253734,-35.2113637,1967,Score 5,yes,
+971,98,3,3,0,2,1,apartment,-5.796771,-35.200507,1994,Score 4,Yes,
+2701,89,1,2,0,1,1,apartment,-5.783788,-35.1913745,1963,Score 5,yes,
+3847,51,1,1,560,1,0,other,-5.8821365,-35.1722172,1989,Score 5,yes,"barbecue space,PLAYGROUND"
+2368,56,2,2,516,1,1,apartment,-5.8821365,-35.1722172,,Score 6,No,SPORTS COURT
+4115,93,3,3,0,2,1,apartment,-5.8226937,-35.2126403,1984,Score 5,yes,
+4131,67,2,2,256,1,1,apartment,-5.8636826,-35.2153349,1990,Score 5,No,"pool,playground"
+2950,64,1,2,0,1,0,apartment,-5.8576398,-35.2014489,1987,Score 5,yes,
+524,145,2,3,0,3,2,house,-5.8437235,-35.2214483,,Score 4,y,
+2455,186,3,3,0,3,3,apartment,-5.8437235,-35.2214483,,Score 5,Yes,
+1841,141,3,3,0,2,3,apartment,-5.866287,-35.1917372,1980,Score 6,y,
+537,56,2,2,0,2,1,apartment,-5.8821365,-35.1722172,1997,Score 4,yes,
+2806,58,1,2,200,1,0,apartment,-5.8250648,-35.235023,2002,Score 6,nop,
+4341,79,1,3,0,2,1,apartment,-5.8821365,-35.1722172,1967,Score 5,yes,
+3175,240,4,4,0,3,2,house,-5.8556614,-35.2415491,1968,Score 4,Yes,
+784,57,1,2,275,0,1,apartment,-5.8821365,-35.1722172,1967,Score 6,y,"barbecue space,playground"
+4057,70,2,2,250,1,0,apartment,-5.8576398,-35.2014489,,Score 4,yes,
+1409,57,1,2,0,1,1,apartment,-5.8666079,-35.2088062,1962,Score 4,y,playground
+2537,54,1,2,0,1,1,apartment,-5.8821365,-35.1722172,1990,Score 6,yes,
+154,38,1,1,0,1,1,other,-5.8674964,-35.180586,,Score 8,Yes,barbecue space
+3009,164,3,3,0,2,3,apartment,-5.783788,-35.1913745,,Score 4,Yes,
+1686,189,3,3,0,2,3,apartment,-5.8165334,-35.2224341,2005,Score 4,y,
+2901,57,2,2,300,1,1,apartment,-5.8654192,-35.2097736,1996,Score 7,yes,"POOL,BARBECUE SPACE,playground,SPORTS COURT"
+4722,85,2,3,500,2,1,apartment,-5.8269204,-35.1985475,1999,Score 6,yes,BARBECUE SPACE
+3863,73,2,3,600,1,1,apartment,-5.7982704,-35.2029366,1985,Score 5,yes,sports court
+2733,108,4,3,350,2,2,apartment,-5.8576398,-35.2014489,2006,Score 5,yes,"BARBECUE SPACE,playground,SPORTS COURT"
+1895,55,2,2,240,1,1,apartment,-5.8627911,-35.1994162,1971,Score 5,No,BARBECUE SPACE
+569,58,1,2,100,1,0,apartment,-5.8576398,-35.2014489,,Score 5,y,
+1816,113,2,3,0,2,2,apartment,-5.8243506,-35.2181326,1970,Score 5,yes,BARBECUE SPACE
+2065,26,0,1,650,1,0,other,-5.8821365,-35.1722172,2002,Score 7,Yes,"GYM,playground"
+127,55,2,2,400,2,1,apartment,-5.8600136,-35.1998189,2004,Score 4,yes,playground
+3394,68,0,3,0,1,0,apartment,-5.824069,-35.1996847,1986,Score 7,Yes,
+3327,69,2,3,200,1,1,apartment,-5.8666079,-35.2088062,2001,Score 4,nop,
+4758,264,2,4,900,2,2,apartment,-5.8032096,-35.2002054,1987,Score 5,y,"BARBECUE SPACE,SPORTS COURT"
+2975,54,2,2,260,1,1,apartment,-5.8909703,-35.1755868,1974,Score 5,y,playground
+980,59,1,2,300,1,1,apartment,-5.8821365,-35.1722172,,Score 4,yes,"playground,SPORTS COURT"
+2300,95,1,3,0,2,1,apartment,-5.8032096,-35.2002054,1983,Score 6,yes,
+190,57,1,2,0,1,1,apartment,-5.8191711,-35.2126895,1977,Score 9,yes,
+1139,51,1,2,220,1,0,apartment,-5.8070811,-35.2286133,1999,Score 4,y,"BARBECUE SPACE,playground"
+699,54,2,2,350,1,1,apartment,-5.7852531,-35.2049414,,Score 3,Yes,"PLAYGROUND,sports court"
+4563,57,2,2,380,1,1,apartment,-5.8666079,-35.2088062,2003,Score 5,Yes,"barbecue space,playground,sports court"
+606,142,4,4,1150,3,2,apartment,-5.8286255,-35.2226081,2003,Score 5,yes,"BARBECUE SPACE,GYM,playground,SPORTS COURT"
+4276,57,1,2,300,1,1,apartment,-5.8053683,-35.2050354,,Score 4,yes,PLAYGROUND
+301,136,5,3,0,3,3,apartment,-5.8163039,-35.2204887,1999,Score 4,No,
+3420,44,1,1,350,1,0,apartment,-5.8821365,-35.1722172,1980,Score 4,No,"barbecue space,playground"
+4602,98,3,3,700,2,1,apartment,-5.8576398,-35.2014489,1963,Score 6,nop,"POOL,BARBECUE SPACE,playground"
+1060,270,2,4,0,2,2,house,-5.7978488,-35.2092207,2005,Score 5,yes,
+2565,90,2,3,500,2,1,apartment,-5.8069157,-35.216795,2003,Score 5,Yes,BARBECUE SPACE
+4766,160,4,4,0,3,3,apartment,-5.8164277,-35.2116397,1999,Score 5,No,BARBECUE SPACE
+1069,62,1,2,380,1,1,apartment,-5.8821365,-35.1722172,,Score 4,yes,barbecue space
+2524,56,0,2,0,1,0,apartment,-5.807319,-35.2304191,2000,Score 5,y,
+2205,166,4,3,0,2,3,apartment,-5.8226937,-35.2126403,,Score 5,No,
+1243,103,3,3,370,2,2,apartment,-5.8347074,-35.2243579,2000,Score 5,Yes,
+16,51,1,2,290,1,0,apartment,-5.8768735,-35.2236066,1969,Score 6,Yes,"barbecue space,PLAYGROUND,sports court"
+3120,56,2,2,600,1,1,apartment,-5.8730875,-35.1800373,1987,Score 5,yes,"BARBECUE SPACE,gym,playground,SPORTS COURT"
+815,276,2,4,0,3,2,house,-5.8656938,-35.2302108,1993,Score 5,y,BARBECUE SPACE
+3067,35,1,1,360,1,1,other,-5.8821365,-35.1722172,2004,Score 7,y,"barbecue space,PLAYGROUND"
+959,48,2,2,1200,1,1,apartment,-5.783788,-35.1913745,1964,Score 7,yes,"BARBECUE SPACE,playground"
+225,55,1,1,900,2,1,apartment,-5.7789823,-35.194817,1968,Score 6,yes,"barbecue space,gym,playground,SPORTS COURT"
+3354,78,2,3,0,2,1,apartment,-5.8661059,-35.2056886,,Score 4,No,barbecue space
+2485,63,1,1,120,1,0,apartment,-5.8136592,-35.2108172,,Score 5,Yes,
+562,240,1,4,0,3,1,house,-5.8576398,-35.2014489,,Score 5,y,
+3436,94,2,3,350,1,1,apartment,-5.8477276,-35.2130915,1999,Score 6,y,PLAYGROUND
+1693,178,4,4,1100,2,2,apartment,-5.788328,-35.1951542,2005,Score 8,Yes,"STEAM ROOM,PLAYGROUND"
+1045,120,2,3,0,2,1,house,-5.8799696,-35.1813052,,Score 5,No,"POOL,BARBECUE SPACE"
+3446,90,3,3,240,2,1,apartment,-5.8576398,-35.2014489,1969,Score 6,y,"BARBECUE SPACE,playground,SPORTS COURT"
+954,50,1,1,300,1,1,apartment,-5.7702789,-35.1957048,1996,Score 5,yes,"barbecue space,PLAYGROUND"
+2735,210,2,3,0,0,1,house,-5.8666079,-35.2088062,,Score 5,y,
+4681,93,3,3,500,2,1,apartment,-5.8674286,-35.1966683,1989,Score 4,Yes,playground
+4605,50,1,2,990,0,1,apartment,-5.8784962,-35.1752621,,Score 4,No,"playground,sports court"
+1218,80,2,2,234,1,1,apartment,-5.8821365,-35.1722172,2001,Score 4,No,"BARBECUE SPACE,playground,SPORTS COURT"
+1527,58,2,2,380,2,1,apartment,-5.7921127,-35.1960671,,Score 6,No,"barbecue space,sports court"
+3987,97,2,3,0,2,1,apartment,-5.7845495,-35.1984438,1967,Score 5,y,
+1300,152,3,4,300,2,1,apartment,-5.8253734,-35.2113637,1964,Score 5,y,"PLAYGROUND,sports court"
+4669,120,2,3,0,1,1,house,-5.7767142,-35.2062156,1958,Score 6,yes,
+160,70,2,2,430,2,1,apartment,-5.824868,-35.2058664,1967,Score 6,yes,"playground,sports court"
+4067,85,3,3,500,2,0,apartment,-5.8580854,-35.2023029,1960,Score 5,y,"POOL,barbecue space,playground"
+956,118,3,3,0,2,3,apartment,-5.7845495,-35.1984438,1986,Score 4,no,
+3791,200,2,3,0,3,1,house,-5.8534756,-35.2394548,,Score 5,yes,
+3234,123,5,3,460,2,3,apartment,-5.8347074,-35.2243579,1962,Score 6,No,BARBECUE SPACE
+2869,250,2,4,0,0,0,house,-5.8821365,-35.1722172,,Score 6,y,pool
+3777,56,4,3,0,3,3,apartment,-5.8164277,-35.2116397,1979,Score 7,Yes,
+4433,54,2,2,0,1,1,apartment,-5.8821365,-35.1722172,2002,Score 4,nop,
+2961,64,1,2,0,2,0,house,-5.733133,-35.2329382,1996,Score 4,Yes,
+2200,120,4,4,0,2,2,apartment,-5.8576398,-35.2014489,2004,Score 6,y,
+98,75,1,3,320,2,1,apartment,-5.7767142,-35.2062156,1967,Score 4,Yes,
+2557,128,5,3,600,2,3,apartment,-5.8165259,-35.2141266,1977,Score 5,yes,"pool,barbecue space"
+3183,58,1,2,220,1,0,apartment,-5.8032096,-35.2002054,,Score 4,no,"BARBECUE SPACE,PLAYGROUND"
+253,54,2,2,0,1,1,apartment,-5.8821365,-35.1722172,2004,Score 5,y,
+3923,88,2,3,470,2,1,apartment,-5.8226937,-35.2126403,1964,Score 4,y,"POOL,PLAYGROUND,sports court"
+4199,108,4,3,776,2,3,apartment,-5.8226937,-35.2126403,,Score 6,yes,"PLAYGROUND,sports court"
+1445,60,2,2,300,1,1,apartment,-5.8109156,-35.2348455,2005,Score 4,no,"playground,sports court"
+1648,87,2,3,478,2,1,apartment,-5.8286255,-35.2226081,1977,Score 5,y,"POOL,barbecue space,PLAYGROUND,SPORTS COURT"
+3991,80,2,2,550,2,0,apartment,-5.8372462,-35.2137906,1957,Score 4,yes,
+1696,90,1,2,630,1,1,apartment,-5.8032096,-35.2002054,,Score 5,no,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+3191,142,3,3,0,2,3,apartment,-5.866287,-35.1917372,,Score 8,y,
+4499,110,2,2,250,2,1,apartment,-5.7884831,-35.201471,2004,Score 4,y,"PLAYGROUND,sports court"
+1154,65,2,3,390,1,1,apartment,-5.8658883,-35.1954251,1996,Score 6,yes,"pool,BARBECUE SPACE,PLAYGROUND,sports court"
+2255,56,2,2,225,1,1,apartment,-5.8633093,-35.2324324,,Score 5,yes,PLAYGROUND
+1682,54,2,2,234,1,1,apartment,-5.8821365,-35.1722172,1994,Score 6,yes,sports court
+3170,188,4,4,1100,2,2,apartment,-5.7816923,-35.1973759,1971,Score 6,Yes,"BARBECUE SPACE,SPORTS COURT"
+2056,105,2,3,800,2,1,apartment,-5.8284015,-35.2200481,,Score 5,nop,"BARBECUE SPACE,gym,PLAYGROUND"
+4090,44,1,2,450,1,1,other,-5.7816181,-35.1974338,,Score 5,Yes,"playground,SPORTS COURT"
+3108,57,2,2,380,1,1,apartment,-5.8212372,-35.1988219,2002,Score 7,Yes,
+4548,250,2,3,0,2,2,house,-5.8576398,-35.2014489,1966,Score 6,yes,
+3723,56,1,2,0,1,1,apartment,-5.8821365,-35.1722172,2005,Score 2,nop,
+2049,80,1,3,0,2,1,house,-5.8226937,-35.2126403,1992,Score 4,yes,
+3643,85,2,3,500,1,1,apartment,-5.8640599,-35.196594,,Score 6,no,"barbecue space,PLAYGROUND,SPORTS COURT"
+4702,58,1,2,0,1,0,apartment,-5.8576398,-35.2014489,1972,Score 5,Yes,
+623,110,1,2,520,2,1,apartment,-5.8032096,-35.2002054,1975,Score 4,y,"barbecue space,gym,playground"
+262,85,1,3,0,1,1,apartment,-5.8576398,-35.2014489,,Score 5,No,
+3369,105,1,3,550,2,1,apartment,-5.8226937,-35.2126403,2006,Score 6,y,"BARBECUE SPACE,gym,playground"
+4061,46,1,2,210,1,0,apartment,-5.8821365,-35.1722172,1964,Score 3,yes,"PLAYGROUND,SPORTS COURT"
+1802,180,3,3,0,2,2,house,-5.8796072,-35.1775443,,Score 6,Yes,
+4764,210,2,3,0,2,2,house,-5.8226937,-35.2126403,,Score 5,yes,
+2385,171,2,4,480,3,2,other,-5.8372291,-35.2389607,,Score 4,Yes,"BARBECUE SPACE,playground,SPORTS COURT"
+1959,42,1,1,280,1,0,other,-5.8842657,-35.1736846,1984,Score 5,y,sports court
+2976,100,3,3,680,2,1,apartment,-5.8576398,-35.2014489,2000,Score 4,yes,"POOL,barbecue space,playground,SPORTS COURT"
+488,138,1,3,0,1,0,house,-5.7856388,-35.20926,,Score 4,Yes,
+1843,59,1,2,0,1,1,apartment,-5.8821365,-35.1722172,1999,Score 8,No,
+1734,54,1,2,1000,0,1,other,-5.8784962,-35.1752621,2005,Score 4,yes,"POOL,PLAYGROUND"
+2911,90,3,3,0,2,1,apartment,-5.8274696,-35.2168565,1973,Score 3,y,
+3219,56,2,2,460,1,1,apartment,-5.8553236,-35.2023325,1972,Score 5,y,BARBECUE SPACE
+146,56,2,2,450,1,1,apartment,-5.8080765,-35.2057924,2002,Score 4,yes,"BARBECUE SPACE,PLAYGROUND"
+1986,60,1,2,0,0,1,apartment,-5.8821365,-35.1722172,,Score 4,Yes,
+1369,54,2,2,350,1,1,apartment,-5.8121824,-35.2190297,2004,Score 6,no,sports court
+2811,1275,0,0,0,0,0,other,-5.8053683,-35.2050354,1991,Score 6,y,
+659,51,1,2,170,0,0,apartment,-5.8777108,-35.2027109,,Score 5,yes,
+1794,72,2,3,380,1,1,apartment,-5.8292546,-35.193081,1962,Score 6,Yes,"POOL,playground"
+2511,147,1,3,750,2,1,apartment,-5.8019395,-35.2076662,1965,Score 4,y,"BARBECUE SPACE,GYM,playground"
+3397,134,5,3,500,3,3,apartment,-5.8023776,-35.2103229,1995,Score 5,nop,"pool,BARBECUE SPACE,playground,SPORTS COURT"
+4282,146,2,4,720,2,2,apartment,-5.808596,-35.20447,1972,Score 4,yes,"pool,PLAYGROUND"
+1147,70,2,2,200,1,1,apartment,-5.8437235,-35.2214483,,Score 4,y,
+3272,50,1,2,380,1,0,apartment,-5.8768735,-35.2236066,,Score 4,yes,"BARBECUE SPACE,PLAYGROUND"
+608,117,4,3,0,3,3,apartment,-5.8005515,-35.1986193,1979,Score 7,no,"BARBECUE SPACE,steam room"
+3582,165,4,3,0,2,2,house,-5.830929,-35.2195447,2008,Score 4,Yes,
+1930,104,1,3,0,2,1,apartment,-5.8226937,-35.2126403,1980,Score 4,y,POOL
+197,110,3,2,800,2,2,apartment,-5.8128407,-35.2050094,1991,Score 5,y,"pool,barbecue space,GYM,SPORTS COURT"
+2931,88,2,3,0,2,1,apartment,-5.7921127,-35.1960671,,Score 7,nop,
+2327,75,2,3,450,2,1,apartment,-5.8477276,-35.2130915,1976,Score 5,Yes,PLAYGROUND
+4389,114,2,3,402,2,1,apartment,-5.8730875,-35.1800373,2007,Score 6,yes,sports court
+766,1000,2,,0,4,2,house,-5.8576398,-35.1800373,1993,Score 5,Yes,
+4496,58,2,2,300,1,1,apartment,-5.8088697,-35.199618,,Score 7,Yes,"barbecue space,PLAYGROUND,SPORTS COURT"
+4218,80,3,3,200,2,1,apartment,-5.8292546,-35.193081,,Score 5,yes,
+3255,54,1,2,0,1,1,apartment,-5.8821365,-35.1722172,,Score 5,nop,barbecue space
+202,84,3,3,350,0,0,apartment,-5.8821365,-35.1722172,,Score 7,Yes,playground
+3510,54,1,2,0,1,1,apartment,-5.7856388,-35.20926,1995,Score 4,Yes,
+1733,188,3,4,0,2,2,apartment,-5.7816923,-35.1973759,1999,Score 5,yes,
+2777,60,2,2,385,1,1,apartment,-5.8833757,-35.1810368,1974,Score 5,Yes,"barbecue space,PLAYGROUND,sports court"
+1707,108,2,3,770,2,2,apartment,-5.8159576,-35.2189124,,Score 1,Yes,"BARBECUE SPACE,PLAYGROUND"
+3474,164,3,4,0,3,3,apartment,-5.783788,-35.1913745,,Score 5,yes,
+854,94,3,3,420,2,2,apartment,-5.8821365,-35.1722172,2002,Score 5,y,barbecue space
+4097,95,3,3,620,0,1,apartment,-5.8640599,-35.196594,1976,Score 4,nop,"POOL,GYM,PLAYGROUND,SPORTS COURT"
+2160,123,3,4,1250,3,1,apartment,-5.7869014,-35.1902633,2007,Score 4,Yes,"barbecue space,STEAM ROOM,gym,playground,SPORTS COURT"
+698,67,2,2,328,1,1,apartment,-5.8636826,-35.2153349,,Score 5,y,PLAYGROUND
+4720,52,2,1,310,1,1,apartment,-5.8821365,-35.1722172,2001,Score 4,Yes,
+2999,214,1,2,0,0,0,other,-5.8089827,-35.2272512,1967,Score 6,y,
+3696,92,1,3,0,1,1,apartment,-5.8226937,-35.2126403,,Score 4,y,
+1636,79,2,3,0,2,2,apartment,-5.8198444,-35.2109804,2000,Score 5,yes,pool
+3457,98,2,3,820,2,1,apartment,-5.8640599,-35.196594,,Score 5,y,BARBECUE SPACE
+3581,56,1,2,0,1,1,apartment,-5.8437235,-35.2214483,1994,Score 5,no,
+1291,103,3,3,0,2,3,apartment,-5.8226937,-35.2126403,1999,Score 6,Yes,
+1853,150,5,4,790,3,3,apartment,-5.8032096,-35.2002054,1983,Score 9,Yes,"BARBECUE SPACE,GYM,PLAYGROUND,sports court"
+3763,137,4,3,0,3,3,apartment,-5.8163039,-35.2204887,2000,Score 5,y,barbecue space
+3304,112,4,3,0,2,2,apartment,-5.7997946,-35.1979747,,Score 5,yes,
+4689,33,1,1,760,1,1,apartment,-5.783788,-35.1913745,1999,Score 5,y,"pool,barbecue space"
+3743,213,5,3,600,2,3,house,-5.8768735,-35.2236066,2009,Score 5,Yes,barbecue space
+3445,100,3,3,700,2,1,apartment,-5.8120418,-35.2152695,1972,Score 4,yes,"GYM,sports court"
+1998,64,1,2,310,1,1,apartment,-5.8821365,-35.1722172,1975,Score 5,yes,"BARBECUE SPACE,PLAYGROUND"
+663,56,2,2,350,1,1,apartment,-5.8502894,-35.2166072,1993,Score 5,y,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+3748,86,1,3,0,2,1,apartment,-5.8226937,-35.2126403,,Score 5,nop,
+4413,153,1,2,1212,1,0,apartment,-5.783788,-35.1913745,1979,Score 5,Yes,"barbecue space,steam room,GYM,PLAYGROUND"
+709,99,2,3,770,2,2,apartment,-5.8576398,-35.2014489,,Score 4,No,"POOL,barbecue space,PLAYGROUND"
+1282,58,2,2,290,2,1,apartment,-5.8712248,-35.2266072,,Score 4,No,"playground,SPORTS COURT"
+2675,64,2,2,315,0,1,apartment,-5.8636826,-35.2153349,1993,Score 5,nop,"barbecue space,PLAYGROUND"
+4029,53,2,2,480,1,2,apartment,-5.8576398,-35.2014489,1999,Score 5,No,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+1306,57,2,2,414,1,1,apartment,-5.8187773,-35.2166551,,Score 5,nop,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+2237,136,3,3,0,0,3,apartment,-5.8226937,-35.2126403,1996,Score 4,Yes,
+3302,142,5,4,580,0,3,apartment,-5.819137,-35.2128154,1992,Score 5,nop,"pool,BARBECUE SPACE,playground"
+2038,59,1,2,0,1,1,apartment,-5.7540506,-35.2152587,1975,Score 5,No,
+1529,56,2,2,650,1,2,apartment,-5.8821365,-35.1722172,1977,Score 5,no,
+1663,57,2,2,315,1,1,apartment,-5.790886,-35.2023866,1971,Score 4,No,"barbecue space,PLAYGROUND,SPORTS COURT"
+4708,88,2,3,0,2,1,apartment,-5.7921127,-35.1960671,1967,Score 5,No,
+4726,98,1,3,0,2,1,apartment,-5.7978488,-35.2092207,2000,Score 8,yes,
+3627,103,1,3,0,2,1,apartment,-5.7845495,-35.1984438,2006,Score 7,y,
+2693,57,2,2,0,1,1,apartment,-5.8686163,-35.2305498,2003,Score 5,nop,
+3060,55,1,2,0,0,1,apartment,-5.8821365,-35.1722172,,Score 5,y,
+1597,160,2,4,1240,2,2,apartment,-5.7958441,-35.1988196,2004,Score 4,y,"BARBECUE SPACE,PLAYGROUND,SPORTS COURT"
+2729,56,2,2,249,1,1,apartment,-5.8753421,-35.2254937,1988,Score 4,No,BARBECUE SPACE
+2625,55,2,2,0,1,1,apartment,-5.8237538,-35.2125088,2002,Score 4,yes,
+3157,100,3,3,1100,2,1,apartment,-5.8209841,-35.2211601,,Score 5,yes,"playground,sports court"
+3314,50,1,2,1000,1,0,other,-5.8674964,-35.180586,1997,Score 5,Yes,"PLAYGROUND,sports court"
+1722,217,4,4,0,2,3,apartment,-5.8650038,-35.1933903,,Score 5,no,
+1059,106,2,3,451,2,1,apartment,-5.831613,-35.2197975,2004,Score 5,y,"POOL,PLAYGROUND,sports court"
+4636,103,4,4,590,2,3,other,-5.8208253,-35.2081237,,Score 4,Yes,"barbecue space,SPORTS COURT"
+3242,120,1,2,450,1,0,apartment,-5.7856388,-35.20926,1995,Score 6,yes,"barbecue space,sports court"
+1678,55,2,2,550,1,1,apartment,-5.8821365,-35.1722172,1970,Score 7,Yes,"POOL,playground,sports court"
+1757,132,1,3,0,1,1,house,-5.8226937,-35.2126403,,Score 5,Yes,
+4191,107,2,3,500,1,1,apartment,-5.8157745,-35.2010277,2002,Score 3,y,"PLAYGROUND,SPORTS COURT"
+563,55,2,2,330,1,1,apartment,-5.8163039,-35.2204887,1993,Score 4,y,"BARBECUE SPACE,playground,SPORTS COURT"
+2790,52,1,2,270,1,0,apartment,-5.8768735,-35.2236066,1975,Score 4,Yes,PLAYGROUND
+863,56,2,2,400,1,1,apartment,-5.7903384,-35.1952596,2004,Score 4,y,"BARBECUE SPACE,PLAYGROUND"
+1484,27,1,1,450,1,0,apartment,-5.8705936,-35.1817559,1971,Score 5,yes,"barbecue space,playground,sports court"
+206,74,1,2,350,1,1,apartment,-5.8576398,-35.2014489,1992,Score 5,y,"barbecue space,playground"
+4488,55,2,2,490,1,1,apartment,-5.7982846,-35.1978866,,Score 7,Yes,"playground,sports court"
+870,112,4,3,650,2,2,apartment,-5.7997946,-35.1979747,,Score 6,nop,"BARBECUE SPACE,GYM,PLAYGROUND"
+4493,100,3,3,700,2,1,apartment,-5.805398,-35.2080905,1986,Score 5,nop,"barbecue space,GYM,playground"
+502,58,2,2,343,2,1,apartment,-5.7782461,-35.2038326,2003,Score 6,yes,"PLAYGROUND,sports court"
+1028,98,3,3,490,2,1,apartment,-5.8128407,-35.2050094,1987,Score 5,y,"POOL,PLAYGROUND"
+3840,55,1,2,280,1,1,apartment,-5.8237538,-35.2125088,,Score 7,yes,PLAYGROUND
+2690,270,1,3,0,0,1,other,-5.8032096,-35.2002054,,Score 5,Yes,
+1570,121,0,2,0,0,0,house,-5.7875904,-35.2101159,1992,Score 6,yes,
+2773,123,3,3,550,2,3,apartment,-5.8437235,-35.2214483,,Score 4,yes,"pool,BARBECUE SPACE,GYM,playground"
+2731,230,4,4,0,2,2,house,-5.8576398,-35.2014489,1975,Score 7,no,
+804,120,1,3,0,0,0,house,-5.8226937,-35.2126403,1998,Score 5,Yes,
+3645,56,1,2,263,1,1,apartment,-5.8437235,-35.2214483,1997,Score 6,No,"barbecue space,playground"
+2454,109,2,3,700,2,2,apartment,-5.8163039,-35.2204887,1966,Score 4,nop,"POOL,barbecue space,gym,playground"
+4598,57,2,2,330,1,1,apartment,-5.8603397,-35.2094385,,Score 5,no,"BARBECUE SPACE,playground,SPORTS COURT"
+3104,50,1,2,80,1,0,apartment,-5.8635502,-35.2029564,,Score 4,yes,
+200,60,1,3,0,1,0,apartment,-5.8576398,-35.2014489,,Score 7,yes,
+3099,31,1,1,700,1,1,other,-5.783788,-35.1913745,1961,Score 6,Yes,SPORTS COURT
+2278,83,2,2,350,2,1,apartment,-5.8437235,-35.2214483,1978,Score 4,y,"playground,sports court"
+3561,92,2,3,0,2,1,apartment,-5.866287,-35.1917372,2003,Score 6,y,
+4474,111,2,3,0,2,1,apartment,-5.8214697,-35.2168115,1967,Score 4,nop,barbecue space
+4514,56,2,2,0,1,2,apartment,-5.8781084,-35.1763299,1997,Score 4,No,
+391,52,1,2,0,1,1,other,-5.8821365,-35.1722172,1959,Score 6,Yes,
+1495,80,3,3,530,0,0,apartment,-5.7978488,-35.2092207,,Score 5,Yes,"pool,PLAYGROUND"
+2695,110,3,3,743,2,1,apartment,-5.8821365,-35.1722172,,Score 4,No,PLAYGROUND
+2027,140,4,3,0,3,3,apartment,-5.8005515,-35.1986193,1998,Score 7,yes,
+2568,69,2,3,0,2,1,apartment,-5.8821365,-35.1722172,2004,Score 5,nop,
+64,95,2,3,0,1,1,apartment,-5.7871981,-35.2012834,,Score 5,no,
+3884,57,1,2,270,1,1,apartment,-5.8796695,-35.1973555,1975,Score 6,y,"barbecue space,PLAYGROUND,SPORTS COURT"
+2062,96,2,3,690,2,1,apartment,-5.8640599,-35.196594,1973,Score 4,y,"playground,sports court"
+492,227,3,4,720,2,1,other,-5.8167905,-35.2082788,2002,Score 4,yes,sports court
+379,124,4,3,0,0,0,apartment,-5.8032096,-35.2002054,2004,Score 8,no,"POOL,BARBECUE SPACE"
+3993,63,2,3,480,1,1,apartment,-5.8012712,-35.2057237,,Score 5,Yes,
+1076,92,3,3,450,2,2,apartment,-5.8214697,-35.2168115,2000,Score 6,Yes,"pool,PLAYGROUND,SPORTS COURT"
+878,110,4,3,750,2,1,apartment,-5.8284015,-35.2200481,,Score 7,yes,"POOL,sports court"
+337,161,4,3,510,2,3,apartment,-5.8240873,-35.2108871,2001,Score 6,yes,"BARBECUE SPACE,sports court"
+1016,140,5,3,700,2,3,apartment,-5.8165334,-35.2224341,2003,Score 5,y,"POOL,barbecue space,GYM,PLAYGROUND,sports court"
+1275,95,3,3,600,2,1,apartment,-5.809497,-35.2063052,2001,Score 7,yes,"barbecue space,PLAYGROUND,sports court"
+3798,55,2,2,350,1,2,apartment,-5.7852531,-35.2049414,,Score 5,y,playground
+4551,58,2,2,0,1,1,apartment,-5.8088697,-35.199618,1997,Score 5,y,
+3342,98,2,3,497,2,1,apartment,-5.7871981,-35.2012834,1985,Score 4,nop,"POOL,barbecue space,playground,SPORTS COURT"
+995,85,2,3,370,2,1,apartment,-5.8576398,-35.2014489,,Score 6,y,"pool,PLAYGROUND"
+1981,136,3,3,1270,1,1,apartment,-5.8032096,-35.2002054,,Score 5,No,"POOL,BARBECUE SPACE,playground"
+4297,55,2,2,0,1,1,apartment,-5.8753421,-35.2254937,2007,Score 4,y,
+161,63,1,2,300,1,0,apartment,-5.8576398,-35.2014489,,Score 5,y,PLAYGROUND
+1500,79,2,3,0,2,1,apartment,-5.8821365,-35.1722172,,Score 5,Yes,"BARBECUE SPACE,gym"
+3843,51,1,2,0,1,0,apartment,-5.8633093,-35.2324324,1974,Score 7,nop,POOL
+2613,67,2,2,325,2,1,apartment,-5.8636826,-35.2153349,2000,Score 4,y,playground
+3461,83,3,3,430,2,3,apartment,-5.8208253,-35.2081237,1989,Score 4,Yes,
+1021,90,3,3,350,2,1,apartment,-5.823703,-35.2265761,1992,Score 6,y,SPORTS COURT
+3073,57,2,2,355,1,1,apartment,-5.8431967,-35.2124468,,Score 4,y,"barbecue space,sports court"
+3943,65,1,3,0,0,1,apartment,-5.8658883,-35.1954251,,Score 4,no,barbecue space
+1585,138,4,3,620,2,1,apartment,-5.8226937,-35.2126403,2005,Score 5,y,"barbecue space,gym,sports court"
+1955,47,1,1,0,1,1,apartment,-5.8821365,-35.1722172,2001,Score 8,no,pool
+3152,180,2,3,0,1,0,house,-5.7988797,-35.2188577,,Score 5,y,BARBECUE SPACE
+34,103,4,3,0,2,3,apartment,-5.8347074,-35.2243579,2004,Score 5,Yes,
+4014,98,3,4,630,2,2,apartment,-5.8576398,-35.2014489,,Score 5,y,"gym,playground,sports court"
+775,60,2,2,310,1,1,apartment,-5.8841734,-35.1783162,,Score 4,y,
+2556,55,1,2,0,1,0,apartment,-5.8666079,-35.2088062,,Score 4,yes,
+1478,175,3,3,0,3,3,apartment,-5.8437235,-35.2214483,,Score 4,nop,
+1363,55,1,2,0,1,1,apartment,-5.8821365,-35.1722172,2000,Score 4,nop,
+2612,62,2,2,0,1,1,apartment,-5.8089827,-35.2272512,,Score 5,No,BARBECUE SPACE
+2824,110,1,3,0,2,1,house,-5.8032096,-35.2002054,2004,Score 4,Yes,barbecue space
+2041,57,2,2,268,1,1,apartment,-5.8796695,-35.1973555,2001,Score 3,y,"playground,sports court"
+241,75,1,3,0,2,1,apartment,-5.7767142,-35.2062156,1965,Score 5,yes,GYM
+2061,57,1,2,350,1,1,apartment,-5.8654192,-35.2097736,1999,Score 4,Yes,playground
+2363,98,4,3,1000,2,3,apartment,-5.7997946,-35.1979747,,Score 5,No,"PLAYGROUND,SPORTS COURT"
+600,142,3,3,0,2,3,apartment,-5.866287,-35.1917372,,Score 5,y,
+2435,253,6,4,0,2,3,house,-5.866287,-35.1917372,1999,Score 5,Yes,
+2888,96,1,3,930,1,1,apartment,-5.8576398,-35.2014489,,Score 6,Yes,"BARBECUE SPACE,GYM,playground"
+646,76,1,2,500,1,0,apartment,-5.8154225,-35.2061012,1976,Score 4,No,PLAYGROUND
+3890,87,2,3,640,2,1,apartment,-5.8126859,-35.2084239,1968,Score 4,no,"gym,PLAYGROUND"
+3556,87,1,3,0,2,1,apartment,-5.8226937,-35.2126403,2002,Score 5,Yes,
+3202,65,1,2,0,1,1,house,-5.8226937,-35.2126403,,Score 5,yes,
+1528,55,2,2,258,1,1,apartment,-5.8753421,-35.2254937,,Score 7,no,"PLAYGROUND,sports court"
+1267,88,2,3,490,2,2,apartment,-5.8226937,-35.2126403,,Score 7,y,"BARBECUE SPACE,PLAYGROUND,sports court"
+1899,200,3,3,0,3,2,house,-5.8821365,-35.1722172,2001,Score 5,y,
+4658,205,4,3,0,3,3,apartment,-5.8005515,-35.1986193,2000,Score 4,no,BARBECUE SPACE
+3005,44,1,1,0,1,1,apartment,-5.8821365,-35.1722172,,Score 4,y,
+2734,116,4,2,0,3,2,apartment,-5.8044476,-35.2032196,,Score 5,yes,
+189,59,2,2,370,2,1,apartment,-5.8502894,-35.2166072,,Score 3,Yes,"BARBECUE SPACE,PLAYGROUND"
+1806,57,2,2,500,1,1,apartment,-5.8705936,-35.1817559,,Score 4,yes,"BARBECUE SPACE,PLAYGROUND"
+975,112,2,2,360,2,1,apartment,-5.8624143,-35.1967263,1995,Score 4,yes,"barbecue space,playground"
+2747,103,1,3,520,2,1,apartment,-5.7845495,-35.1984438,,Score 4,no,"BARBECUE SPACE,playground"
+2047,54,2,2,0,1,1,apartment,-5.8248843,-35.2127737,1993,Score 6,Yes,
+2558,55,2,2,300,0,2,apartment,-5.8237538,-35.2125088,1961,Score 6,Yes,"playground,sports court"
+1082,54,2,2,320,1,1,apartment,-5.8069157,-35.216795,1966,Score 4,yes,playground
+474,57,1,2,330,1,1,apartment,-5.8576398,-35.2014489,2003,Score 5,y,"barbecue space,playground,SPORTS COURT"
+2904,1200,0,0,0,0,0,other,-5.8480353,-35.2167733,1966,Score 5,yes,
+4117,92,3,3,500,2,3,apartment,-5.8576398,-35.2014489,,Score 6,y,"pool,barbecue space,playground"
+3385,57,2,2,0,1,1,apartment,-5.7978057,-35.2103514,,Score 5,nop,
+4555,60,1,1,0,1,0,other,-5.7789823,-35.194817,1967,Score 6,y,barbecue space
+1184,80,2,3,60,1,1,apartment,-5.7884831,-35.201471,2000,Score 4,yes,barbecue space
+2433,99,3,3,800,0,3,apartment,-5.866287,-35.1917372,1965,Score 4,yes,"BARBECUE SPACE,GYM,PLAYGROUND,sports court"
+2391,57,2,2,0,2,1,apartment,-5.7767142,-35.2062156,,Score 5,y,
+769,57,2,2,300,1,1,apartment,-5.8502894,-35.2166072,,Score 7,y,"barbecue space,playground,SPORTS COURT"
+1685,58,2,2,0,1,1,apartment,-5.8186892,-35.2401631,2003,Score 5,no,
+130,102,4,3,0,2,3,apartment,-5.8841734,-35.1783162,,Score 4,nop,
+2919,75,1,3,300,1,1,apartment,-5.8603397,-35.2094385,1966,Score 5,y,"PLAYGROUND,sports court"
+3171,95,2,2,600,1,1,apartment,-5.8032096,-35.2002054,2000,Score 5,y,"barbecue space,gym,playground,sports court"
+3444,50,2,2,500,1,0,apartment,-5.8352533,-35.2143381,2003,Score 4,nop,POOL
+4426,99,4,3,490,2,2,apartment,-5.8243506,-35.2181326,,Score 6,Yes,"pool,barbecue space,playground,SPORTS COURT"
+466,56,2,2,230,1,1,apartment,-5.8821365,-35.1722172,2004,Score 4,yes,"barbecue space,PLAYGROUND,sports court"
+3092,55,1,2,300,1,1,apartment,-5.8654192,-35.2097736,2005,Score 5,nop,PLAYGROUND
+3772,109,4,4,750,2,3,apartment,-5.8165259,-35.2141266,,Score 6,y,"playground,sports court"
+860,69,2,2,340,1,0,apartment,-5.8674286,-35.1966683,,Score 4,y,PLAYGROUND

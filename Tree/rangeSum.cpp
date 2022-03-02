@@ -14,11 +14,25 @@ struct node {
 int rangeSum (node *root, int low, int high) {
 	if (root == NULL)
 		return 0;
-	if (root->val > high)
-		return rangeSum(root->left, low, high);
-	else if (root->val < low)
-		return rangeSum(root->right, low, high);
-	return root->val + rangeSum(root->left, low, high) + rangeSum(root->right, low, high);
+	if (root->val > high) {
+		if (root->left != NULL)
+			return rangeSum (root->left, low, high);
+		else
+			return 0;
+	}
+	else if (root->val < low) {
+		if (root->right != NULL)
+			return rangeSum (root->right, low, high);
+		else
+			return 0;
+	}
+	if (root->left == NULL && root->right == NULL)
+		return root->val;
+	else if (root->left == NULL && root->right != NULL)
+		return root->val + rangeSum (root->right, low, high);
+	else if (root->left != NULL && root->right == NULL)
+		return root->val + rangeSum (root->left, low, high);
+	return root->val + rangeSum (root->left, low, high) + rangeSum (root->right, low, high);
 }
 
 int main () {

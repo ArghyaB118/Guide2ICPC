@@ -33,7 +33,37 @@ vector<vector<int>> kClosest(vector<vector<int>>& points, int k) {
 
 	while (!pq.empty()) {
 		struct point tmp = pq.top();
-		cout << tmp.x << tmp.y << tmp.dist << endl;
+//		cout << tmp.x << tmp.y << tmp.dist << endl;
+		pq.pop();
+		points.push_back({tmp.x, tmp.y});
+	}
+	return points;
+}
+
+struct pp {
+	int x, y;
+};
+
+struct comp {
+	bool operator() (const pp& p, const pp& q) {
+		return ((p.x * p.x + p.y * p.y) < (q.x * q.x + q.y * q.y));
+	}
+};
+
+vector<vector<int>> kClosestOptimized (vector<vector<int>>& points, int k) {
+	priority_queue<pp, vector<pp>, comp> pq;
+	for (int i = 0; i < k; i++)
+		pq.push({points[i][0], points[i][1]});
+
+	for (int i = k; i < points.size(); i++) {
+		pq.push({points[i][0], points[i][1]});
+		pq.pop();
+	}
+	points.clear();
+
+	while (!pq.empty()) {
+		struct pp tmp = pq.top();
+//		cout << tmp.x << tmp.y << tmp.dist << endl;
 		pq.pop();
 		points.push_back({tmp.x, tmp.y});
 	}
@@ -46,5 +76,12 @@ int main () {
 	kClosest(points, k);
 	for (auto & p : points)
 		cout << p[0] << " " << p[1] << endl;
+
+	points.clear();
+	points = {{3,3},{5,-1},{-2,4}};
+	kClosestOptimized(points, k);
+	for (auto & p : points)
+		cout << p[0] << " " << p[1] << endl;
+
 	return 0;
 }

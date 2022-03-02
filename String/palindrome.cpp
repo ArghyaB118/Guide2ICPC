@@ -46,11 +46,10 @@ Given a string s, return true if the s can be palindrome
 after deleting at most one character from it.
 */
 
-
+bool useDeletion = false;
 // Use two pointers
 bool validPalindromeWithDeletion (string s) {
 	int left = 0, right = s.length() - 1;
-	bool useDeletion = false;
 	while (left < right) {
 		if (s[left] != s[right] && useDeletion == true)
 			return false;
@@ -58,9 +57,11 @@ bool validPalindromeWithDeletion (string s) {
 			useDeletion = true;
 			if (left + 1 == right)
 				return true;
-			else if (s[left + 1] == s[right])
+			else if (s[left + 1] == s[right] && s[left] == s[right - 1])
+				return (validPalindromeWithDeletion (s.substr(left, right - left)) || validPalindromeWithDeletion (s.substr(left + 1, right - left)));
+			else if (s[left + 1] == s[right] && s[left] != s[right - 1])
 				left++;
-			else if (s[left] == s[right - 1])
+			else if (s[left] == s[right - 1] && s[left + 1] != s[right])
 				right--;
 		}
 		else {
@@ -70,6 +71,38 @@ bool validPalindromeWithDeletion (string s) {
 	return true;
 }
 
+
+// A much faster way is not to define a global boolean
+// Instead have a root function and a utility funtion
+bool validPalindromeWithDeletionUtil (string s, bool useDelete, int left, int right) {
+	while (left < right) {
+		if (s[left] != s[right] && useDelete == true)
+			return false;
+		else if (s[left] != s[right] && useDelete == false) {
+			useDelete = true;
+			if (left + 1 == right)
+				return true;
+			else if (s[left + 1] == s[right] && s[left] == s[right - 1])
+				return (validPalindromeWithDeletionUtil (s, useDelete, left, right - 1) || validPalindromeWithDeletionUtil (s, useDelete, left + 1, right));
+			else if (s[left + 1] == s[right] && s[left] != s[right - 1])
+				left++;
+			else if (s[left] == s[right - 1] && s[left + 1] != s[right])
+				right--;
+		}
+		else {
+			left++; right--;
+		}
+	}
+	return true;
+}
+
+bool validPalindromeWithDeletionRoot (string s) {
+	if (s.length() == 0)
+		return true;
+	else if (s.length() == 1)
+		return true;
+	return validPalindromeWithDeletionUtil (s, false, 0, s.length() - 1);
+}
 
 
 // dp[i][j] = (dp[i + 1][j - 1]) && (is s[i] == s[j])
@@ -110,7 +143,8 @@ int main () {
 	string s = "A man, a plan, a canal: Panama";
 	s = removeNonAlphaNumerics(s);
 	cout << "Is " << s << " a palindrome? " << boolalpha << isPalindrome(s) << endl;
-	cout << "Is abca a palindrome after deleting at most one char? " << validPalindromeWithDeletion(s) << endl;
+	string s1 = "aguokepatgbnvfqmgmlcupuufxoohdfpgjdmysgvhmvffcnqxjjxqncffvmhvgsymdjgpfdhooxfuupuculmgmqfvnbgtapekouga";
+	cout << "Is s1 a palindrome after deleting at most one char? " << validPalindromeWithDeletionRoot(s1) << endl;
 	cout << "Length of longest palindromic substring of abcbd: " << longestPalindromicSubstring("abcbd") << endl; 
 	return 0;
 }

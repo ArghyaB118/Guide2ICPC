@@ -146,6 +146,9 @@ Output: ""
 
 typedef pair<char, int> Pair;
 
+// Idea: Maintain a stack of opening parentheses and their positions.
+// As you see the corresponding closing parentheses, pop the stack
+// At the end, remove the parentheses left in the stack one by one from the string
 string minRemoveToMakeValid (string s) {
     stack<Pair> st;
     for (int i = 0; i < s.length(); i++) {
@@ -166,6 +169,31 @@ string minRemoveToMakeValid (string s) {
     while (!st.empty()) {
         Pair tmp = st.top(); st.pop();
         s.erase(s.begin() + tmp.second);
+    }
+    return s;
+}
+
+
+string minRemoveToMakeValidOptimized (string s) {
+    stack<int> st;
+    for (int i = 0; i < s.length(); i++) {
+        if (!isalpha(s[i])) {
+            if (st.empty())
+                st.push(i);
+            else {
+                if (s[i] == '(')
+                    st.push(i);
+                else if (s[i] == ')' && s[st.top()] == '(')
+                    st.pop();
+                else if (s[i] == ')' && s[st.top()] != '(')
+                    st.push(i);
+            }
+        }
+    }
+    
+    while (!st.empty()) {
+        s.erase(s.begin() + st.top());
+        st.pop();
     }
     return s;
 }
@@ -203,15 +231,22 @@ Return the minimum number of moves required to make s valid.
 int minAddToMakeValid(string s) {
     stack<char> st;
     for (int i = 0; i < s.length(); i++) {
-        if (s[i] == ')' && st.top() == '(')
+        if (!st.empty() && s[i] == ')' && st.top() == '(')
           st.pop();
         else
           st.push(s[i]);
     }
-    int count = 0;
-    while (!st.empty()) {
-        st.pop(); count++;
+    return st.size();
+}
+
+int minAddToMakeValidOptimized (string s) {
+    int open = 0, count = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] == '(') open++;
+        else if (s[i] == ')')
+            (open > 0) ? open-- : count++; 
     }
+    count += open;
     return count;
 }
 
@@ -233,10 +268,10 @@ int main() {
   check(expected_3, output_3);
   
   string s = "(()"; cout << longestValidParentheses(s) << endl;
-  cout << "Minimum to make valid string: " << minAddToMakeValid("(()") << endl;
+  cout << "Minimum add to make valid string: " << minAddToMakeValidOptimized("(()") << endl;
 
   s = "lee(t(c)o)de)";
-  cout << "Min removed to make valid string: " << s << " -> " << minRemoveToMakeValid(s) << endl;
+  cout << "Min removed to make valid string: " << s << " -> " << minRemoveToMakeValidOptimized(s) << endl;
   return 0;
   
 }

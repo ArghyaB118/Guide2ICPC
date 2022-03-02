@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <map>
+#include <vector>
 using namespace std;
 
 // Example Tree
@@ -96,9 +97,46 @@ void LevelOrderQueue (struct Node* root) {
 	}
 }
 
+/*
+Vertical Order Traversal of a Binary Tree
+    1
+   / \
+  2   3
+ /\   /\
+4  6 5  7
+
+Given the root of a binary tree, calculate the vertical order traversal of the binary tree.
+
+For each node at position (row, col), its left and right children will be 
+at positions (row + 1, col - 1) and (row + 1, col + 1) respectively. 
+The root of the tree is at (0, 0).
+
+The vertical order traversal of a binary tree is a list of 
+top-to-bottom orderings for each column index starting from the 
+leftmost column and ending on the rightmost column. 
+There may be multiple nodes in the same row and same column. 
+
+Option 1:
+If two nodes are in the same row and column, the order should be from left to right.
+
+Option 2 (difficult):
+In such a case, sort these nodes by their values.
+
+Return the vertical order traversal of the binary tree.
+
+Input: root = [1,2,3,4,5,6,7]
+Output: [[4],[2],[1,5,6],[3],[7]]
+
+Input: root = [1,2,3,4,6,5,7]
+Output: [[4],[2],[1,5,6],[3],[7]]
+*/
+
+
 typedef pair<int, struct Node*> Pair;
 
 vector<vector<int>> verticalOrder (struct Node* root) {
+	if (root == NULL)
+		return {};
 	vector<vector<int>> result;
 	map<int, vector<int>> elements;
 	queue<Pair> nodes; nodes.push(make_pair(0, root));
@@ -112,8 +150,10 @@ vector<vector<int>> verticalOrder (struct Node* root) {
 		if (root.second->right != NULL)
 			nodes.push(make_pair(root.first + 1, root.second->right));
 	}
-	for (auto & m : elements)
+	for (auto & m : elements) {
+//		sort(m.second.begin(), m.second.end());
 		result.push_back(m.second);
+	}
 	return result;
 }
 
@@ -190,6 +230,50 @@ vector<int> rightSideView(struct Node* root) {
 	return v;
 }
 
+/*
+Zigzag order traversal of a tree:
+    1
+   / \
+  2   3
+ /\   /\
+4  5 6  7
+	   / \
+	  8   9
+
+Output: 1, 3, 2, 4, 5, 6, 7, 9, 8
+*/
+
+vector<int> zigzagOrder (struct Node* root) {
+	vector<vector<int>> traversal;
+	queue<Pair> q; q.push(make_pair(0, root));
+	int d = depth(root);
+	for (int i = 0; i < d; i++)
+		traversal.push_back({});
+	while (!q.empty()) {
+		Pair p = q.front();
+		q.pop();
+		traversal[p.first].push_back(p.second->data);
+		if (p.second->left)	
+			q.push(make_pair(p.first + 1, p.second->left));
+		if (p.second->right)
+			q.push(make_pair(p.first + 1, p.second->right));
+	}
+	vector<int> result;
+	bool reverse = false;
+	for (int i = 0; i < traversal.size(); i++) {
+		if (!reverse) {
+			reverse = true;
+			for (int j = 0; j < traversal[i].size(); j++)
+				result.push_back(traversal[i][j]);
+		}
+		else {
+			reverse = false;
+			for (int j = traversal[i].size() - 1; j >= 0; j--)
+				result.push_back(traversal[i][j]);
+		}
+	}
+	return result;
+}
 
 int main() {
 	struct Node *root = new Node(1);
@@ -230,6 +314,14 @@ int main() {
 	vector<int> v = rightSideView(root);
 	for (int & vv : v)
 		cout << vv << " ";
+	cout << endl;
+
+	root->right->right->left = new Node(8);
+	root->right->right->right = new Node(9);
+	vector<int> zigzag = zigzagOrder(root);
+	cout << "The zigzag order traversal is: ";
+	for (int & z : zigzag)
+		cout << z << " ";
 	cout << endl;
 	return 0;
 }

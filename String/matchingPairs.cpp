@@ -24,6 +24,7 @@ output = 1
 
 #include <iostream>
 #include <string>
+#include <map>
 using namespace std;
 
 int matchingPairs(string s, string t) {
@@ -49,9 +50,39 @@ int matchingPairs(string s, string t) {
   return count;
 }
 
+/*
+Making Anagrams:
+You are given two strings of the same length s and t. 
+In one step you can choose any character of t and replace it with another character.
+
+Return the minimum number of steps to make t an anagram of s.
+
+An Anagram of a string is a string that contains the same characters 
+with a different (or the same) ordering.
+*/
+
+int minStepsAnagram(string s, string t) {
+  map<char, int> m1, m2;
+  for(int i = 0; i < 26; ++i) {
+    m1.insert(make_pair(static_cast<char>('a' + i), i));
+    m2.insert(make_pair(static_cast<char>('a' + i), i));
+  }
+  for (int i = 0; i < s.length(); i++) {
+    m1[s[i]]++;
+    m2[t[i]]++;
+  }
+  int minSteps = 0;
+  for (int i = 0; i < 26; ++i)
+    minSteps += abs(m1[static_cast<char>('a' + i)] - m2[static_cast<char>('a' + i)]);
+  
+  return minSteps / 2;
+}
+
+
 int main () {
 	string s = "abcd", t = "adcb";
 //	string s = "mno", t = "mno";
 	cout << matchingPairs(s, t) << endl;
+  cout << minStepsAnagram(s, t) << endl;
 	return 0;
 }

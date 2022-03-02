@@ -29,6 +29,28 @@ Node* lca_bst (Node* root, Node* left, Node* right) {
 	return root;
 }
 
+bool ancestry (Node* root, Node* child) {
+	if (root == NULL)
+		return false;
+	else if (root == child)
+		return true;
+	return ancestry(root->left, child) || ancestry(root->right, child);
+}
+
+Node* lca_bt (Node* root, Node* left, Node* right) {
+	if (ancestry(left, right))
+		return left;
+	else if (ancestry(right, left))
+		return right;
+	else if (ancestry(root->left, left) && ancestry(root->right, right))
+		return root;
+	else if (ancestry(root->left, left) && ancestry(root->left, right))
+		return lca_bt(root->left, left, right);
+	else if (ancestry(root->right, left) && ancestry(root->right, right))
+		return lca_bt(root->right, left, right);
+	return NULL;
+}
+
 /*
 Lowest Common Ancestor of a Binary Tree
 
@@ -38,6 +60,14 @@ According to the definition of LCA on Wikipedia:
 "The lowest common ancestor of two nodes p and q in a tree T 
 is the lowest node that has both p and q as descendants 
 (where we allow a node to be a descendant of itself)."
+
+    3
+   / \
+  5   1
+ / \ / \
+6  2 0  8
+  / \
+ 7   4
 */
 class TreeNode {
 public:
@@ -63,12 +93,15 @@ int get_depth(TreeNode* p) {
 }
 
 TreeNode* lca (TreeNode* p, TreeNode* q) {
-	if (get_depth(p) > get_depth(q))
-		for (int i = 0; i < get_depth(p) - get_depth(q); i++)
+	int depth_p = get_depth(p), depth_q = get_depth(q);
+	if (depth_p > depth_q)
+		for (int i = 0; i < depth_p - depth_q; i++)
 			p = p->parent;
-	else if (get_depth(p) < get_depth(q))
-		for (int i = 0; i < get_depth(q) - get_depth(p); i++)
+	else if (depth_p < depth_q)
+		for (int i = 0; i < depth_q - depth_p; i++)
 			q = q->parent;
+	if (p->val == q->val)
+		return p;
 	while (p->val != q->val) {
 		p = p->parent;
 		q = q->parent;
@@ -76,20 +109,39 @@ TreeNode* lca (TreeNode* p, TreeNode* q) {
 	return p;
 }
 
+/*
+	20
+	/\
+   8 22
+  /  /\
+ 4  21 24
+
+lca_bt(root, 21, 24) = 22
+*/
+
 int main() {
 	Node *root = newNode(20);
 	root->left = newNode(8);
 	root->right = newNode(22);
 	root->left->left = newNode(4);
+	root->right->left = newNode(21);
 	root->right->right = newNode(24);
 	Node* ancestor = lca_bst (root, root->left->left, root->right->right);
 	cout << ancestor->data << endl;
 
+	Node* ancestor1 = lca_bt (root, root->right->left, root->right->right);
+	cout << ancestor1->data << endl;
 
 	TreeNode* newroot = new TreeNode();
 	newroot->val = 3; newroot->parent = NULL;
 	newroot->left = addNode(5, newroot);
 	newroot->right = addNode(1, newroot);
-	cout << lca(newroot->left, newroot->right)->val << endl;
+	newroot->left->left = addNode(6, newroot->left);
+	newroot->left->right = addNode(2, newroot->left);
+	newroot->right->left = addNode(0, newroot->right);
+	newroot->right->right = addNode(8, newroot->right);
+	newroot->left->right->left = addNode(7, newroot->left->right);
+	newroot->left->right->right = addNode(4, newroot->left->right);
+	cout << lca(newroot->left, newroot->left->right->right)->val << endl;
 	return 0;
 }

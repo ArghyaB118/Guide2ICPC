@@ -37,31 +37,57 @@ string removeSpaces (string s) {
 	return t;
 }
 
-vector<string> operations (string s) {
+int operations (vector<string> v) {
+	int size = v.size();
+	while (size > 1) {
+		for (int i = 0; i < v.size(); i++) {
+			if (v[i] == "/") {
+				int num = stoi(v[i - 1]) / stoi(v[i + 1]);
+				v[i] = to_string(num);
+				v.erase(v.begin() + i + 1);
+				v.erase(v.begin() + i - 1);
+			}
+		}
+		size = 1;
+	}
+	for (string & sv : v)
+		cout << sv;
+	cout << endl;
+	return 0;
+}
+
+
+vector<string> split (string s) {
 	string tmp;
-	vector<string> opns;
+	vector<string> v;
 	for (int i = 0; i < s.length(); i++) {
 		if (isdigit(s[i]))
-			tmp.push_back(s[i])
-		else {
-			opns.push_back(tmp); opns.push_back(s[i]);
-			tmp.clear();
+			tmp.push_back(s[i]);
+		else if (s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/') {
+			v.push_back(tmp); tmp.clear(); 
+			tmp.push_back(s[i]); v.push_back(tmp); tmp.clear();
 		}
 	}
-	return opns;
+	v.push_back(tmp);
+	return v;
 }
 
 int calculate (string s) {
 	s = removeSpaces(s);
-	vector<string> v = operations(s);
+	vector<string> v = split(s);
+	for (string & sv : v)
+		cout << sv;
+	cout << endl;
+	operations(v);
+/*	vector<string> v = operations(s);
 	while (v.size() > 1) {
 		for (int i = 0; i < v.size(); i++)
 			if (s[i] == '/') {
 				int num = stoi(s[i - 1]) / stoi(s[i + 1]);
 				v.erase(v.begin() + )
 			}
-	}
-	return v[0];
+	}*/
+	return 0;
 }
 
 int main () {
