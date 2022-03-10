@@ -64,6 +64,9 @@ int depth (struct Node* node) {
 
 // level order traversal
 // 1 2 3 4 5
+// Note: Time complexity for any tree traversal = O(n)
+// Space complexity = O(h) = O(log n) for DFS
+//					= O(ceil(n / 2)) for BFS (in the worst-case)
 void Level (struct Node* root, int level) {
 	if (root == NULL)
 		return;

@@ -1,0 +1,13 @@
+potato hashing:
+
+series of benchmarks
+
+TLB measurement, using ‘perf’ 
+workload and memory size?
+
+1. how many threads? parallel workload? let's stay single thread, for now
+2. some workload suggestion, omnet and stuffs
+3. blow up the footprint by 25%, page table cycle size
+4. hit rate and miss rate
+5. TLB miss rates per million instructions
+6. collect performance numbers, turn some flag off.

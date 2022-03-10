@@ -4,7 +4,31 @@
 2. Implementation to test Secretary Problem
 3. Implementation to check Happy Number
 
+## How to run 
+```bash
+g++ -v
+g++ -std=c++11 <program_name>.cpp
+./a.out
+```
+
+
+
 ## Topic-wise study
+
+### Array problems
+1. Buy and Sell stocks: from an array of prices, choose two days from buys and sell that maximizes the profit.
+Solution: DP, where DP[i] = arr[i] - current_min
+2. Currency Exchange: can you get the exact change with given denominations of coins and bills?
+3. Count number of contiguous subarrays that follows a constraint.
+4. Cutting Ribbons: Maximum length of k ribbons cut from a number of ribbons available of given lengths.
+5. Heavy Hitters: Find top k most frequent elements.
+Solution: Make a hashmap, keep counts, sort the hashmap by a priority queue based on counts as comparator. Return top k elements from the priority queue.
+6. Find k Closest points in an 1D line and an 2D plane.
+Solution: keep priority queue of length k based on the distance.
+7. Largest Triple Product: 
+Solution: keep a priority queue of length 3, and if the current elemnt is larger than the top element of the queue, pop the queue once, and push the current element.
+
+
 ### Graph problems
 1. buildHouse.cpp
 Problem: Choose the cell to build a house in a maze so that it has the least sum of distance from all other houses.

@@ -14,6 +14,25 @@ void reverseString(vector<char>& s) {
 	}
 }
 
+void reverseString(vector<char>& v) {
+    size_t numofchar = v.size();
+    //for (const char &c : v)
+    //  cout << c;
+    //vector<char> v2; int i = 0;
+    if (numofchar == 1)
+        cout << v[0] << endl;
+    else
+    {
+        cout << v[numofchar - 1];
+        //v2[i] = v[numofchar - 1];
+        //i = i + 1;
+        vector<char> v1(v.begin(), v.end() - 1);
+        v = v1;
+        reverseString(v);
+    }
+    //for (const char &c : v2)
+      //  cout << c;
+}
 
 int main() {
 	string sa = "argo";
