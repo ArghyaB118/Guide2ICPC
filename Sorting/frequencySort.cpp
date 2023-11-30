@@ -3,6 +3,23 @@
 #include <map>
 using namespace std;
 
+// For every lookup or insert in the map: O(log n) average
+// Overall cost: O(n log n)
+vector<int> frequencySortOpt (vector<int>& input) {
+    vector<int> result = {};
+    map<int, int> m;
+    for (auto i : input) {
+        if (m.find(i) != m.end())
+            m[i]++;
+        else
+            m[i] = 1;
+    }
+    for (auto i : m)
+        for (int j = 0; j < i.second; j++)
+            result.push_back(i.first);
+    return result;
+}
+
 
 // extra space used: 3 * N
 // uses map, pair, and comparator
@@ -54,11 +71,18 @@ vector<int> freqSort(vector<int> listEle) {
 int main() {
 	int arr[] = { 20, 40, 26, 25, 40, 20, 40, 20, 40, 25, 20 };
 	int listEle_size = sizeof(arr) / sizeof(arr[0]);
+    // Array to vector conversion
 	vector<int> listEle(arr, arr + listEle_size);
 	vector<int> result = freqSort(listEle);
 
 	for (int i = 0; i < listEle_size; i++)
 		cout << result[i] << " ";
 	cout << endl;
+    
+    vector<int> input = { 20, 40, 26, 25, 40, 20, 40, 20, 40, 25, 20 };
+    vector<int> output = frequencySortOpt (input);
+    for (auto i : result)
+        cout << i << " ";
+    cout << endl;
 	return 0;
 }

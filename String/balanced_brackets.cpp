@@ -22,13 +22,13 @@ Example 1
 s = {[()]}
 output: true
 Example 2
-s = {}()
+s = {}()[]
 output: true
 Example 3
 s = {(})
 output: false
 Example 4
-s = )
+s = ){
 output: false
 Example 5
 s = {[(])}
@@ -43,23 +43,49 @@ output: true
 #include <stack>
 using namespace std;
 
+// The following function fails for "()[]{}"
 bool isBalanced(string s) {
-  if (s.length() % 2 != 0)
-    return false;
-  stack<char> st;
-  for (int i = 0; i < s.length(); i++)
-    st.push(s[i]);
-  for (int i = 0; i < s.length() / 2; i++) {
-    if (s[i] == '(' && st.top() == ')')
-      st.pop();
-    else if (s[i] == '{' && st.top() == '}')
-      st.pop();
-    else if (s[i] == '[' && st.top() == ']')
-      st.pop();
-    else
-      return false;
-  }
-  return true;
+    if(s.length() == 0)
+        return true;
+    if (s.length() % 2 != 0)
+        return false;
+    stack<char> st;
+    for (int i = 0; i < s.length(); i++)
+        st.push(s[i]);
+    for (int i = 0; i < s.length() / 2; i++) {
+        if (s[i] == '(' && st.top() == ')')
+            st.pop();
+        else if (s[i] == '{' && st.top() == '}')
+            st.pop();
+        else if (s[i] == '[' && st.top() == ']')
+            st.pop();
+        else
+            return false;
+    }
+    return true;
+}
+
+bool isBalanced(string s) {
+    if(s.length() == 0)
+        return true;
+    if (s.length() % 2 != 0)
+        return false;
+    stack<char> st;
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] == '(' || s[i] == '{' || s[i] == '[')
+            st.push(s[i]);
+        else if (s[i] == ')' || s[i] == '}' || s[i] == ']') {
+            if (st.empty())
+                return false;
+            if ((s[i] == ')' && st.top() == '(') || (s[i] == '}' && st.top() == '{') || (s[i] == ']' && st.top() == '['))
+                st.pop();
+            else
+                return false;
+        }
+    }
+    if (!st.empty())
+        return false;
+    return true;
 }
 
 

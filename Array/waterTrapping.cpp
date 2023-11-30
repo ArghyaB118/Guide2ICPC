@@ -29,13 +29,36 @@ int trap (vector<int>& heights) {
 			if (s.empty())
 				s.push(heights[i]);
 		}
-
-
-			
 	}
 	return s.top();
 }
 */
+
+int trap2 (vector<int>& heights) {
+    if (heights.size() == 0 || heights.size() == 1 || heights.size() == 2)
+        return 0;
+    // Idea: any index apart from the two extremes stores
+    // min(max_left, max_right) - height[i]
+    // one pass each to store max_left, max_right; then a final pass => O(3n)
+    vector<int> max_left, max_right;
+    int tmp = heights[0];
+    for (int i = 1; i < heights.size() - 1; i++) {
+        max_left.push_back(tmp);
+        tmp = max(tmp, heights[i]);
+    }
+    tmp = heights[heights.size() - 1];
+    for (int i = heights.size() - 2; i >= 1; i--) {
+        max_right.push_back(tmp);
+        tmp = max(tmp, heights[i]);
+    }
+    int trapped = 0;
+    for (int i = 1; i < heights.size() - 1; i++) {
+        if (min(max_left[i - 1], max_right[heights.size() - 2 - i]) > heights[i])
+            trapped += min(max_left[i - 1], max_right[heights.size() - 2 - i]) - heights[i];
+    }
+    return trapped;
+}
+
 
 int trap (vector<int>& heights) {
 	vector<int> max_left;
@@ -68,5 +91,6 @@ int trap (vector<int>& heights) {
 int main() {
 	vector<int> heights{4,2,0,3,2,5}; //{ 0,1,0,2,1,0,1,3,2,1,2,1 };
 	cout << "Water trapped: " << trap(heights) << endl;
+    cout << "Water trapped: " << trap2(heights) << endl;
 	return 0;
 }

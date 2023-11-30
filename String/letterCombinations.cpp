@@ -16,6 +16,7 @@ Output: ["a","b","c"]
 #include <iostream>
 #include <string>
 #include <vector>
+#include <queue>
 using namespace std;
 
 vector<vector<char> > keypad{{'a','b','c'},{'d','e','f'},{'g','h','i'},{'j','k','l'},{'m','n','o'},{'p','q','r','s'},{'t','u','v'},{'w','x','y','z'}};
@@ -42,6 +43,8 @@ vector<string> permutation (char c, vector<string> out) {
 	return out;
 }
 
+// Iterative solution: Use BFS (by queue).
+// Recursice solution: Use DFS (by stack) on the recursion tree.
 vector<string> letterCombinations(string digits) {
 	if (digits.length() == 0)
 		return {};
@@ -51,6 +54,39 @@ vector<string> letterCombinations(string digits) {
 	return out;
 }
 
+// Iterative solution: Use BFS (by queue).
+vector<string> letterCombinationBFS (string digits) {
+    if (digits.length() == 0)
+        return {};
+    queue<string> q; vector<string> res;
+    string tmp = "";
+    for (auto i : digits) {
+        if (q.empty()) {
+            for (auto j : keypad[int(i) - 50]) {
+                tmp.clear();
+                tmp.push_back(j);
+                q.push(tmp);
+            }
+        }
+        else {
+            int n = q.size();
+            for (int k = 0; k < n; k++) {
+                tmp.clear();
+                tmp = q.front(); q.pop();
+                for (auto j : keypad[int(i) - 50]) {
+                    tmp.push_back(j);
+                    q.push(tmp);
+                    tmp.pop_back();
+                }
+            }
+        }
+    }
+    while (!q.empty()) {
+        res.push_back(q.front());
+        q.pop();
+    }
+    return res;
+}
 
 /*
 Given an array nums of distinct integers, return all the possible permutations. 
@@ -97,5 +133,9 @@ int main () {
 			cout << v[i][j] << " ";
 		cout << endl;
 	}
+    
+    vector<string> res = letterCombinationBFS("234");
+    for (auto i : res)
+        cout << i << endl;
 	return 0;
 }

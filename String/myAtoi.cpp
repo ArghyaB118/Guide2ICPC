@@ -29,27 +29,27 @@ int char2int(char c) {
 
 
 int myAtoi(string s) {
-	int count = 0, i = 0;
-	if (s[0] == ' ') {
-		while (s[i] == ' ') {
-			++i;
-		}
-	}
-	int k = i + 1;
-	while (s[k] == '1' || s[k] == '2' || s[k] == '3' || s[k] == '4' || s[k] == '5' || s[k] == '6' || s[k] == '7' || s[k] == '8' || s[k] == '9' || s[k] == '0')
-		k++;
-	if (s[i] == '-') {
-		for (int j = i + 1; j < k; j++) {
-			count *= 10; count += char2int(s[j]);
-		}
-		count = count * (-1);
-	}
-	else {
-		for (int j = i; j < k; j++) {
-			count *= 10; count += char2int(s[j]);
-		}
-	}
-	return count;
+    long long int count = 0; int i = 0, mult = 0;
+    // get rid of the leading whitespaces
+    if (s[0] == ' ') {
+        while (s[i] == ' ') {
+            ++i;
+        }
+    }
+    if (s[i] == '+') {
+        mult = 1; i++;
+    }
+    else if (s[i] == '-') {
+        mult = -1; i++;
+    }
+    else
+        mult = 1;
+    // ignoring trailing string
+    while (int(s[i]) >= 48 && int(s[i]) <= 57) {
+        count *= 10; count += char2int(s[i]); i++;
+    }
+    int result = mult * (count % 2147483648); count *= mult;
+    return result;
 }
 
 int main() {

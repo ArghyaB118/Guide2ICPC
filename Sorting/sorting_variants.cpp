@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <queue>
 using namespace std;
 
 void swap(int *p1, int *p2) {
@@ -23,7 +24,8 @@ void printVector(vector<int>& vec) {
 	cout << endl;
 }
 
-//complexity is always O(n^2)
+/* Idea: Build nested for loops, commpare the adjacent elements, swap if needed
+ Complexity: always O(n^2) */
 void bubbleSort(int arr[], int size) {
 	for (int i = 0; i < size; ++i) {
 		for (int j = 0; j < size - i - 1; ++j) {
@@ -33,7 +35,8 @@ void bubbleSort(int arr[], int size) {
 	}
 }
 
-//best case is O(n) and worst case is O(n^2)
+// Small Optimization: stop when it is already sorted.
+// Best case is O(n) and worst case is O(n^2)
 void bubbleSortOpt(int arr[], int size) {
 	bool swapped = false;
 	for (int i = 0; i < size; ++i) {
@@ -48,8 +51,8 @@ void bubbleSortOpt(int arr[], int size) {
 	}
 }
 
-//works in O(n^2) going through the array n times 
-//and storing the minimum element
+/* Idea: Run through the array n times and stores the minimum element
+ Complexity: O(n^2)  */
 void selectionSort(int arr[], int size) {
 	for (int i = 0; i < size - 1; ++i) {
 		int min_id;
@@ -62,6 +65,13 @@ void selectionSort(int arr[], int size) {
 	}
 }
 
+/* Merge Sort: O(n log n)
+ Recursive sorting algorithm
+ Idea:
+ 1. Break the array in two parts
+ 2. Sort the subparts.
+ 3. Merge the sorted runs.
+*/
 void merge(int arr[], int l, int m, int r) {
 	int i, j, k;
 	int n1 = m - l + 1, n2 = r - m;
@@ -94,16 +104,27 @@ void merge(int arr[], int l, int m, int r) {
 	}
 }
 
+void mergeClean (int arr[], int l, int r) {
+    priority_queue<int, vector<int>, greater<int>> pq;
+    for (int i = l; i <= r; i++)
+        pq.push(arr[i]);
+    int i = l;
+    while (!pq.empty()) {
+        arr[i] = pq.top(); i++; pq.pop();
+    }
+}
+
 void mergeSort(int arr[], int l, int r) {
 	if (l < r) {
 		int m = l + (r - l) / 2;
 		mergeSort(arr, l, m);
 		mergeSort(arr, m + 1, r);
-		merge(arr, l, m, r);
+        mergeClean(arr, l, r); // merge(arr, l, m, r);
 	}
 }
-//the way we sort cards
-//we stream through the array, insert every element in a sorted manner
+
+// Example: the way we sort cards
+// Stream through the array, insert every element in a sorted manner
 void insertionSort(int arr[], int size) {
 	for (int i = 1; i < size; ++i) {
 		int key = arr[i];
@@ -116,6 +137,8 @@ void insertionSort(int arr[], int size) {
 	}
 }
 
+/* Quicksort
+ Complexity: O(n log n) average*/
 int pivoting(int arr[], int low, int high) {
 	int pivot = arr[high];
 	int i = low - 1;
@@ -138,6 +161,8 @@ void quickSort(int arr[], int low, int high) {
 }
 
 
+// Very useful to sort arrays with a lot of duplicates
+// Brings down the cost from O(n log n) to O(n + k), k = input range
 vector<int> countSort(vector<int>& arr) {
 	int max = *max_element(arr.begin(), arr.end());
 	int min = *min_element(arr.begin(), arr.end());
@@ -154,6 +179,8 @@ vector<int> countSort(vector<int>& arr) {
 	return output;
 }
 
+// Notes: Using a map with make the cost O(n log k), k = range of inputs
+
 void countSortexp(int arr[], int n, int exp) {
 	int output[n];
 	int count[10] = {0};
@@ -169,12 +196,17 @@ void countSortexp(int arr[], int n, int exp) {
         arr[i] = output[i];
 }
 
+/* https://www.interviewkickstart.com/learn/radix-sort-algorithm
+ Radix sort can be applied to data that can be sorted lexicographically, such as words and integers. It is also used for stably sorting strings.
+ It is a good option when the algorithm runs on parallel machines, making the sorting faster. To use parallelization, we divide the input into several buckets, enabling us to sort the buckets in parallel, as they are independent of each other.
+ It is used for constructing a suffix array. (An array that contains all the possible suffixes of a string in sorted order is called a suffix array. For example: If the string is “sort,” then the suffix array SA[] will be:*/
+
 int getMax(int arr[], int n) {
-	int max = arr[0];
-	for (int i = 1; i < n; ++i)
-		if (arr[i] > max)
-			max = arr[i];
-	return max;
+    int max = arr[0];
+    for (int i = 1; i < n; ++i)
+        if (arr[i] > max)
+            max = arr[i];
+    return max;
 }
 
 void radixSort(int arr[], int n) {
@@ -269,7 +301,7 @@ void buildMaxHeap(int arr[], int n) {
 }
 
 void heapSort(int arr[], int n) {
-	 buildMaxHeap(arr, n);
+    buildMaxHeap(arr, n);
 	for (int i = n - 1; i >= 0; i--) {
 		swap(arr[0], arr[i]);
 		heapify(arr, i, 0);

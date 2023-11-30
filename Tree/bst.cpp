@@ -13,6 +13,7 @@ struct Node {
 	}
 };
 
+
 // https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
 // max(left subtree) < node < min(right subtree) V all nodes
 bool isBST (struct Node* root, struct Node* l, struct Node* r) {
@@ -74,6 +75,23 @@ void printLevelOrder (struct Node *root) {
 		cout << node->data << " ";
 	}
 	cout << ": Level order traversal" << endl;
+}
+
+typedef pair<Node*, int> levelNode;
+vector<vector<int>> LevelOrder (struct Node *root) {
+    vector<vector<int>> result;
+    if (root == NULL)
+        return {{}};
+    queue<levelNode> q; q.push(root);
+    while (!q.empty()) {
+        Node* node = q.front(); q.pop();
+        if (node->left != NULL)
+            q.push(node->left);
+        if (node->right != NULL)
+            q.push(node->right);
+        cout << node->data << " ";
+    }
+    cout << ": Level order traversal" << endl;
 }
 
 /*

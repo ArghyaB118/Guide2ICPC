@@ -1,4 +1,5 @@
-/*
+/* LC#528
+ 
 You are given a 0-indexed array of positive integers w 
 where w[i] describes the weight of the ith index.
 
@@ -39,6 +40,52 @@ public:
 	}
 };
 
+class PDFOpt {
+private:
+    vector<int> cumsums;
+public:
+    PDFOpt (vector<int>& w) {
+        int cumsum = 0;
+        for (int i = 0; i < w.size(); i++) {
+            cumsum += w[i];
+            this->cumsums.push_back(cumsum);
+        }
+    }
+
+    int pickIndex () {
+        int randnum = rand() % this->cumsums.back() + 1;
+        // linear search on the cumsum array :(
+        for (int i = 0; i < this->cumsums.size(); i++)
+            if (this->cumsums[i] >= randnum)
+                return i;
+        return -1;
+    }
+    
+    int pickIndex2 () {
+        if (this->cumsums.size() == 1)
+            return 0;
+        int randnum = rand() % this->cumsums.back() + 1;
+        //cout << randnum << endl;
+        // binary search on the cumsum array with repeated doubling :)
+        int left = 0, right = cumsums.size() - 1, jump = 1;
+        while (left < right) {
+            if (cumsums[left] >= randnum)
+                return left;
+            else if (cumsums[left] < randnum && cumsums[left + 1] >= randnum)
+                return (left + 1);
+            else if (left + jump < right) {
+                left = left + jump;
+                jump *= 2;
+            }
+            else {
+                jump = 1;
+            }
+        }
+        return -1;
+    }
+};
+
+
 int main () {
 	vector<int> w = {1,3};
 	PDF* obj = new PDF(w);
@@ -46,5 +93,12 @@ int main () {
 		cout << obj->pickIndex() << " ";
 	}
 	cout << endl;
-	return 0;
+	
+    PDFOpt* obj1 = new PDFOpt(w);
+    for (int i = 0; i < 10; i++) {
+        cout << obj1->pickIndex2() << " ";
+    }
+    cout << endl;
+    
+    return 0;
 }

@@ -11,7 +11,11 @@ g++ -std=c++11 <program_name>.cpp
 ./a.out
 ```
 
+###Interesting Links
 
+Blind 75 problems on leetcode: https://leetcode.com/discuss/general-discussion/460599/blind-75-leetcode-questions
+
+Leetcode patterns: https://seanprashad.com/leetcode-patterns/
 
 ## Topic-wise study
 
@@ -60,4 +64,5 @@ finding a lucky triple (x,y,z) where x divides y and y divides z.
 #### Level 4
 1. Bunnies Escape Distribute Keys
 
-
+# Meta Careers Website Puzzles
+Inlcuded in the folder MetaPuzzles and categorized level-wise.

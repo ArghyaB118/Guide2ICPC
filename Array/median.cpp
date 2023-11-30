@@ -74,6 +74,12 @@ int findMedian2(struct vec v1, struct vec v2) {
 
 
 
+double findMedianSortedArrays (vector<int>& nums1, vector<int>& nums2) {
+    if (nums1.size() + nums2.size() % 2 != 0)
+        findMedianRecur (nums1, 0, nums1.size() - 1, nums2, 0, nums2.size() - 1);
+}
+
+
 int main() {
 	vector<int> nums1{1,2,3,4,5};
 	vector<int> nums2{2,3,5,7};

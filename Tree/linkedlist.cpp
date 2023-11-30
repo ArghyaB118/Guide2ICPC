@@ -1,3 +1,4 @@
+//#include <bits/stdc++.h>
 #include <iostream>
 #include <stack>
 #include <vector>
@@ -68,6 +69,67 @@ void deleteNode(ListNode* node) {
     }
 }
 
+// Reverse a linked list
+ListNode* reverseList (ListNode* head) {
+    if (head == NULL || head->next == NULL)
+        return head;
+    ListNode* listnode = head->next;
+    ListNode* reverselistnode = head;
+    reverselistnode->next = NULL;
+    while (listnode != NULL) {
+        ListNode* temp = listnode;
+        listnode = listnode->next;
+        temp->next = reverselistnode;
+        reverselistnode = temp;
+    }
+    return reverselistnode;
+}
+
+
+bool hasCycle (ListNode *head) {
+    unordered_set<ListNode*> s;
+    while(head != NULL) {
+        if (s.find(head) != s.end())
+            return true;
+        s.insert(head);
+        head = head->next;
+    }
+}
+    
+bool hasCycle2 (ListNode *head) {
+    ListNode *slow_p = head, *fast_p = head;
+    while (slow_p && fast_p && fast_p->next) {
+        slow_p = slow_p->next;
+        fast_p = fast_p->next->next;
+        if (slow_p == fast_p)
+            return true;
+    }
+    return false;
+}
+
+/*You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+ 
+ You may assume the two numbers do not contain any leading zero, except the number 0 itself.*/
+
+ListNode* addTwoNumbers (ListNode* l1, ListNode* l2) {
+    int num1, num2;
+    while (l1 != NULL) {
+        num1 *= 10; num1 += l1->val;
+    }
+    while (l2 != NULL) {
+        num2 *= 10; num2 += l2->val;
+    }
+    num1 += num2;
+    stack<int> st;
+    while (num1 != 0) {
+        st.push(num1 % 10); num1 /= 10;
+    }
+    while (!st.empty()) {
+        cout << st.top() << endl; st.pop();
+    }
+    // ListNode* sum
+    return NULL;
+}
 
 /*
 You are given a singly-linked list that contains N integers. 
@@ -160,9 +222,26 @@ int countDuplicateHash(ListNode* head) {
 	return count;
 }
 
-// How to merge two sorted linked list
-// https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
-ListNode* mergeTwoSortedLists(ListNode* l1, ListNode* l2) {
+/* LC#21
+ 
+ How to merge two sorted linked list
+ https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
+ You are given the heads of two sorted linked lists list1 and list2.
+
+ Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+ Return the head of the merged linked list.
+ 
+ Input: list1 = [1,2,4], list2 = [1,3,4]
+ Output: [1,1,2,3,4,4]
+ 
+ Input: list1 = [], list2 = []
+ Output: []
+ 
+ Input: list1 = [], list2 = [0]
+ Output: [0]
+*/
+ListNode* mergeTwoSortedLists (ListNode* l1, ListNode* l2) {
 	ListNode dummy(-1);
 	ListNode* tail = &dummy;
 	dummy.next = NULL;
@@ -187,6 +266,75 @@ ListNode* mergeTwoSortedLists(ListNode* l1, ListNode* l2) {
 	}
 	return dummy.next;
 }
+
+/* LC#23
+ 
+ You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+ 
+ Merge all the linked-lists into one sorted linked-list and return it.
+ 
+ Input: lists = [[1,4,5],[1,3,4],[2,6]]
+ Output: [1,1,2,3,4,4,5,6]
+ Explanation: The linked-lists are:
+ [
+   1->4->5,
+   1->3->4,
+   2->6
+ ]
+ merging them into one sorted list:
+ 1->1->2->3->4->4->5->6
+ 
+ Input: lists = []
+ Output: []
+ 
+ Input: lists = [[]]
+ Output: []*/
+
+
+ListNode* mergeKLists(vector<ListNode*>& lists) {
+    if (lists.size() == 0)
+        return NULL;
+    ListNode dummy(-1);
+    ListNode* tail = &dummy;
+    dummy.next = NULL;
+    while (1) {
+        int count = 0;
+        for (int i = 0; i < lists.size(); i++)
+            if (lists[i] != NULL)
+                count++;
+        if (count == 0) {
+            cout << "here" << endl;
+            return dummy.next;
+        }
+        else if (count == 1) {
+            for (int i = 0; i < lists.size(); i++) {
+                if (lists[i] != NULL) {
+                    tail->next = lists[i];
+                    return dummy.next;
+                }
+            }
+        }
+        else {
+            // break;
+            int tmp = 10000;
+            for (int i = 0; i < lists.size(); i++) {
+                if (lists[i] != NULL)
+                    tmp = min(tmp, lists[i]->val);
+            }
+            for (int i = 0; i < lists.size(); i++) {
+                if (lists[i] != NULL) {
+                    if (lists[i]->val == tmp) {
+                        tail->next = lists[i];
+                        lists[i] = lists[i]->next;
+                        tail = tail->next;
+                    }
+                }
+            }
+        }
+    }
+    return dummy.next;
+}
+
 
 
 // https://www.geeksforgeeks.org/reverse-a-linked-list/
@@ -234,8 +382,6 @@ void swapNode(int x, int y) {
     currX->next = temp;
 }
 
-
-
 int main() {
 	struct ListNode *head = new ListNode(1);
 	head = push(&head, 2);
@@ -253,5 +399,8 @@ int main() {
 	struct ListNode *head3 = arrayToList(arr2, size2);
 	cout << countDuplicate(head3) << endl;
 	cout << countDuplicateHash(head3) << endl;
+    
+    ListNode* l1 = NULL; l1->val = 5; l1->next->val = 6; l1->next->next->val = 4;
+    ListNode* l2 = NULL; l2->val = 2; l2->next->val = 4; l2->next->next->val = 3;
 	return 0;
 }

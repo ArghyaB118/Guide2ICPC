@@ -14,6 +14,39 @@ Output: true
 #include <stack>
 using namespace std;
 
+
+// push back in a new string
+bool isPalindrome(string s) {
+    string t;
+    int len = s.length();
+    for (int i = 0; i < len; i++) {
+        if (s[i] != '\n' && s[i] != ' ' && ispunct(s[i]) == false)
+            t.push_back(tolower(s[i]));
+    }
+    for (int i = 0; i < t.length() / 2; i++)
+        if (t[i] != t[t.length() - i - 1])
+            return false;
+    return true;
+}
+
+// modify the same string
+bool isPalindromeInPlace (string s) {
+    s.erase(remove(s.begin(), s.end(), '\n'), s.end());
+    s.erase(remove(s.begin(), s.end(), ' '), s.end());
+    for (int i = 0, len = s.length(); i < len; i++) {
+        if (ispunct(s[i])) {
+            s.erase(i--,1); len = s.length();
+        }
+    }
+    for (int i = 0; i < s.length(); i++)
+        s[i] = tolower(s[i]);
+    cout << s;
+    for (int i = 0; i < s.length() / 2; i++)
+        if (s[i] != s[s.length() - i - 1])
+            return false;
+    return true;
+}
+
 string removeNonAlphaNumerics(string s) {
 	string s1;
 	for (int i = 0; i < s.length(); i++) {
