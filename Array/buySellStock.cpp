@@ -10,7 +10,7 @@ to sell that stock.
 Return the maximum profit you can achieve from this transaction. 
 If you cannot achieve any profit, return 0.
 
-Clarification: number if transaction = 1
+Clarification: number of transaction = 1
 Input: prices = [7,1,5,3,6,4]
 Output: 5
 
@@ -78,6 +78,17 @@ int maxProfit2a (vector<int>& prices) {
     for (int & price : prices) {
         least = (price < least) ? price : least;
         max_diff = (price - least > max_diff) ? price - least : max_diff;
+    }
+    return max_diff;
+}
+
+int maxProfit2b (vector<int>& prices) {
+    if (prices.empty() || prices.size() == 1) return 0;
+    int least = prices[0], max_diff = 0;
+
+    for (int & price : prices) {
+        least = min(least, price);
+        max_diff = max(max_diff, price - least);
     }
     return max_diff;
 }

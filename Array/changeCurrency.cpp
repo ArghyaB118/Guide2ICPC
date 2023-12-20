@@ -44,11 +44,17 @@ bool canGetExactChange(int targetMoney, vector<int>& denominations){
 
 /* LC#322
  
- You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+ You are given an integer array coins representing 
+ coins of different denominations and an integer amount 
+ representing a total amount of money.
  
- Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+ Return the fewest number of coins 
+ that you need to make up that amount. 
+ If that amount of money cannot be made up 
+ by any combination of the coins, return -1.
 
- You may assume that you have an infinite number of each kind of coin.
+ You may assume that you have an infinite number 
+ of each kind of coin.
  
  Input: coins = [1,2,5], amount = 11
  Output: 3
@@ -58,7 +64,9 @@ bool canGetExactChange(int targetMoney, vector<int>& denominations){
  Output: -1
  
  Input: coins = [1], amount = 0
- Output: 0*/
+ Output: 0
+
+ This is a dp problem*/
 
 // Approach 1: Brute Force / Backtracking / DFS
 // Cost: O(amount ^ |coins|)
@@ -128,9 +136,13 @@ int coinChangeDP (vector<int>& coins, int amount) {
 
 /* LC#518
  
- You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+ You are given an integer array coins representing 
+ coins of different denominations and an integer amount 
+ representing a total amount of money.
  
- Return the number of combinations that make up that amount. If that amount of money cannot be made up by any combination of the coins, return 0.
+ Return the number of combinations that make up that amount. 
+ If that amount of money cannot be made up 
+ by any combination of the coins, return 0.
 
  You may assume that you have an infinite number of each kind of coin.
 
@@ -179,7 +191,7 @@ int change (int amount, vector<int>& coins) {
         return 1;
     if (coins.size() == 0)
         return 0;
-    vector<vector<int>> dp (coins.size(),  vector<int> (amount + 1, 0));
+    vector<vector<int>> dp (coins.size(), vector<int> (amount + 1, 0));
     for (int i = 0; i < coins.size(); i++)
         dp[i][0] = 1;
 
@@ -209,6 +221,32 @@ int change (int amount, vector<int>& coins) {
         cout << endl;
     }
     return dp[coins.size() - 1][amount];
+}
+
+int change2 (int amount, vector<int>& coins) {
+    if (amount == 0)
+        return 0;
+    if (coins.size() == 0)
+        return 0;
+
+    vector<int> tmp = {};
+    vector<vector<int>> dp(amount + 1, tmp);
+    for (auto &coin : coins)
+        dp[coin].push_back({coin});
+
+    for (int i = 1; i <= amount; i++) {
+        for (auto &coin : coins) {
+            if (i - coin > 0) {
+                for (auto &j : dp[i - coin]) {
+                    tmp = j;
+                    tmp.push_back(coin);
+                    dp[i].push_back(tmp);
+                }
+            }
+        }
+    }
+
+    return dp[amount].size();
 }
 
 int main () {

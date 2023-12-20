@@ -109,7 +109,9 @@ public:
     
     int get(int key) {
         if (keyValuePairs.find(key) != keyValuePairs.end()) {
-            /* Note: unfortunately, list.remove is O(n). We have used it in 2 other places. Hence, overall it is O(n). Useless!*/
+            /* Note: unfortunately, list.remove is O(n). 
+            We have used it in 2 other places. 
+            Hence, overall it is O(n). Useless!*/
             keys.remove(key);
             keys.push_back(key);
             return keyValuePairs[key];
@@ -154,10 +156,14 @@ public:
     
     int get(int key) {
         if (keyValuePairs.find(key) != keyValuePairs.end()) {
-            /* Note: Any combination using std::remove does not work as after it removes 1 from {1, 2} it makes {2 2}, so finally it becomes {2 2 1} instead of {2 1} after the final push_back.
+            /* Note: Any combination using std::remove does not work 
+            as after it removes 1 from {1, 2} it makes {2 2}, 
+            so finally it becomes {2 2 1} instead of {2 1} 
+            after the final push_back.
             // keys.push_back(key);
             // remove(keys.begin(), keys.end() - 1, key);
-             Unfortunately, now the way we are removing elements, is still O(n). */
+            Unfortunately, now the way we are removing elements, 
+            is still O(n). */
             
             for (int i = 0; i < keys.size(); i++)
                 if (keys[i] == key)

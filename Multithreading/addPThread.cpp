@@ -1,4 +1,5 @@
 #include <iostream>
+#include <numeric>
 #include "pthread.h"
 using namespace std;
 
@@ -27,6 +28,7 @@ void* myAdd (void* input) {
 		unit_sum += arr[i];
 	pthread_mutex_unlock(&myMutex);
 	cout << unit_sum << endl;
+	pthread_exit(NULL);
 	
 }
 
@@ -39,6 +41,21 @@ void* myAdd2 (void* input) {
 		unit_sum += arr[i];
 	cout << unit_sum << endl;
 	sum[(int)args->thread_id] = unit_sum;
+	pthread_exit(NULL);
+}
+
+int global_sum = 0;
+pthread_mutex_t forMyAdd3;
+void* myAdd3 (void* input) {
+	int* thread_id = (int*) input;
+	int thread_length = max_length / max_thread;
+	cout << *thread_id << " " << thread_length << endl;
+	for (int i = *thread_id * thread_length; i < (*thread_id + 1) * thread_length; i++) {
+		pthread_mutex_lock(&forMyAdd3);
+		global_sum += arr[i];
+		pthread_mutex_unlock(&forMyAdd3);
+	}
+	pthread_exit(NULL);
 }
 
 int main () {
@@ -70,5 +87,17 @@ int main () {
 	for (auto& i : sum)
 		cout << i << " ";
 	cout << endl;
+
+	vector<int> thread_ids(max_thread, 0);
+	pthread_mutex_init(&forMyAdd3,0);
+	for (int i = 0; i < max_thread; i++) {
+		thread_ids[i] = i;
+		pthread_create(&thread[i], NULL, &myAdd3, &thread_ids[i]);
+	}
+	for (int i = 0; i < max_thread; i++)
+		pthread_join(thread[i], NULL);
+	pthread_mutex_destroy(&forMyAdd3);
+
+	cout << global_sum << " " << std::accumulate(sum.begin(), sum.end(), 0) << endl;
 	return 0;
 }
