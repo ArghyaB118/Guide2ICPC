@@ -28,7 +28,8 @@ bool subsetSum (int arr[], int n, int sum, int x, vector<int> subset) {
 }
 
 
-/*
+/* LC#523
+
 Given an integer array nums and an integer k, 
 return true if nums has a continuous subarray of size 
 at least two whose elements sum up to a multiple of k, or false otherwise.
@@ -41,23 +42,39 @@ Output: true
 
 Input: nums = [23,2,6,4,7], k = 13
 Output: false
+
+Constraints:
+1 <= nums.length <= 10^5
+0 <= nums[i] <= 10^9
+0 <= sum(nums[i]) <= 2^31 - 1
+1 <= k <= 2^31 - 1
 */
 
 // Naive approach: O(n ^ 2)
-bool checkSubarraySum (vector<int>& nums, int k) {
-	for (int i = 1; i < nums.size(); i++)
-		for (int j = 0; j < i - 1; j++)
-			if (accumulate(nums.begin() + j, nums.begin() + i, 0) % k == 0)
+// TLE
+bool checkSubarraySumNaive (vector<int>& nums, int k) {
+    if (nums.size() == 0 || nums.size() == 1)
+		return false;
+
+	for (int i = 1; i < nums.size(); i++) {
+		for (int j = 0; j < i; j++) {
+            int sum = accumulate(nums.begin() + j, nums.begin() + i + 1, 0);
+            if (sum == 0 || sum % k == 0)
 				return true;
+        }
+    }
 	return false;
 }
 
 // O(n) algorithm
+// two pointer
+// works only if sum == k
+// not the multiple part
 bool checksubarraySum2 (vector<int>& nums, int k) {
-	if (nums.size() == 0)
+	if (nums.size() == 0 || nums.size() == 1)
 		return false;
-	int left = 0, right = 0, sum = nums[0];
-	while (right < nums.size() - 1) {
+	int left = 0, right = 0, sum = nums[0] + nums[1];
+	while (left < right && right < nums.size() - 1) {
 		if (sum == k)
 			return true;
 		else if (sum < k) {
@@ -70,8 +87,29 @@ bool checksubarraySum2 (vector<int>& nums, int k) {
 	return false;
 }
 
+bool checkSubarraySum3 (vector<int>& nums, int k) {
+	unordered_map<int, int> prefix_sums;
+	int prefix_sum = 0;
+	for (int i = 0; i < nums.size(); i++) {
+		prefix_sum += nums[i];
+		if (prefix_sum % k == 0)
+			return true;
+		// sum is 0
+		if (prefix_sums.find(prefix_sum) != prefix_sums.end())
+			return true;
+		prefix_sums[prefix_sum] = i;
+		int tmp = prefix_sum;
+		while (tmp - k >= 0) {
+			if (prefix_sums.find(tmp - k) != prefix_sums.end())
+				return true;
+			tmp -= k;
+		}
+	}
+	return false;
+}
 
-/*
+/* LC#560
+
 Subarray Sum Equals K
 
 Given an array of integers nums and an integer k, 
@@ -110,6 +148,25 @@ Output: 2
 	}
 	return count;
 }*/
+
+int subarraySumNaive (vector<int>& nums, int k) {
+    if (nums.size() == 0)
+		return 0;
+	if (nums.size() == 1) {
+        if (nums[0] == k)
+            return 1;
+        else
+            return 0;
+    }
+	int count = 0;
+	for (int i = 0; i < nums.size(); i++) {
+		for (int j = 0; j <= i; j++) {
+            if (accumulate(nums.begin() + j, nums.begin() + i + 1, 0) == k)
+				count++;
+        }
+    }
+	return count;
+}
 
 int subarraySumPositive (vector<int>& nums, int k) {
 //	cout << " here" << endl;
@@ -184,6 +241,33 @@ int subarraySum (vector<int>& nums, int k) {
 			return subarraySumNegative (nums, k);
 	return subarraySumPositive (nums, k);
 }
+
+// beats ~99% LC users
+int subarraySumWithPrefixSum (vector<int>& nums, int k) {
+	if (nums.size() == 0)
+		return 0;
+    if (nums.size() == 1) {
+        if (nums[0] == k)
+            return 1;
+        else
+            return 0;
+    }
+	unordered_map<int, int> prefix_sums;
+	int prefix_sum = 0, count = 0;
+	for (int& i : nums) {
+		prefix_sum += i;
+		if (prefix_sum == k)
+			count++;
+		if (prefix_sums.find(prefix_sum - k) != prefix_sums.end())
+			count += prefix_sums[prefix_sum - k];
+		if (prefix_sums.find(prefix_sum) != prefix_sums.end())
+			prefix_sums[prefix_sum]++;
+		else
+			prefix_sums[prefix_sum] = 1;
+	}
+	return count;
+}
+
 
 int main() {
 	int arr[] = {10, 7, 5, 18, 12, 20, 15};

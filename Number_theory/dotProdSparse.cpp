@@ -4,6 +4,7 @@
 using namespace std;
 
 class SparseVector {
+	int size;
 	unordered_map<int, int> hashmap;
 public:
 	SparseVector (vector<int>& nums) {
@@ -11,15 +12,27 @@ public:
 			if (nums[i] != 0)
 				hashmap[i] = nums[i];
 		}
+		this->size = hashmap.size();
 	}
 
 	int dotProduct (SparseVector& vec) {
 		int product = 0;
-		unordered_map<int, int>::iterator it = this->hashmap.begin();
-		while (it != this->hashmap.end()) {
-			if (vec.hashmap.find(it->first) != vec.hashmap.end())
-				product += it->second * vec.hashmap[it->first];
-			it++;
+		if (this->size > vec.size) {
+			unordered_map<int, int>::iterator it = vec.hashmap.begin();
+			while (it != vec.hashmap.end()) {
+				if (this->hashmap.find(it->first) != this->hashmap.end())
+					product += it->second * this->hashmap[it->first];
+				it++;
+			}
+			return product;
+		}
+		else {		
+			unordered_map<int, int>::iterator it = this->hashmap.begin();
+			while (it != this->hashmap.end()) {
+				if (vec.hashmap.find(it->first) != vec.hashmap.end())
+					product += it->second * vec.hashmap[it->first];
+				it++;
+			}
 		}
 		return product;
 	}

@@ -1,9 +1,13 @@
-/*
-A phrase is a palindrome if, after converting all uppercase letters into lowercase letters 
-and removing all non-alphanumeric characters, it reads the same forward and backward. 
+/* LC#125
+
+A phrase is a palindrome if, 
+after converting all uppercase letters into lowercase letters 
+and removing all non-alphanumeric characters, 
+it reads the same forward and backward. 
 Alphanumeric characters include letters and numbers.
 
-Given a string s, return true if it is a palindrome, or false otherwise.
+Given a string s, return true if it is a palindrome, 
+or false otherwise.
 
 Input: s = "A man, a plan, a canal: Panama"
 Output: true
@@ -14,6 +18,23 @@ Output: true
 #include <stack>
 using namespace std;
 
+// use two pointers
+// beats 100% LC users
+bool isPalindrome(string s) {
+	int left = 0, right = s.length() - 1;
+	while (left < right) {
+		if (!isalnum(s[left]))
+			left++;
+		else if (!isalnum(s[right]))
+			right--;
+		else if (tolower(s[left]) != tolower(s[right]))
+			return false;
+		else if (tolower(s[left]) == tolower(s[right])) {
+			left++; right--;
+		}
+	}
+	return true;
+}
 
 // push back in a new string
 bool isPalindrome(string s) {
@@ -74,7 +95,8 @@ bool isPalindrome (string s) {
 	return true;
 }
 
-/*
+/* LC#680
+
 Given a string s, return true if the s can be palindrome 
 after deleting at most one character from it.
 */

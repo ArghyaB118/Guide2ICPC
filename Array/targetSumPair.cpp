@@ -1,6 +1,8 @@
-// Given an array of integers nums and an integer target, return indices of the two numbers 
+// Given an array of integers nums and an integer target, 
+// return indices of the two numbers 
 // such that they add up to target. 
-// Assumption: Each input would have exactly one solution, and same element can't be used twice.
+// Assumption: Each input would have exactly one solution, 
+// and same element can't be used twice.
 
 #include <iostream>
 #include <vector>

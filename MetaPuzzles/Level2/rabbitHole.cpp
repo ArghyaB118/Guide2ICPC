@@ -113,7 +113,9 @@ int getMaxVisitableWebpagesOldImproved(int N, vector<int> L) {
   	return res;
 }
 
-int getMaxVisitableWebpagesOld(int N, vector<int> L) {
+// runs bfs starting from each node
+// time limit exceeded
+int getMaxVisitableWebpagesNaive(int N, vector<int> L) {
   	int res = 0;
   	unordered_set<int> chain;
 	for (int i = 1; i <= N; i++) {
@@ -132,10 +134,53 @@ int getMaxVisitableWebpagesOld(int N, vector<int> L) {
   	return res;
 }
 
+// this is the final solution, still timed out!
+int getMaxVisitableWebpagesMem(int N, vector<int> L) {
+  	int res = 0;
+  	unordered_set<int> chain_set;
+  	unordered_map<int, int> chain_lengths;
+  	vector<int> chain;
+	for (int i = 1; i <= N; i++) {
+		if (chain_lengths.find(i) == chain_lengths.end()) {
+			chain.clear(); chain_set.clear();
+			chain_set.insert(i); chain.push_back(i);
+			int item = i;
+			while (chain_set.find(L[item - 1]) == chain_set.end()) {
+				chain_set.insert(L[item - 1]);
+				chain.push_back(L[item - 1]);
+				item = L[item - 1];
+			}
+			int cycle = L[item - 1];
+			int size = chain.size();
+			res = max(res, size);
+			if (res == N)
+				return res;
+			bool not_yet_cycle = true;
+			for (auto &c : chain) {
+				if (c == cycle)
+					not_yet_cycle = !not_yet_cycle;
+				if (not_yet_cycle) {
+					chain_lengths[c] = size;
+					size--;
+				}
+				else {
+					chain_lengths[c] = size;
+				}
+			}
+		}
+	}
+  	return res;
+}
+
+int getMaxVisitableWebpages(int N, int M, vector<int> A, vector<int> B)  {
+	
+}
+
 int main () {
 	cout << getMaxVisitableWebpages(5, {2, 4, 2, 2, 3}) << " "
 		<< getMaxVisitableWebpages2(5, {2, 4, 2, 2, 3}) << " "
 		<< getMaxVisitableWebpagesOldImproved(5, {2, 4, 2, 2, 3}) << " "
-		<< getMaxVisitableWebpagesOld(5, {2, 4, 2, 2, 3}) << endl;
+		<< getMaxVisitableWebpagesMem(5, {2, 4, 2, 2, 3}) << " "
+		<< getMaxVisitableWebpagesNaive(5, {2, 4, 2, 2, 3}) << endl;
 	return 0;
 }

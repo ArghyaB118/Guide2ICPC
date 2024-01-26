@@ -14,6 +14,8 @@ counts the number of occurences of each character.
 #include <unordered_map>
 // for multithreading
 #include "pthread.h"
+// for std::thread instead of posix threads
+#include <thread>
 using namespace std;
 
 string generateRandomString (int n) {
@@ -39,13 +41,34 @@ unordered_map<char, int> stringToDict (string s) {
 
 #define max_threads 8
 unordered_map<char, int> um;
-	
+
+
+// also comment out the entry creation lines.
+void* stringToDictMultithreadedFail (void* input) {
+	string *s = (string *) input;
+	// cout << *s << endl;
+	for (auto ch : *s) {
+		if (um.find(ch) != um.end())
+			um[ch]++;
+		else
+			um[ch] = 1;
+	}
+	pthread_exit(NULL);
+}
+
 void* stringToDictMultithreaded (void* input) {
 	string *s = (string *) input;
 	// cout << *s << endl;
 	for (auto ch : *s) {
 		um[ch]++;
 	}
+	pthread_exit(NULL);
+}
+
+void stringToDictMultithreaded2 (string& s, int start, int end) {
+	for (int i = start; i <= end; i++)
+		um[s[i]]++;
+	pthread_exit(NULL);
 }
 
 int main () {
@@ -79,7 +102,20 @@ int main () {
 	for (auto &ch : um)
 		if (ch.second != hashMap[ch.first])
 			cout << "found" << endl;
-	
+	cout << "Done this round" << endl;	
+
+	um.clear();
+	for (int i = 0; i < 256; i++)
+		um[static_cast<char>(i)] = 0;
+
+	std::thread th1(stringToDictMultithreaded2, std::ref(s), 0, n / 2 - 1);
+	std::thread th2(stringToDictMultithreaded2, std::ref(s), n / 2, n - 1);
+	th1.join();
+	th2.join();
+
+	for (auto &ch : um)
+		if (ch.second != hashMap[ch.first])
+			cout << "found" << endl;
 	return 0;
 }
 

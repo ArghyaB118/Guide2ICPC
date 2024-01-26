@@ -1,11 +1,16 @@
-/*
-Implement next permutation, which rearranges numbers into the 
+/* LC#31
+
+Implement next permutation, 
+which rearranges numbers into the 
 lexicographically next greater permutation of numbers.
 
-If such an arrangement is impossible, it must rearrange it to the 
-lowest possible order (i.e., sorted in ascending order).
+If such an arrangement is impossible, 
+it must rearrange it to the 
+lowest possible order 
+(i.e., sorted in ascending order).
 
-The replacement must be in place and use only constant extra memory.
+The replacement must be in place 
+and use only constant extra memory.
 
 Input: nums = [1,2,3]
 Output: [1,3,2]
@@ -17,16 +22,7 @@ Output: [1,2,3]
 #include<vector>
 using namespace std;
 
-
-bool isReverseSorted (vector<int>& nums) {
-	int n = nums.size();
-	for (int i = 1; i < n; i++)
-		if (nums[i] > nums[i - 1])
-			return false;
-	return true;
-}
-
-
+// beats 100% LC users
 void next_perm (vector<int>& nums) {
 	int n = nums.size(), i = n - 1;
 	for (i = n - 1; i >= 1; i--) {
@@ -49,11 +45,14 @@ void next_perm (vector<int>& nums) {
 
 
 int main () {
-	vector<int> nums{2,3,1}; //{1,3,2}; //{1, 2, 3}; //{3, 2, 1};
-	if (isReverseSorted(nums))
-		sort(nums.begin(), nums.end());
-	else
-		next_perm(nums);
+	vector<int> nums = {4, 3, 2, 1}; //{1,3,2}; //{1, 2, 3}; //{3, 2, 1};
+	next_perm(nums);
+	for (auto i : nums)
+		cout << i << " ";
+	cout << endl;
+
+	nums = {2, 4, 1, 3};
+	std::next_permutation(nums.begin(), nums.end());
 	for (auto i : nums)
 		cout << i << " ";
 	cout << endl;

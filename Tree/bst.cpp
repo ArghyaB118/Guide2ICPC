@@ -6,7 +6,7 @@ using namespace std;
 
 struct Node {
 	int data;
-	Node* left, *right;
+	Node *left, *right;
 	Node (int data) {
 		this->data = data;
 		this->left = this->right = NULL;
@@ -186,7 +186,62 @@ struct node* deleteLevelOrder(struct node* root, int val) {
 	return root;
 }
 
+/* LC#938
 
+Given the root node of a binary search tree 
+and two integers low and high, 
+return the sum of values of all nodes 
+with a value in the inclusive range [low, high].
+*/
+
+int rangeSumBST(Node* root, int low, int high) {
+	int sum = 0;
+	queue<Node*> q;
+	q.push(root);
+	while (!q.empty()) {
+		Node* tmp = q.front();
+		q.pop();
+		if (tmp != NULL && tmp->val <= high && tmp->val >= low) {
+			sum += tmp->val;
+			q.push(tmp->left);
+			q.push(tmp->right);
+		}
+		else if (tmp != NULL && tmp->val > high && tmp->left != NULL)
+			q.push(tmp->left);
+		else if (tmp != NULL && tmp->val < low && tmp->right != NULL)
+			q.push(tmp->right);
+	}
+	return sum;
+}
+
+/* LC#270
+
+Given the root of a binary search tree and a target value, 
+return the value in the BST that is closest to the target. 
+If there are multiple answers, print the smallest.
+*/
+
+int closestValue(Node* root, double target) {
+	if (!root) { return 0; }
+	if (!root->left && !root->right) {return root->data; }
+	queue<Node*> q; q.push(root);
+	double closest_value = root->data;
+	while (!q.empty()) {
+		Node* tmp = q.front();
+		q.pop();
+		if (abs(closest_value - target) > abs(tmp->data - target))
+			closest_value = tmp->data;
+		else if (abs(closest_value - target) == abs(tmp->data - target) && tmp->data < closest_value)
+			closest_value = tmp->data;
+		if (tmp->data == target)
+			return target;
+		if (tmp->data > target && tmp->left)
+			q.push(tmp->left);
+		else if (tmp->data < target && tmp->right)
+			q.push(tmp->right);
+	}
+	return closest_value;
+}
 
 int main() {
 	struct Node *root = new Node(30);

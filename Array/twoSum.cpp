@@ -100,6 +100,68 @@ vector<int> twoSum(vector<int>& nums, int target) {
     return {-1,-1};
 }
 
+/* LC#167 
+
+Two Sum II - Input Array Is Sorted
+
+Given a 1-indexed array of integers numbers 
+that is already sorted in non-decreasing order, 
+find two numbers such that they add up to a specific target number. 
+Let these two numbers be numbers[index1] and numbers[index2] 
+where 1 <= index1 < index2 <= numbers.length.
+
+Return the indices of the two numbers, 
+index1 and index2, added by one as an integer array 
+[index1, index2] of length 2.
+
+The tests are generated 
+such that there is exactly one solution. 
+You may not use the same element twice.
+
+Your solution must use only constant extra space.
+Hence, you may not use any additional data container like hashset.
+*/
+
+int binary_search (vector<int>& numbers, int target) {
+	int left = 0, right = numbers.size() - 1;
+	while (left < right) {
+		if (left == right - 1) {
+			if (numbers[left] == target)
+				return left;
+			else if (numbers[right] == target)
+				return right;
+			return -1;
+		}
+		int mid = left + (right - left) / 2;
+		if (numbers[mid] == target)
+			return mid;
+		else if (numbers[mid] < target) {
+			left = mid;
+		}
+		else if (numbers[mid] > target) {
+			right = mid;
+		}
+	}
+	return -1;
+}
+
+vector<int> twoSum (vector<int>& numbers, int target) {
+	for (int i = 0; i < numbers.size(); i++) {
+		if (i > 0 && numbers[i] == numbers[i - 1])
+			continue;
+		if (2 * numbers[i] == target && i + 1 < numbers.size()) {
+			if (numbers[i + 1] == numbers[i])
+				return {i + 1, i + 2};
+			else
+				return {-1, -1};
+		}
+		int j = binary_search(numbers, target - numbers[i]);
+		if (j > 0)
+			return {i + 1, j + 1};
+	}
+	return {-1, -1};
+}
+
 int main() {
 	std::vector<int> nums{2, 7, 15, 11};
 	int target = 18;

@@ -224,23 +224,27 @@ int countDuplicateHash(ListNode* head) {
 
 /* LC#21
  
- How to merge two sorted linked list
- https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
- You are given the heads of two sorted linked lists list1 and list2.
+How to merge two sorted linked list
+https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/
+You are given the heads 
+of two sorted linked lists list1 and list2.
 
- Merge the two lists in a one sorted list. The list should be made by splicing together the nodes of the first two lists.
+Merge the two lists in a one sorted list. 
+The list should be made 
+by splicing together the nodes of the first two lists.
 
- Return the head of the merged linked list.
- 
- Input: list1 = [1,2,4], list2 = [1,3,4]
- Output: [1,1,2,3,4,4]
- 
- Input: list1 = [], list2 = []
- Output: []
- 
- Input: list1 = [], list2 = [0]
- Output: [0]
+Return the head of the merged linked list.
+
+Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+
+Input: list1 = [], list2 = []
+Output: []
+
+Input: list1 = [], list2 = [0]
+Output: [0]
 */
+
 ListNode* mergeTwoSortedLists (ListNode* l1, ListNode* l2) {
 	ListNode dummy(-1);
 	ListNode* tail = &dummy;
@@ -269,26 +273,29 @@ ListNode* mergeTwoSortedLists (ListNode* l1, ListNode* l2) {
 
 /* LC#23
  
- You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
- 
- Merge all the linked-lists into one sorted linked-list and return it.
- 
- Input: lists = [[1,4,5],[1,3,4],[2,6]]
- Output: [1,1,2,3,4,4,5,6]
- Explanation: The linked-lists are:
- [
-   1->4->5,
-   1->3->4,
-   2->6
- ]
- merging them into one sorted list:
- 1->1->2->3->4->4->5->6
- 
- Input: lists = []
- Output: []
- 
- Input: lists = [[]]
- Output: []*/
+You are given an array of k linked-lists lists, 
+each linked-list is sorted in ascending order.
+
+Merge all the linked-lists into 
+one sorted linked-list and return it.
+
+Input: lists = [[1,4,5],[1,3,4],[2,6]]
+Output: [1,1,2,3,4,4,5,6]
+Explanation: The linked-lists are:
+[
+1->4->5,
+1->3->4,
+2->6
+]
+merging them into one sorted list:
+1->1->2->3->4->4->5->6
+
+Input: lists = []
+Output: []
+
+Input: lists = [[]]
+Output: []
+*/
 
 
 ListNode* mergeKLists(vector<ListNode*>& lists) {

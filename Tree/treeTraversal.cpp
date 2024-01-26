@@ -1,4 +1,4 @@
-f#include <iostream>
+#include <iostream>
 #include <queue>
 #include <map>
 #include <vector>
@@ -100,7 +100,8 @@ void LevelOrderQueue (struct Node* root) {
 	}
 }
 
-/*
+/* LC#987
+
 Vertical Order Traversal of a Binary Tree
     1
    / \
@@ -160,6 +161,40 @@ vector<vector<int>> verticalOrder (struct Node* root) {
 	return result;
 }
 
+// beats 100% LC users
+vector<vector<int>> verticalOrder2(TreeNode* root) {
+    if (root == NULL)
+	    return {};
+    TreeNode* tmp = root;
+    int max_depth = 0, min_depth = 0;
+    queue<Pair> nodes; nodes.push(make_pair(0, tmp));
+    while (!nodes.empty()) {
+        Pair root = nodes.front();
+        min_depth = min(min_depth, root.first);
+        max_depth = max(max_depth, root.first);
+	    nodes.pop();
+        if (root.second->left != NULL) {
+            nodes.push(make_pair(root.first - 1, root.second->left));
+        }
+        if (root.second->right != NULL)
+            nodes.push(make_pair(root.first + 1, root.second->right));
+    }
+    vector<vector<int>> result(max_depth - min_depth + 1, vector<int>{});
+    
+    nodes.push(make_pair(0, root));
+    while (!nodes.empty()) {
+        Pair root = nodes.front();
+        result[root.first - min_depth].push_back(root.second->val);
+        nodes.pop();
+        if (root.second->left != NULL) {
+            nodes.push(make_pair(root.first - 1, root.second->left));
+        }
+        if (root.second->right != NULL)
+            nodes.push(make_pair(root.first + 1, root.second->right));
+    }
+	return result;
+}
+
 
 Node* array2LevelOrderTree (int arr[], Node* root, int l, int r) {
 	if (l < r) {
@@ -171,16 +206,17 @@ Node* array2LevelOrderTree (int arr[], Node* root, int l, int r) {
 	return root;
 }
 
-//Node* array2InPreOrderTree (int arr_preorder[], int arr_inorder[]) {
+/* LC#543
 
-//}
+Given the root of a binary tree, 
+return the length of the diameter of the tree.
 
-/*
-The diameter of a binary tree is the length of the 
-longest path between any two nodes in a tree. 
+The diameter of a binary tree is the length 
+of the longest path between any two nodes in a tree. 
 This path may or may not pass through the root.
-The length of a path between two nodes is represented by 
-the number of edges between them.
+
+The length of a path between two nodes 
+is represented by the number of edges between them.
 
 Input: root = [1,2,3,4,5]
 Output: 3
@@ -188,8 +224,6 @@ Output: 3
 Input: root = [1,2]
 Output: 1
 */
-
-
 
 int diameter (struct Node* root) {
 	if (root == NULL)
@@ -205,15 +239,37 @@ int diameter (struct Node* root) {
 			: max(diameter(root->right), depth(root->left) + depth(root->right));
 }
 
-/*
-Given the root of a binary tree, imagine yourself standing on the right side of it, 
-return the values of the nodes you can see ordered from top to bottom.
+/* LC#199
+
+Given the root of a binary tree, 
+imagine yourself standing on the right side of it, 
+return the values of the nodes you can see 
+ordered from top to bottom.
 
 Input: root = [1,2,3,null,5,null,4]
 Output: [1,3,4]
 */
 
-vector<int> rightSideView(struct Node* root) {
+// beats 65% LC users
+vector<int> rightSideView(TreeNode* root) {
+	vector<int> right_projection;
+	if (!root) { return right_projection; }
+	queue<TreeNode*> curr, next;
+	curr.push(root);
+	while (!curr.empty()) {
+		TreeNode* node = curr.front();
+		if (curr.size() == 1)
+			right_projection.push_back(node->val);
+		curr.pop();
+		if (node->left) { next.push(node->left); }
+		if (node->right) { next.push(node->right); }
+		if (curr.empty()) { swap(curr, next); }
+	}
+	return right_projection;
+}
+
+// WRONG! root = [1,2,3,4] expected = [1,3,4] output = [1, 3]
+vector<int> rightSideView2 (struct Node* root) {
 	vector<int> v;
 	queue<Node*> q;
 	q.push(root);
@@ -233,7 +289,8 @@ vector<int> rightSideView(struct Node* root) {
 	return v;
 }
 
-/*
+/* LC#103
+
 Zigzag order traversal of a tree:
     1
    / \

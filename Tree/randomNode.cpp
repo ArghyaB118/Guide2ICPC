@@ -1,22 +1,32 @@
 /* LC#382
-Given a singly linked list, return a random node's value from the linked list. Each node must have the same probability of being chosen.
+
+Given a singly linked list, 
+return a random node's value from the linked list. 
+Each node must have the same probability of being chosen.
 
 Implement the Solution class:
 
-Solution(ListNode head) Initializes the object with the head of the singly-linked list head.
-int getRandom() Chooses a node randomly from the list and returns its value. All the nodes of the list should be equally likely to be chosen.
+Solution(ListNode head) Initializes the object 
+with the head of the singly-linked list head.
+int getRandom() Chooses a node randomly from the list 
+and returns its value. 
+All the nodes of the list 
+should be equally likely to be chosen.
 
  
 
 Constraints:
-The number of nodes in the linked list will be in the range [1, 104].
--104 <= Node.val <= 104
-At most 104 calls will be made to getRandom.
+The number of nodes in the linked list 
+will be in the range [1, 10^4].
+-10^4 <= Node.val <= 10^4
+At most 10^4 calls will be made to getRandom.
  
 
 Follow up:
-What if the linked list is extremely large and its length is unknown to you?
-Could you solve this efficiently without using extra space?
+What if the linked list is extremely large 
+and its length is unknown to you?
+Could you solve this efficiently 
+without using extra space?
 */
 
 #include <iostream>
@@ -79,6 +89,82 @@ public:
     	return random;
     }
 };
+
+/* LC#138
+
+A linked list of length n is given 
+such that each node contains an additional random pointer, 
+which could point to any node in the list, or null.
+
+Construct a deep copy of the list. 
+The deep copy should consist of exactly n brand new nodes, 
+where each new node has its value 
+set to the value of its corresponding original node. 
+Both the next and random pointer of the new nodes 
+should point to new nodes in the copied list 
+such that the pointers in the original list 
+and copied list represent the same list state. 
+None of the pointers in the new list 
+should point to nodes in the original list.
+
+For example, 
+if there are two nodes X and Y in the original list, 
+where X.random --> Y, 
+then for the corresponding two nodes x and y 
+in the copied list, x.random --> y.
+
+Return the head of the copied linked list.
+
+The linked list is represented 
+in the input/output as a list of n nodes. 
+Each node is represented as a pair of [val, random_index] where:
+
+val: an integer representing Node.val
+random_index: the index of the node (range from 0 to n-1) 
+that the random pointer points to, 
+or null if it does not point to any node.
+Your code will only be given the head of the original linked list.
+*/
+
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* random;
+    
+    Node(int _val) {
+        val = _val;
+        next = NULL;
+        random = NULL;
+    }
+};
+
+// beats 73% LC users
+Node* copyRandomList(Node* head) {
+	unordered_map<Node*, int> oldNodeIndex;
+	vector<Node*> newNodes;
+	if (head == NULL)
+		return NULL;
+	Node* head_copy = head;
+	int i = 0;
+	while (head_copy != NULL) {
+		Node* newNode = new Node(head_copy->val);
+		newNodes.push_back(newNode);
+		oldNodeIndex[head_copy] = i;
+		i++;
+		head_copy = head_copy->next;
+	}
+	for (int i = 0; i < newNodes.size(); i++) {
+		if (i == newNodes.size() - 1)
+			newNodes[i]->next = NULL;
+		else
+			newNodes[i]->next = newNodes[i + 1];
+		if (head->random != NULL)
+			newNodes[i]->random = newNodes[oldNodeIndex[head->random]];
+		head = head->next;
+	}
+	return newNodes[0];
+}
 
 
 int main () {

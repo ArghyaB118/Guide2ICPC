@@ -49,6 +49,28 @@ int pow_mod_optimized (int c, int e, int n) {
 	return -1;
 }
 
+double myPow(double x, int n) {
+	if (n == 0)
+	    return 1;
+	else if (x == 0)
+	    return 0;
+	else if (n == 1 || x == 1)
+	    return x;
+	else if (n < 0)
+	    return myPow(x, n + 1) / x;
+	else if (0 < x && x < 1) {
+	    if (n > 1000000)
+	        return 0;
+	    return 1 / myPow(1 / x, n);
+	}
+	else if (x < 0 && n % 2 == 0)
+	    return myPow((-1) * x, n);
+	else if (x < 0 && n % 2 == 1)
+	    return (-1) * myPow((-1) * x, n);
+	else
+	    return x * myPow(x, n - 1);   
+}
+
 int main () {
 	cout << pow(2, -2) << endl;
 	cout << pow_mod(2, 10, 5) << " " << pow_mod_optimized(2, 10, 5) << endl;

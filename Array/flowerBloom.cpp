@@ -156,7 +156,10 @@ vector<int> fullBloomFlowersOpt (vector<vector<int>>& flowers, vector<int>& pers
     return {};
 }*/
 
-vector<int> fullBloomFlowers (vector<vector<int>>& flowers, vector<int>& persons) {
+// keep a hashmap of <timespamp, number of flowers>
+vector<int> fullBloomFlowers 
+    (vector<vector<int>>& flowers, 
+        vector<int>& persons) {
     unordered_map<int, int> mp;
     for (auto & flower : flowers) {
         for (int i = flower[0]; i <= flower[1]; i++) {
@@ -182,7 +185,9 @@ static bool cmp (const vector<int>& a, const vector<int>& b) {
     return (a[1] <= b[1]) ? true : false;
 };
 
-vector<int> fullBloomFlowers3 (vector<vector<int>>& flowers, vector<int>& persons) {
+vector<int> fullBloomFlowers3 
+    (vector<vector<int>>& flowers, 
+        vector<int>& persons) {
     vector<int> result (persons.size(), 0);
     sort(flowers.begin(), flowers.end());
     
@@ -210,7 +215,187 @@ vector<int> fullBloomFlowers3 (vector<vector<int>>& flowers, vector<int>& person
     return result;
 }
 
-vector<int> fullBloomFlowers2 (vector<vector<int>>& flowers, vector<int>& persons) {
+// index of first flower that blooms after the person's visit
+// = number of flowers with bloom time <= person's arrival        
+int findGreater (vector<vector<int>>& flowers, int person) {
+    int left = 0, right = flowers.size() - 1;
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        if (right == left + 1
+            && left == 0
+            && flowers[left][0] > person)
+            return 0;
+        else if (right == left + 1
+            && right == flowers.size() - 1
+            && flowers[right][0] <= person)
+            return flowers.size();
+        else if (flowers[right][0] > person 
+            && flowers[left][0] <= person 
+            && right == left + 1)
+            return right;
+        else if (flowers[mid][0] > person)
+            right = mid;
+        else if (flowers[mid][0] <= person)
+            left = mid;
+    }
+    return -1;
+}
+
+// index of first flower that with end_time >= the person's visit
+// = number of flowers with end_time < person's arrival        
+int findEqualOrGreater (vector<vector<int>>& flowers, int person) {
+    int left = 0, right = flowers.size() - 1;
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        if (right == left + 1
+            && left == 0
+            && flowers[left][1] >= person)
+            return 0;
+        else if (right == left + 1
+            && right == flowers.size() - 1
+            && flowers[right][1] < person)
+            return flowers.size();
+        else if (flowers[right][1] >= person 
+            && flowers[left][1] < person 
+            && right == left + 1)
+            return right;
+        else if (flowers[mid][1] >= person)
+            right = mid;
+        else if (flowers[mid][1] < person)
+            left = mid;
+    }
+    return -1;
+}
+
+vector<int> fullBloomFlowers3a 
+    (vector<vector<int>>& flowers, 
+        vector<int>& persons) {
+    vector<int> result (persons.size(), 0);
+    sort(flowers.begin(), flowers.end());
+    for (auto & f: flowers)
+        cout << "{" << f[0] << " " << f[1] << "} ";
+    cout << endl;
+
+    for (int i = 0; i < persons.size(); i++)
+        result[i] += findGreater (flowers, persons[i]);
+        // cout << findGreater (flowers, persons[i]) << endl;
+    
+    sort (flowers.begin(), flowers.end(), cmp);
+    for (auto & f: flowers)
+        cout << "{" << f[0] << " " << f[1] << "} ";
+    cout << endl;
+    
+    for (int i = 0; i < persons.size(); i++)
+        result[i] -= findEqualOrGreater(flowers, persons[i]);
+        // cout << findEqualOrGreater(flowers, persons[i]) << endl;
+    return result;
+}
+
+
+/* This is the final answer
+beats 88.71% users */
+int findGreaterBegin (vector<int> &flower_begin, int person) {
+    int left = 0, right = flower_begin.size() - 1;
+    if (left == right) {
+        if (flower_begin[0] <= person)
+            return 1;
+        else
+            return 0;
+    }
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        if (right == left + 1
+            && left == 0
+            && flower_begin[left] > person)
+            return 0;
+        else if (right == left + 1
+            && right == flower_begin.size() - 1
+            && flower_begin[right] <= person)
+            return flower_begin.size();
+        else if (flower_begin[right] > person 
+            && flower_begin[left] <= person 
+            && right == left + 1)
+            return right;
+        else if (flower_begin[mid] > person)
+            right = mid;
+        else if (flower_begin[mid] <= person)
+            left = mid;
+    }
+    return -1;
+}
+
+int findEqualOrGreaterEnd (vector<int> &flower_end, int person) {
+    int left = 0, right = flower_end.size() - 1;
+    if (left == right) {
+        if (flower_end[0] < person)
+            return 1;
+        else
+            return 0;
+    }
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        if (right == left + 1
+            && left == 0
+            && flower_end[left] >= person)
+            return 0;
+        else if (right == left + 1
+            && right == flower_end.size() - 1
+            && flower_end[right] < person)
+            return flower_end.size();
+        else if (flower_end[right] >= person 
+            && flower_end[left] < person 
+            && right == left + 1)
+            return right;
+        else if (flower_end[mid] >= person)
+            right = mid;
+        else if (flower_end[mid] < person)
+            left = mid;
+    }
+    return -1;
+}
+
+vector<int> fullBloomFlowers3b 
+    (vector<vector<int>>& flowers, 
+        vector<int>& persons) {
+    vector<int> result (persons.size(), 0);
+    vector<int> flower_begin, flower_end;
+
+    for (auto &f : flowers) {
+        flower_begin.push_back(f[0]);
+        flower_end.push_back(f[1]);
+    }
+
+    sort(flower_begin.begin(), flower_begin.end());
+    sort(flower_end.begin(), flower_end.end());
+
+    for (auto &i : flower_begin)
+        cout << i << " ";
+    cout << endl;
+
+    for (auto &i : flower_end)
+        cout << i << " ";
+    cout << endl;
+
+    for (int i = 0; i < persons.size(); i++)
+        result[i] += findGreaterBegin (flower_begin, persons[i]);
+
+    for (auto &i : result)
+        cout << i << " ";
+    cout << endl;
+
+    for (int i = 0; i < persons.size(); i++)
+        result[i] -= findEqualOrGreaterEnd(flower_end, persons[i]);
+    return result;
+}
+
+
+
+// time limit exceeded
+// O(np) - for each person, for each flower
+// sort the flowers first, once the start time exceeds, break.
+vector<int> fullBloomFlowers2 
+    (vector<vector<int>>& flowers, 
+        vector<int>& persons) {
     vector<int> result (persons.size(), 0);
     sort(flowers.begin(), flowers.end());
     
@@ -230,6 +415,7 @@ vector<int> fullBloomFlowers2 (vector<vector<int>>& flowers, vector<int>& person
     return result;
 }
 
+// O(np) - for each person, for each flower
 vector<int> fullBloomFlowersNaive (vector<vector<int>>& flowers, vector<int>& persons) {
     vector<int> result (persons.size(), 0);
     
@@ -244,13 +430,16 @@ vector<int> fullBloomFlowersNaive (vector<vector<int>>& flowers, vector<int>& pe
 }
 
 int main () {
-    vector<vector<int>> flowers = {{1,6},{3,7},{9,12},{1,4},{4,13}};
-    vector<int> persons = {2,3,7,11};
+    // vector<vector<int>> flowers = {{1,6},{3,7},{9,12},{1,4},{4,13}};
+    // vector<int> persons = {2,3,7,11};
+
+    vector<vector<int>> flowers = {{1,1}};
+    vector<int> persons = {1};
     
     // vector<vector<int>> flowers = {{19,37},{19,38},{19,35}};
     // vector<int> persons = {6,7,21,1,13,37,5,37,46,43};
     
-    vector<int> blooms = fullBloomFlowers3 (flowers, persons);
+    vector<int> blooms = fullBloomFlowers3b (flowers, persons);
     for (auto i : blooms)
         cout << i << " ";
     cout << endl;

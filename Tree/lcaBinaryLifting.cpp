@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <cmath> // for pow
 using namespace std;
 
 struct TreeNode {
@@ -123,14 +124,11 @@ int get_depth_binary_lifting (TreeNode* node) {
 		return -1;
 	else if (node->ancestors.size() == 0)
 		return 0;
-	int depth = 1;
+	int depth = 0;
 	while (node->ancestors.size() != 0) {
-		// using the first one so that it is scalable to binary lifting
 		int n = node->ancestors.size();
 		node = node->ancestors[n - 1];
-		while (n > 1) {
-			depth *= 2;
-		}
+		depth += pow(2, n - 1);
 	}
 	return depth;
 }
@@ -168,14 +166,14 @@ TreeNode* find_lcs_util (TreeNode* node1, TreeNode* node2) {
 		if (node1->ancestors[i] == node2->ancestors[i])
 			tmp_num = i - 1;
 	}
-	if (tmp_num == 0)
-		tmp_num = size - 1;
+	// if (tmp_num == 0)
+	// 	tmp_num = size - 1;
 	return find_lcs_util(node1->ancestors[tmp_num], node2->ancestors[tmp_num]);
 }
 
 TreeNode* lca_binary_lifting (TreeNode* node1, TreeNode* node2) {
-	int depth1 = get_depth(node1);
-	int depth2 = get_depth(node2);
+	int depth1 = get_depth_binary_lifting(node1);
+	int depth2 = get_depth_binary_lifting(node2);
 	cout << "Native depths: " 
 		<< depth1 << " " << depth2 << endl;
 	if (depth1 > depth2) {
@@ -242,6 +240,6 @@ int main () {
 	struct TreeNode *sixteen = node_create_binary_lifting(16, two);
 	
 	bfs_with_ancestors(one);
-	cout << lca_binary_lifting(fourteen, sixteen)->val << endl;
+	cout << lca_binary_lifting(fourteen, eight)->val << endl;
 	return 0;
 }

@@ -1,5 +1,6 @@
-/*
-Basic Calculator
+/* LC#227
+
+Basic Calculator II
 
 Given a string s which represents an expression, 
 evaluate this expression and return its value. 
@@ -20,6 +21,11 @@ Output: 1
 
 Input: s = " 3+5 / 2 "
 Output: 5
+
+s consists of integers and operators ('+', '-', '*', '/') 
+separated by some number of spaces.
+s represents a valid expression.
+The answer is guaranteed to fit in a 32-bit integer.
 */
 
 #include <iostream>
@@ -90,8 +96,67 @@ int calculate (string s) {
 	return 0;
 }
 
+int calculateCondensed (string s) {
+	int i = 0, n = s.length();
+	string tmp;
+	vector<string> ss;
+	while (i < n) {
+		if (isdigit(s[i]))
+			tmp += s[i];
+		else {
+			if (tmp != "")
+				ss.push_back(tmp);
+			tmp.clear();
+			if (s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/') {
+				tmp += s[i];
+				ss.push_back(tmp);
+				tmp.clear();
+			}
+		}
+		i++;
+	}
+	if (tmp != "")
+		ss.push_back(tmp);
+	for (auto &i: ss)
+		cout << i << endl;
+	// division
+	for (int i = 0; i < ss.size(); i++) {
+		if (ss[i] == "/") {
+			int tmp = stoi(ss[i - 1]) / stoi(ss[i + 1]);
+			ss[i - 1] = to_string(tmp);
+			ss.erase(ss.begin() + i); ss.erase(ss.begin() + i - 1); 
+		}
+	}
+	// multiplication
+	for (int i = 0; i < ss.size(); i++) {
+		if (ss[i] == "*") {
+			int tmp = stoi(ss[i - 1]) * stoi(ss[i + 1]);
+			ss[i - 1] = to_string(tmp);
+			ss.erase(ss.begin() + i); ss.erase(ss.begin() + i - 1); 
+		}
+	}
+	// addition
+	for (int i = 0; i < ss.size(); i++) {
+		if (ss[i] == "+") {
+			int tmp = stoi(ss[i - 1]) + stoi(ss[i + 1]);
+			ss[i - 1] = to_string(tmp);
+			if (ss.size() > 3)
+				ss.erase(ss.begin() + i); ss.erase(ss.begin() + i - 1); 
+		}
+	}
+	// substraction
+	for (int i = 0; i < ss.size(); i++) {
+		if (ss[i] == "-") {
+			int tmp = stoi(ss[i - 1]) - stoi(ss[i + 1]);
+			ss[i - 1] = to_string(tmp);
+			ss.erase(ss.begin() + i); ss.erase(ss.begin() + i - 1); 
+		}
+	}	
+	return stoi(ss[0]);
+}
+
 int main () {
 	string s = "3+5 / 2 ";
-	cout << calculate(s) << endl;
+	cout << calculateCondensed(s) << endl;
 	return 0;
 }

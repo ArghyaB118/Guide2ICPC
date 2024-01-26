@@ -83,6 +83,32 @@ public:
         }
         return -1;
     }
+
+    // beats aroundd ~75% LC users
+    int pickIndex3 () {
+        if (this->cumsums.size() == 1)
+            return 0;
+        int randnum = rand() % this->cumsums.back() + 1;
+        // binary search on the cumsum array
+        int left = 0, right = cumsums.size() - 1;
+        while (left < right) {
+            if (cumsums[left] >= randnum)
+                return left;
+            if (right == left)
+                return left;
+            if (right == left + 1)
+                if (cumsums[right] >= randnum && cumsums[left] < randnum)
+                    return right;
+            int mid = left + (right - left) / 2;
+            if (cumsums[mid] == randnum)
+                return mid;
+            else if (cumsums[mid] > randnum)
+                right = mid;
+            else
+                left = mid;
+        }
+        return -1;
+    }
 };
 
 

@@ -13,8 +13,15 @@ void nQueens (vector<int>& v, int n) {
 }
 
 vector<vector<string>> solveNQueens(int n) {
-	for (int i = 0; i < n; i++)
-		nQueens({i}, n);
+	string s = "";
+	for (int i = 0, i < n; i++)
+		s.push_back('.');
+	vector<string> ss(n, s);
+	queue<vector<string>> q;
+	q.push(ss);
+	while (!q.empty()) {
+		vector<string> tmp = q.front();
+	}
 	return {{}};
 }
 

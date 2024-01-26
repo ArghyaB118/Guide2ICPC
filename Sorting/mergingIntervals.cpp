@@ -1,10 +1,14 @@
 /* LC#56
  
- Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
+ Given an array of intervals where intervals[i] = [starti, endi], 
+ merge all overlapping intervals, 
+ and return an array of the non-overlapping intervals 
+ that cover all the intervals in the input.
  
  Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
  Output: [[1,6],[8,10],[15,18]]
- Explanation: Since intervals [1,3] and [2,6] overlap, merge them into [1,6].
+ Explanation: Since intervals [1,3] and [2,6] overlap, 
+ merge them into [1,6].
  
  Input: intervals = [[1,4],[4,5]]
  Output: [[1,5]]
@@ -41,7 +45,8 @@ vector<vector<int>> merge (vector<vector<int>>& intervals) {
 	return intervals;
 }
 
-// Although this is more simplified as a code, but using only vector is not a good idea in terms of performance.
+// Although this is more simplified as a code, 
+// but using only vector is not a good idea in terms of performance.
 // Cost = O(sort) + O(n) = O(n log n)
 vector<vector<int>> merge2 (vector<vector<int>>& intervals) {
     sort(intervals.begin(), intervals.end());
@@ -63,6 +68,63 @@ vector<vector<int>> merge2 (vector<vector<int>>& intervals) {
     return result;
 }
 
+/* LC Facebook problem discussions
+
+You are given two lists of closed intervals, 
+firstList and secondList, where firstList[i] = [starti, endi] 
+and secondList[j] = [startj, endj]. 
+Each list of intervals is pairwise disjoint and in sorted order.
+
+Return the union of these two interval lists.
+
+A closed interval [a, b] (with a <= b) denotes 
+the set of real numbers x with a <= x <= b.
+*/
+
+vector<vector<int>> mergeIntervalLists
+	(vector<vector<int>>& firstList, 
+		vector<vector<int>>& secondList) {
+	stack<vector<int>> st;
+	int i = 0, j = 0;
+	while (i < firstList.size() && j < secondList.size()) {
+		if (st.empty() && firstList[i][0] <= secondList[j][0]) {
+			st.push(firstList[i]); i++;
+		}
+		else if (st.empty() && firstList[i][0] > secondList[j][0]) {
+			st.push(secondList[i]); j++;
+		}
+		else if (firstList[i][0] > st.top()[1] && secondList[j][0] > st.top()[1]) {
+			if (firstList[i][0] <= secondList[j][0]) {
+				st.push(firstList[i]); i++;
+			}
+			else if (firstList[i][0] > secondList[j][0]) {
+				st.push(secondList[i]); j++;
+			}
+		}
+		else if (firstList[i][0] <= st.top()[1] && secondList[j][0] > st.top()[1]) {
+			vector<int> tmp = st.top(); st.pop();
+			tmp[0] = min(tmp[0], firstList[i][0]);
+			tmp[1] = max(tmp[1], firstList[i][1]);
+			st.push(tmp);
+			i++;
+		}
+		else if (firstList[i][0] > st.top()[1] && secondList[j][0] <= st.top()[1]) {
+			vector<int> tmp = st.top(); st.pop();
+			tmp[0] = min(tmp[0], secondList[j][0]);
+			tmp[1] = max(tmp[1], secondList[j][1]);
+			st.push(tmp);
+			j++;
+		}
+	}
+	vector<vector<int>> result;
+	while (!st.empty()) {
+		result.push_back(st.top());
+		st.pop();
+	}
+	reverse(result.begin(), result.end());
+	return result;
+}
+
 int main () {
 	vector<vector<int>> intervals{{2,6},{1,3},{8,10},{9,15}};
 	merge(intervals);
@@ -75,6 +137,14 @@ int main () {
     intervals = {{2,6},{1,3},{8,10},{9,15}};
     vector<vector<int>> result = merge2(intervals);
     for (auto i : result)
+        cout << i[0] << " " << i[1] << endl;
+
+    cout << "merging list of intervals" << endl;
+	vector<vector<int>> intervals1{{0,2},{5,10},{13,23},{24,25}};
+    vector<vector<int>> intervals2{{1,5},{8,12},{15,24},{25,26}};
+    
+    vector<vector<int>> result2 = mergeIntervalLists (intervals1, intervals2);
+    for (auto i : result2)
         cout << i[0] << " " << i[1] << endl;
 	return 0;
 }

@@ -1,14 +1,24 @@
 /* LC#695
  
- You are given an m x n binary matrix grid. An island is a group of 1's (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
+ You are given an m x n binary matrix grid. 
+ An island is a group of 1's (representing land) 
+ connected 4-directionally (horizontal or vertical). 
+ You may assume all four edges of the grid are surrounded by water.
  
- The area of an island is the number of cells with a value 1 in the island.
+ The area of an island is the number of cells 
+ with a value 1 in the island.
 
- Return the maximum area of an island in grid. If there is no island, return 0.
+ Return the maximum area of an island in grid. 
+ If there is no island, return 0.
  
- Input: grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]
+ Input: grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],
+ [0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],
+ [0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],
+ [0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],
+ [0,0,0,0,0,0,0,1,1,0,0,0,0]]
  Output: 6
- Explanation: The answer is not 11, because the island must be connected 4-directionally.
+ Explanation: The answer is not 11, 
+ because the island must be connected 4-directionally.
  
  Input: grid = [[0,0,0,0,0,0,0,0]]
  Output: 0
@@ -66,9 +76,75 @@ int maxAreaOfIsland(vector<vector<int>>& grid) {
     return maxArea;
 }
 
+/* LC#827
+
+You are given an n x n binary matrix grid. 
+You are allowed to change at most one 0 to be 1.
+
+Return the size of the largest island 
+in grid after applying this operation.
+
+An island is a 4-directionally connected group of 1s.
+
+Input: grid = [[1,1],[1,0]]
+Output: 4
+
+Constraints:
+n == grid.length
+n == grid[i].length
+1 <= n <= 500
+grid[i][j] is either 0 or 1.
+*/
+
+typedef pair<int, int> cell;
+
+int largestIsland (vector<vector<int>>& grid)  {
+    int n = grid.size();
+    int max_island = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (grid[i][j] == 0) {
+                queue<cell> q; q.push({i, j});
+                int tmp_size = 0;
+                vector<vector<bool>> visited(n, vector<bool>(n, false));
+                visited[i][j] = true;
+                while (!q.empty()) {
+                    cell c = q.front(); q.pop();
+                    tmp_size++;
+                    if (c.first - 1 >= 0 && grid[c.first - 1][c.second] == 1 && !visited[c.first - 1][c.second]) {
+                        q.push({c.first - 1, c.second});
+                        visited[c.first - 1][c.second] = true;
+                    }
+                    if (c.first + 1 < n && grid[c.first + 1][c.second] == 1 && !visited[c.first + 1][c.second]) {
+                        q.push({c.first + 1, c.second});
+                        visited[c.first + 1][c.second] = true;
+                    }
+                    if (c.second - 1 >= 0 && grid[c.first][c.second - 1] == 1 && !visited[c.first][c.second - 1]) {
+                        q.push({c.first, c.second - 1});
+                        visited[c.first][c.second - 1] = true;
+                    }
+                    if (c.second + 1 < n && grid[c.first][c.second + 1] == 1 && !visited[c.first][c.second + 1]) {
+                        q.push({c.first, c.second + 1});
+                        visited[c.first][c.second + 1] = true;
+                    }
+                }
+                max_island = max(max_island, tmp_size);
+            }
+        }
+    }
+    if (max_island == 0) { return n * n; }
+    return max_island;
+}
+
 int main () {
-    vector<vector<int>> grid = {{1,1,0,0,0},{1,1,0,0,0},{0,0,0,1,1},{0,0,0,1,1}};
-    // {{0,0,1,0,0,0,0,1,0,0,0,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,1,1,0,1,0,0,0,0,0,0,0,0},{0,1,0,0,1,1,0,0,1,0,1,0,0},{0,1,0,0,1,1,0,0,1,1,1,0,0},{0,0,0,0,0,0,0,0,0,0,1,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},{0,0,0,0,0,0,0,1,1,0,0,0,0}};
-    cout << maxAreaOfIsland (grid) << endl;
+    vector<vector<int>> grid = 
+    // {{1, 1}, {1, 0}};
+    {{1,1,0,0,0},{1,1,0,0,0},{0,0,0,1,1},{0,0,0,1,1}};
+    // {{0,0,1,0,0,0,0,1,0,0,0,0,0},{0,0,0,0,0,0,0,1,1,1,0,0,0},
+    // {0,1,1,0,1,0,0,0,0,0,0,0,0},{0,1,0,0,1,1,0,0,1,0,1,0,0},
+    // {0,1,0,0,1,1,0,0,1,1,1,0,0},{0,0,0,0,0,0,0,0,0,0,1,0,0},
+    // {0,0,0,0,0,0,0,1,1,1,0,0,0},{0,0,0,0,0,0,0,1,1,0,0,0,0}};
+    // cout << maxAreaOfIsland (grid) << endl;
+    cout << largestIsland(grid) << endl;
     return 0;
 }

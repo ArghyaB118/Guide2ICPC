@@ -1,3 +1,14 @@
+/* LC#347
+
+Given an integer array nums 
+and an integer k, 
+return the k most frequent elements. 
+You may return the answer in any order.
+
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+*/
+
 #include <iostream>
 #include <unordered_map>
 #include <vector>
@@ -11,31 +22,46 @@ struct cmp {
 	};
 };
 
-vector<int> topKelements(vector<int>& arr, int k) {
-	vector<int> heavy_hitters;
-	unordered_map<int,int> hashmap;
-	for (int i = 0; i < arr.size(); i++)
-		hashmap[arr[i]]++;
-	for (auto x : hashmap)
-		cout << x.first << " " << x.second << endl;
-	priority_queue<Pair, vector<Pair>, cmp> pq(hashmap.begin(), hashmap.end());
-	while (k > 0) {
-		heavy_hitters.push_back(pq.top().first);
-		pq.pop(); k--;
-	}
-	return heavy_hitters;
+// beats ~83% LC users
+vector<int> topKFrequent(vector<int>& nums, int k) {
+    vector<int> heavy_hitters;
+    unordered_map<int,int> count;
+    for (int i = 0; i < nums.size(); i++) {
+        if (count.find(nums[i]) == count.end())
+            count[nums[i]] = 1;
+        else
+            count[nums[i]]++;
+    }
+    priority_queue<Pair, vector<Pair>, cmp> pq(count.begin(), count.end());
+    while (k > 0) {
+        heavy_hitters.push_back(pq.top().first);
+        pq.pop(); k--;
+    }
+    return heavy_hitters;
 }
 
+/* LC#215
+
+Given an integer array nums and an integer k, 
+return the kth largest element in the array.
+
+Note that it is the kth largest element 
+in the sorted order, not the kth distinct element.
+
+Can you solve it without sorting?
+*/
+
+// beats ~70% LC users
 int findKthLargest(vector<int>& nums, int k) {
-	priority_queue<int, vector<int>, greater<int>> pq;
-	for (int i = 0; i < nums.size(); i++) {
-		if (pq.size() < k)
-			pq.push(nums[i]);
-		else {
-			pq.push(nums[i]); pq.pop();
-		}
-	}
-	return pq.top();
+    priority_queue<int, vector<int>, greater<int>> pq;
+    for (int &num : nums) {
+        if (pq.size() < k)
+            pq.push(num);
+        else if (pq.size() == k && num > pq.top()) {
+            pq.pop(); pq.push(num);
+        }
+    }
+    return pq.top();
 }
 
 /* LC#1838
@@ -108,7 +134,7 @@ int main () {
 	cout << endl;
 
 	arr = {1,2,3,4,5};
-	cout << "The kth largest element: " << findKthLargest(arr, 2) << endl;
+	cout << "The kth largest element: " << findKthLargest2(arr, 2) << endl;
     
     arr = {1, 2, 4}; // {1,4,8,13};
     int k = 5;

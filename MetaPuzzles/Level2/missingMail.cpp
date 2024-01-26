@@ -7,7 +7,6 @@ using namespace std;
 typedef pair<double, double> value_tmp;
 
 double getMaxExpectedProfit(int N, vector<int> V, int C, double S) {
-  // Write your code here
   if (N == 1)
     return max(V[0] - C, 0);
   else if (S == 0)

@@ -1,11 +1,15 @@
-/*
-You are given an integer array height of length n. There are n vertical lines 
-drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+/* LC#11
 
-Find two lines that together with the x-axis form a container, such that 
-the container contains the most water.
+You are given an integer array height of length n. 
+There are n vertical lines 
+drawn such that the two endpoints of the ith line 
+are (i, 0) and (i, height[i]).
+
+Find two lines that together with the x-axis form a container, 
+such that the container contains the most water.
 
 Return the maximum amount of water a container can store.
+size of heights array <= 2
 
 height = [1,8,6,2,5,4,8,3,7]
 Output: 49
@@ -21,7 +25,6 @@ using namespace std;
 // If the right height is less, move the right wall
 int waterContained(vector<int>& heights) {
 	int n = heights.size();
-	if (n < 2) { return 0; }
 	int l = 0, r = n - 1, maxArea = 0;
 	while (l < r) {
 		maxArea = max(maxArea, min(heights[l], heights[r]) * (r - l));

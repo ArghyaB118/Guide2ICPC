@@ -30,3 +30,8 @@ int getMinimumDeflatedDiscCount(int N, vector<int> R) {
   }
   return deflateN;
 }
+
+
+long long getMinimumSecondsRequired(int N, vector<int> R, int A, int B)  {
+  vector<vector<long long>> cost(N, vector<long long> ())
+}

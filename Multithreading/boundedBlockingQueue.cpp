@@ -27,6 +27,7 @@ Please do not use built-in implementations of bounded blocking queue as this wil
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+// #include <semaphore.h>
 using namespace std;
 
 vector<int> arr = {1, 2, 3, 4, 5, 6};
@@ -76,6 +77,40 @@ void thread_dequeue (BoundedBlockingQueue b) {
     for (int i = 0; i < arr.size(); i++)
         b.dequeue();
 }
+
+class BoundedBlockingQueue2 {
+private:
+    queue<int> q;
+    sem_t unempty, unfull;
+public:
+    BoundedBlockingQueue2(int capacity) {
+        sem_init(&unfull, 0, capacity);
+        sem_init(&unempty, 0, 0);
+    }
+
+    ~BoundedBlockingQueue2() {
+        sem_destroy(&unempty);
+        sem_destroy(&unfull);
+    }
+
+    void enqueue (int element) {
+        sem_wait(&unfull);
+        q.push(element); 
+        sem_post(&unempty);
+    }
+
+    int dequeue () {
+        sem_wait(&unempty);
+        const int v =  q.front(); // this const is needed
+        q.pop(); 
+        sem_post(&unfull);
+        return v;
+    }
+    
+    int size() {
+        return q.size();
+    }
+};
 
 int main () {
     BoundedBlockingQueue b(3);
